@@ -59,12 +59,19 @@ const wins = [
 				</div>
 			</div>
 			<div class="nav-actions">
-				<a class="ghost-link" href="#services">Services</a>
-				<a class="ghost-link" href="#approach">Approach</a>
-				<a class="ghost-link" href="#contact">Contact</a>
+				<a class="ghost-link" href="/#services">Services</a>
+				<a class="ghost-link" href="/#approach">Approach</a>
+				<a class="ghost-link" href="/about">About</a>
+				<a class="ghost-link" href="/#contact">Contact</a>
 				<a class="btn primary" href="mailto:hello@gnksoftware.com">Book an intro</a>
 			</div>
 		</nav>
+
+		<div class="ticker">
+			<div class="ticker-track">
+				<span>Texas registered · Two founders shipping web platforms · Infra included · Weekly demos · Pragmatic builds · Texas registered · Two founders shipping web platforms · Infra included · Weekly demos · Pragmatic builds</span>
+			</div>
+		</div>
 
 		<section class="hero">
 			<div class="orb orb-a"></div>
@@ -72,8 +79,8 @@ const wins = [
 			<p class="eyebrow">G&K Software, LLC</p>
 			<h1>Ship-ready software without the agency drag.</h1>
 			<p class="lede">
-				We are a two-senior-engineer studio crafting lean, reliable web products. Strategy,
-				architecture, and hands-on builds—all in one cadence.
+				We are two senior founders—Gibson Martin and Kyle Dougan—crafting lean, reliable web products
+				from Texas. Strategy, architecture, and hands-on builds—all in one cadence.
 			</p>
 			<div class="hero-actions">
 				<a class="btn primary" href="mailto:hello@gnksoftware.com">Start a project</a>
@@ -174,6 +181,41 @@ const wins = [
 			</div>
 		</section>
 
+		<section class="section founders">
+			<div class="section-head">
+				<p class="eyebrow">Who we are</p>
+				<h2>Founders stay in the work.</h2>
+				<p class="muted">G&K Software, LLC is Texas-registered and entirely founder-built.</p>
+			</div>
+			<div class="founder-grid">
+				<div class="founder-card">
+					<div class="initial">G</div>
+					<div>
+						<p class="step-title">Gibson Martin</p>
+						<p class="muted">
+							Full-stack product engineer focused on fast feedback loops and production readiness.
+						</p>
+					</div>
+				</div>
+				<div class="founder-card">
+					<div class="initial">K</div>
+					<div>
+						<p class="step-title">Kyle Dougan</p>
+						<p class="muted">
+							Systems-minded builder who loves simplifying data flows and making ops painless.
+						</p>
+					</div>
+				</div>
+				<div class="founder-card accent">
+					<div class="initial">TX</div>
+					<div>
+						<p class="step-title">Texas registered</p>
+						<p class="muted">Operating remotely with clients across North America and Europe.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section id="contact" class="section cta">
 			<div>
 				<p class="eyebrow">Let’s talk</p>
@@ -190,10 +232,22 @@ const wins = [
 				</div>
 			</div>
 			<div class="cta-card">
-				<p class="muted">Based in the Pacific Northwest. Available globally.</p>
+				<p class="muted">Registered in Texas. Remote-first across North America and Europe.</p>
 				<p class="muted">Email: hello@gnksoftware.com</p>
 			</div>
 		</section>
+
+		<footer class="footer">
+			<div>
+				<p class="eyebrow">G&K Software, LLC</p>
+				<p class="muted">Texas registered. Built by Gibson Martin and Kyle Dougan.</p>
+			</div>
+			<div class="footer-links">
+				<a class="ghost-link" href="/">Home</a>
+				<a class="ghost-link" href="/about">About</a>
+				<a class="ghost-link" href="mailto:hello@gnksoftware.com">Contact</a>
+			</div>
+		</footer>
 	</main>
 </Layout>
 
@@ -324,6 +378,56 @@ const wins = [
 		color: var(--muted);
 		background: rgba(255, 255, 255, 0.03);
 		font-size: 14px;
+	}
+
+	.ticker {
+		margin: 18px 0 0;
+		border-radius: 12px;
+		border: 1px solid var(--stroke);
+		background: radial-gradient(circle at 0% 50%, rgba(255, 180, 84, 0.08), transparent 30%),
+			radial-gradient(circle at 100% 50%, rgba(127, 231, 211, 0.08), transparent 30%),
+			rgba(255, 255, 255, 0.03);
+		overflow: hidden;
+		position: relative;
+	}
+
+	.ticker::after,
+	.ticker::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 24px;
+		height: 100%;
+		pointer-events: none;
+	}
+
+	.ticker::before {
+		left: 0;
+		background: linear-gradient(90deg, var(--paper), transparent);
+	}
+
+	.ticker::after {
+		right: 0;
+		background: linear-gradient(270deg, var(--paper), transparent);
+	}
+
+	.ticker-track {
+		display: inline-block;
+		white-space: nowrap;
+		padding: 10px 20px;
+		animation: ticker 26s linear infinite;
+		color: var(--muted);
+		font-weight: 600;
+		letter-spacing: 0.04em;
+	}
+
+	@keyframes ticker {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
 	}
 
 	.section {
@@ -509,6 +613,43 @@ const wins = [
 		background: rgba(255, 255, 255, 0.02);
 	}
 
+	.founders {
+		padding-top: 12px;
+	}
+
+	.founder-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 12px;
+	}
+
+	.founder-card {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 12px;
+		align-items: center;
+		border: 1px solid var(--stroke);
+		border-radius: 14px;
+		padding: 14px;
+		background: rgba(255, 255, 255, 0.02);
+	}
+
+	.founder-card.accent {
+		background: linear-gradient(135deg, rgba(255, 180, 84, 0.12), rgba(127, 231, 211, 0.12));
+	}
+
+	.initial {
+		width: 44px;
+		height: 44px;
+		border-radius: 12px;
+		border: 1px solid var(--stroke);
+		display: grid;
+		place-items: center;
+		font-weight: 800;
+		font-family: 'Space Grotesk', 'Manrope', sans-serif;
+		background: rgba(255, 255, 255, 0.06);
+	}
+
 	.cta {
 		display: grid;
 		grid-template-columns: 2fr 1fr;
@@ -544,6 +685,23 @@ const wins = [
 		background: radial-gradient(circle, rgba(127, 231, 211, 0.35), transparent 65%);
 		top: 120px;
 		right: 5%;
+	}
+
+	.footer {
+		padding: 18px 16px 0;
+		margin-top: 12px;
+		border-top: 1px solid var(--stroke);
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 12px;
+		color: var(--muted);
+	}
+
+	.footer-links {
+		display: flex;
+		gap: 12px;
+		flex-wrap: wrap;
 	}
 
 	@media (max-width: 900px) {
