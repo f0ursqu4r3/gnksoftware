@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 
 type Props = {
 	title?: string;
@@ -93,5 +94,6 @@ const {
 				}
 			})();
 		</script>
+		<SpeedInsights />
 	</body>
 </html>
