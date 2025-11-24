@@ -106,7 +106,7 @@ const accelerators = [
 		>
 			<div class="flex items-center gap-3">
 				<span
-					class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-900 bg-white text-sm font-black text-slate-900"
+					class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-900 bg-white/90 text-sm font-black text-slate-900"
 				>
 					G&K
 				</span>
@@ -225,7 +225,7 @@ const accelerators = [
 						<div class="grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
 							{signals.map((signal) => (
 								<div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-									<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-amber-300/70 to-amber-400/70 text-slate-900 text-sm font-black">
+									<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-amber-300/70 to-amber-400/70 text-slate-900 text-sm font-black">
 										{signal.label.slice(0, 2)}
 									</div>
 									<div>
@@ -269,8 +269,8 @@ const accelerators = [
 
 		<div class="relative overflow-hidden rounded-full border border-white/10 bg-white/5 py-3">
 			<div class="flex animate-ticker gap-6 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.3em] text-slate-200/70">
-				{[...tickerItems, ...tickerItems].map((item, idx) => (
-					<span class="rounded-full border border-white/10 bg-white/5 px-4 py-2" key={`${item}-${idx}`}>
+				{[...tickerItems, ...tickerItems].map((item, _idx) => (
+					<span class="rounded-full border border-white/10 bg-white/5 px-4 py-2">
 						{item}
 					</span>
 				))}
@@ -306,7 +306,7 @@ const accelerators = [
 				{services.map((service) => (
 					<article class="flex h-full flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-white/10 bg-linear-to-b from-white/10 via-white/5 to-white/5 p-5 shadow-[0_12px_44px_rgba(0,0,0,0.16)]">
 						<div class="space-y-2">
-							<div class="mb-2 h-[2px] w-16 rounded-full bg-linear-to-r from-amber-300 to-emerald-300"></div>
+							<div class="mb-2 h-0.5 w-16 rounded-full bg-linear-to-r from-amber-300 to-emerald-300"></div>
 							<h3 class="text-lg font-semibold">{service.title}</h3>
 							<p class="text-sm leading-6 text-slate-200/80">{service.body}</p>
 						</div>
@@ -329,8 +329,8 @@ const accelerators = [
 				<h2 class="text-2xl font-semibold md:text-3xl">Pragmatic, visible, predictable.</h2>
 				<ol class="space-y-4">
 					{steps.map((step, index) => (
-						<li class="grid grid-cols-[auto,1fr] items-start gap-3">
-							<div class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-sm font-bold">
+						<li class="flex items-start gap-3">
+							<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-sm font-bold">
 								{index + 1}
 							</div>
 							<div class="space-y-1">
