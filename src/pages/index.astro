@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import gibson from '../assets/gibson.png';
+import kyle from '../assets/kyle.png';
 
 const services = [
 	{
@@ -49,68 +51,101 @@ const wins = [
 	title="G&K Software, LLC — Software contracting without the drag"
 	description="Senior engineers building SaaS, internal tools, and reliable web platforms with clear communication and fast delivery."
 >
-	<main class="page">
-		<nav class="topbar">
-			<div class="brand">
-				<span class="pill">G&K</span>
+	<main class="relative mx-auto flex max-w-6xl flex-col gap-8 px-5 pb-24 pt-8 md:pt-10">
+		<div
+			aria-hidden="true"
+			class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-linear-to-b from-white/10 to-transparent blur-3xl"
+		/>
+
+		<nav
+			class="sticky top-4 z-20 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur"
+		>
+			<div class="flex items-center gap-3">
+				<span
+					class="flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-amber-400/60 to-emerald-300/50 text-sm font-black text-slate-900"
+				>
+					G&K
+				</span>
 				<div>
-					<p class="eyebrow">G&K Software, LLC</p>
-					<p class="muted">Software contracting, minus the agency overhead</p>
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">
+						G&K Software, LLC
+					</p>
+					<p class="text-sm text-slate-200/80">Software contracting, minus the agency overhead</p>
 				</div>
 			</div>
-			<div class="nav-actions">
-				<a class="ghost-link" href="/#services">Services</a>
-				<a class="ghost-link" href="/#approach">Approach</a>
-				<a class="ghost-link" href="/about">About</a>
-				<a class="ghost-link" href="/#contact">Contact</a>
-				<a class="btn primary" href="mailto:hello@gnksoftware.com">Book an intro</a>
+			<div class="flex flex-wrap items-center justify-end gap-2">
+				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#services">Services</a>
+				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#approach">Approach</a>
+				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/about">About</a>
+				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#contact">Contact</a>
+				<a
+					class="inline-flex items-center justify-center rounded-full bg-linear-to-br from-amber-300 to-amber-500 px-4 py-2 text-sm font-semibold text-slate-900 shadow-[0_12px_38px_rgba(255,180,84,0.45)] transition hover:brightness-105"
+					href="mailto:hello@gnksoftware.com"
+				>
+					Book an intro
+				</a>
 			</div>
 		</nav>
 
-		<div class="ticker">
-			<div class="ticker-track">
-				<span>Texas registered · Two founders shipping web platforms · Infra included · Weekly demos · Pragmatic builds · Texas registered · Two founders shipping web platforms · Infra included · Weekly demos · Pragmatic builds</span>
-			</div>
-		</div>
-
-		<section class="hero">
-			<div class="orb orb-a"></div>
-			<div class="orb orb-b"></div>
-			<p class="eyebrow">G&K Software, LLC</p>
-			<h1>Ship-ready software without the agency drag.</h1>
-			<p class="lede">
-				We are two senior founders—Gibson Martin and Kyle Dougan—crafting lean, reliable web products
-				from Texas. Strategy, architecture, and hands-on builds—all in one cadence.
+		<section class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-6 py-12 md:py-16">
+			<div
+				aria-hidden="true"
+				class="absolute -left-10 -top-24 h-64 w-64 rounded-full bg-[radial-linear(circle,rgba(255,180,84,0.35),transparent_60%)] blur-3xl opacity-80"
+			></div>
+			<div
+				aria-hidden="true"
+				class="absolute -right-6 top-4 h-72 w-72 rounded-full bg-[radial-linear(circle,rgba(127,231,211,0.35),transparent_60%)] blur-3xl opacity-80"
+			></div>
+			<p class="text-xs font-semibold uppercase tracking-[0.28em] text-slate-200/70">G&K Software, LLC</p>
+			<h1 class="mt-3 text-3xl font-semibold leading-tight md:text-5xl">
+				Ship-ready software without the agency drag.
+			</h1>
+			<p class="mt-4 max-w-2xl text-lg leading-8 text-slate-200/85">
+				We are two senior founders—Gibson Martin and Kyle Dougan—crafting lean, reliable web products from
+				Texas. Strategy, architecture, and hands-on builds—all in one cadence.
 			</p>
-			<div class="hero-actions">
-				<a class="btn primary" href="mailto:hello@gnksoftware.com">Start a project</a>
-				<a class="btn ghost" href="#services">See how we work</a>
+			<div class="mt-6 flex flex-wrap gap-3">
+				<a
+					class="inline-flex items-center justify-center rounded-full bg-linear-to-r from-amber-300 to-amber-500 px-5 py-3 text-sm font-semibold text-slate-900 shadow-[0_12px_38px_rgba(255,180,84,0.45)] transition hover:brightness-105"
+					href="mailto:hello@gnksoftware.com"
+				>
+					Start a project
+				</a>
+				<a
+					class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/30"
+					href="#services"
+				>
+					See how we work
+				</a>
 			</div>
-			<div class="chips">
-				<span class="chip">Weekly demos & visibility</span>
-				<span class="chip">Infrastructure included</span>
-				<span class="chip">Direct access to builders</span>
+			<div class="mt-6 flex flex-wrap gap-3 text-sm text-slate-200/80">
+				<span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">Weekly demos & visibility</span>
+				<span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">Infrastructure included</span>
+				<span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">Direct access to builders</span>
 			</div>
 		</section>
 
-		<section id="services" class="section">
-			<div class="section-head">
-				<p class="eyebrow">Capabilities</p>
-				<h2>Web products with senior ownership.</h2>
-				<p class="muted">
+		<section id="services" class="rounded-3xl border border-white/10 bg-white/5 px-6 py-10">
+			<div class="max-w-3xl space-y-2">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Capabilities</p>
+				<h2 class="text-2xl font-semibold md:text-3xl">Web products with senior ownership.</h2>
+				<p class="text-base leading-7 text-slate-200/80">
 					No handoffs, just disciplined engineering and design that keeps your roadmap moving.
 				</p>
 			</div>
-			<div class="grid services">
+			<div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
 				{services.map((service) => (
-					<article class="card">
-						<div class="card-top">
-							<h3>{service.title}</h3>
-							<p class="muted">{service.body}</p>
+					<article class="flex h-full flex-col justify-between gap-4 rounded-2xl border border-white/10 bg-white/5 p-5">
+						<div class="space-y-2">
+							<h3 class="text-lg font-semibold">{service.title}</h3>
+							<p class="text-sm leading-6 text-slate-200/80">{service.body}</p>
 						</div>
-						<ul>
+						<ul class="space-y-2 text-sm text-slate-200/80">
 							{service.items.map((item) => (
-								<li>{item}</li>
+								<li class="flex items-start gap-2">
+									<span class="mt-1 h-2 w-2 rounded-full bg-amber-300/80"></span>
+									<span>{item}</span>
+								</li>
 							))}
 						</ul>
 					</article>
@@ -118,610 +153,141 @@ const wins = [
 			</div>
 		</section>
 
-		<section id="approach" class="section split">
-			<div class="panel">
-				<p class="eyebrow">Engagement model</p>
-				<h2>Pragmatic, visible, predictable.</h2>
-				<ol class="steps">
+		<section id="approach" class="grid gap-4 lg:grid-cols-2">
+			<div class="flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/5 p-6">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Engagement model</p>
+				<h2 class="text-2xl font-semibold md:text-3xl">Pragmatic, visible, predictable.</h2>
+				<ol class="space-y-4">
 					{steps.map((step, index) => (
-						<li>
-							<div class="step-marker">{index + 1}</div>
-							<div>
-								<p class="step-title">{step.title}</p>
-								<p class="muted">{step.body}</p>
+						<li class="grid grid-cols-[auto,1fr] items-start gap-3">
+							<div class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-sm font-bold">
+								{index + 1}
+							</div>
+							<div class="space-y-1">
+								<p class="text-base font-semibold">{step.title}</p>
+								<p class="text-sm leading-6 text-slate-200/80">{step.body}</p>
 							</div>
 						</li>
 					))}
 				</ol>
-				<div class="cta-note">
-					<p class="muted">
-						We slot into your stack and rhythms—Slack, Linear, Notion, or whatever keeps your team
-						aligned.
-					</p>
+				<div class="border-t border-white/10 pt-3 text-sm text-slate-200/80">
+					We slot into your stack and rhythms—Slack, Linear, Notion, or whatever keeps your team aligned.
 				</div>
 			</div>
-			<div class="panel panel-accent">
-				<p class="eyebrow">Recent wins</p>
-				<div class="wins">
+			<div class="flex flex-col gap-4 rounded-3xl border border-white/10 bg-linear-to-br from-emerald-300/10 to-amber-200/10 p-6">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Recent wins</p>
+				<div class="grid gap-3">
 					{wins.map((win) => (
-						<div class="win-card">
-							<span class="tag">{win.tag}</span>
-							<h3>{win.title}</h3>
-							<p class="muted">{win.body}</p>
+						<div class="rounded-2xl border border-white/15 bg-white/5 p-4">
+							<span class="inline-flex items-center rounded-full bg-amber-300/90 px-2 py-1 text-xs font-bold uppercase tracking-[0.14em] text-slate-900">
+								{win.tag}
+							</span>
+							<h3 class="mt-3 text-lg font-semibold">{win.title}</h3>
+							<p class="text-sm leading-6 text-slate-200/80">{win.body}</p>
 						</div>
 					))}
 				</div>
-				<div class="score">
+				<div class="grid gap-3 border-t border-white/10 pt-4 md:grid-cols-2">
 					<div>
-						<p class="score-number">6–8</p>
-						<p class="muted">week delivery window for most engagements</p>
+						<p class="text-3xl font-semibold leading-none">6–8</p>
+						<p class="text-sm text-slate-200/80">week delivery window for most engagements</p>
 					</div>
 					<div>
-						<p class="score-number">100%</p>
-						<p class="muted">senior talent; founders build, not account managers</p>
+						<p class="text-3xl font-semibold leading-none">100%</p>
+						<p class="text-sm text-slate-200/80">senior talent; founders build, not account managers</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="section narrow">
-			<div class="badge-row">
-				<div class="badge">
-					<p class="eyebrow">Focus</p>
-					<p class="muted">Limited concurrent clients for deep attention.</p>
+		<section class="rounded-3xl border border-white/10 bg-white/5 px-6 py-8">
+			<div class="grid gap-3 md:grid-cols-3">
+				<div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Focus</p>
+					<p class="text-sm leading-6 text-slate-200/80">Limited concurrent clients for deep attention.</p>
 				</div>
-				<div class="badge">
-					<p class="eyebrow">Observability</p>
-					<p class="muted">Logging, alerts, and health checks from day one.</p>
+				<div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Observability</p>
+					<p class="text-sm leading-6 text-slate-200/80">Logging, alerts, and health checks from day one.</p>
 				</div>
-				<div class="badge">
-					<p class="eyebrow">Handover ready</p>
-					<p class="muted">Docs, patterns, and pairing to equip your team.</p>
+				<div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Handover ready</p>
+					<p class="text-sm leading-6 text-slate-200/80">Docs, patterns, and pairing to equip your team.</p>
 				</div>
 			</div>
 		</section>
 
-		<section class="section founders">
-			<div class="section-head">
-				<p class="eyebrow">Who we are</p>
-				<h2>Founders stay in the work.</h2>
-				<p class="muted">G&K Software, LLC is Texas-registered and entirely founder-built.</p>
+		<section class="rounded-3xl border border-white/10 bg-white/5 px-6 py-10">
+			<div class="max-w-3xl space-y-2">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Who we are</p>
+				<h2 class="text-2xl font-semibold md:text-3xl">Founders stay in the work.</h2>
+				<p class="text-base leading-7 text-slate-200/80">
+					G&K Software, LLC is Texas-registered and entirely founder-built.
+				</p>
 			</div>
-			<div class="founder-grid">
-				<div class="founder-card">
-					<div class="initial">G</div>
-					<div>
-						<p class="step-title">Gibson Martin</p>
-						<p class="muted">
-							Full-stack product engineer focused on fast feedback loops and production readiness.
-						</p>
-					</div>
-				</div>
-				<div class="founder-card">
-					<div class="initial">K</div>
-					<div>
-						<p class="step-title">Kyle Dougan</p>
-						<p class="muted">
+			<div class="mt-6 grid gap-4 md:grid-cols-2">
+				<div class="flex items-start justify-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+						<img src={gibson.src} alt="Gibson Martin" class="h-11 w-11 rounded-full border border-white/15 bg-white/5 object-cover" />
+					<div class="space-y-1">
+						<p class="text-base font-semibold">Gibson Martin</p>
+						<p class="text-sm leading-6 text-slate-200/80">
 							Systems-minded builder who loves simplifying data flows and making ops painless.
 						</p>
 					</div>
 				</div>
-				<div class="founder-card accent">
-					<div class="initial">TX</div>
-					<div>
-						<p class="step-title">Texas registered</p>
-						<p class="muted">Operating remotely with clients across North America and Europe.</p>
+				<div class="flex items-start justify-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+						<img src={kyle.src} alt="Kyle Dougan" class="h-11 w-11 rounded-full border border-white/15 bg-white/5 object-cover" />
+					<div class="space-y-1">
+						<p class="text-base font-semibold">Kyle Dougan</p>
+						<p class="text-sm leading-6 text-slate-200/80">
+							Full-stack product engineer focused on fast feedback loops and production readiness.
+						</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="contact" class="section cta">
-			<div>
-				<p class="eyebrow">Let’s talk</p>
-				<h2>Need momentum? We can help.</h2>
-				<p class="muted">
-					Tell us about your product and timelines. We’ll respond within one business day with next
-					steps.
+		<section
+			id="contact"
+			class="grid gap-4 rounded-3xl border border-white/10 bg-white/5 px-6 py-10 md:grid-cols-[2fr,1fr]"
+		>
+			<div class="space-y-3">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Let’s talk</p>
+				<h2 class="text-2xl font-semibold md:text-3xl">Need momentum? We can help.</h2>
+				<p class="text-base leading-7 text-slate-200/80">
+					Tell us about your product and timelines. We’ll respond within one business day with next steps.
 				</p>
-				<div class="hero-actions">
-					<a class="btn primary" href="mailto:hello@gnksoftware.com">Book an intro call</a>
-					<a class="btn ghost" href="mailto:hello@gnksoftware.com?subject=Project%20details">
+				<div class="flex flex-wrap gap-3">
+					<a
+						class="inline-flex items-center justify-center rounded-full bg-linear-to-r from-amber-300 to-amber-500 px-5 py-3 text-sm font-semibold text-slate-900 shadow-[0_12px_38px_rgba(255,180,84,0.45)] transition hover:brightness-105"
+						href="mailto:hello@gnksoftware.com"
+					>
+						Book an intro call
+					</a>
+					<a
+						class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/30"
+						href="mailto:hello@gnksoftware.com?subject=Project%20details"
+					>
 						Send project details
 					</a>
 				</div>
 			</div>
-			<div class="cta-card">
-				<p class="muted">Registered in Texas. Remote-first across North America and Europe.</p>
-				<p class="muted">Email: hello@gnksoftware.com</p>
+			<div class="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-slate-200/80">
+				<p>Registered in Texas. Remote-first across North America and Europe.</p>
+				<p>Email: hello@gnksoftware.com</p>
 			</div>
 		</section>
 
-		<footer class="footer">
+		<footer class="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-200/70">
 			<div>
-				<p class="eyebrow">G&K Software, LLC</p>
-				<p class="muted">Texas registered. Built by Gibson Martin and Kyle Dougan.</p>
+				<p class="font-semibold uppercase tracking-[0.18em]">G&K Software, LLC</p>
+				<p>Texas registered. Built by Gibson Martin and Kyle Dougan.</p>
 			</div>
-			<div class="footer-links">
-				<a class="ghost-link" href="/">Home</a>
-				<a class="ghost-link" href="/about">About</a>
-				<a class="ghost-link" href="mailto:hello@gnksoftware.com">Contact</a>
+			<div class="flex flex-wrap items-center gap-3">
+				<a class="font-semibold text-slate-200/80 hover:text-white" href="/">Home</a>
+				<a class="font-semibold text-slate-200/80 hover:text-white" href="/about">About</a>
+				<a class="font-semibold text-slate-200/80 hover:text-white" href="mailto:hello@gnksoftware.com">Contact</a>
 			</div>
 		</footer>
 	</main>
 </Layout>
-
-<style>
-	.page {
-		max-width: 1180px;
-		margin: 0 auto;
-		padding: 32px 20px 96px;
-		position: relative;
-		overflow: hidden;
-	}
-
-	.topbar {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 12px 16px;
-		border: 1px solid var(--stroke);
-		background: rgba(255, 255, 255, 0.02);
-		border-radius: 16px;
-		backdrop-filter: blur(10px);
-		gap: 16px;
-		position: sticky;
-		top: 16px;
-		z-index: 10;
-	}
-
-	.brand {
-		display: flex;
-		gap: 12px;
-		align-items: center;
-	}
-
-	.pill {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 48px;
-		height: 48px;
-		border-radius: 16px;
-		background: linear-gradient(135deg, rgba(255, 180, 84, 0.35), rgba(127, 231, 211, 0.25));
-		color: white;
-		font-weight: 700;
-		font-family: 'Space Grotesk', 'Manrope', sans-serif;
-		letter-spacing: 0.04em;
-	}
-
-	.nav-actions {
-		display: flex;
-		gap: 12px;
-		align-items: center;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-	}
-
-	.ghost-link {
-		color: var(--muted);
-		text-decoration: none;
-		font-weight: 600;
-		transition: color 0.2s ease;
-	}
-
-	.ghost-link:hover {
-		color: white;
-	}
-
-	.hero {
-		position: relative;
-		padding: 80px 16px 48px;
-	}
-
-	.hero h1 {
-		font-size: clamp(32px, 5vw, 56px);
-		line-height: 1.1;
-		margin: 12px 0 12px;
-		font-family: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
-	}
-
-	.lede {
-		max-width: 720px;
-		font-size: 18px;
-		color: var(--muted);
-		line-height: 1.6;
-	}
-
-	.hero-actions {
-		display: flex;
-		gap: 12px;
-		margin: 24px 0 12px;
-		flex-wrap: wrap;
-	}
-
-	.btn {
-		border: 1px solid transparent;
-		border-radius: 999px;
-		padding: 12px 18px;
-		font-weight: 700;
-		text-decoration: none;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		gap: 8px;
-	}
-
-	.btn.primary {
-		background: linear-gradient(135deg, #ffb454, #ffd699);
-		color: #0f162c;
-		box-shadow: 0 8px 24px rgba(255, 180, 84, 0.35);
-	}
-
-	.btn.ghost {
-		border-color: var(--stroke);
-		color: white;
-		background: rgba(255, 255, 255, 0.04);
-	}
-
-	.chips {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-		margin-top: 10px;
-	}
-
-	.chip {
-		border: 1px solid var(--stroke);
-		border-radius: 999px;
-		padding: 8px 12px;
-		color: var(--muted);
-		background: rgba(255, 255, 255, 0.03);
-		font-size: 14px;
-	}
-
-	.ticker {
-		margin: 18px 0 0;
-		border-radius: 12px;
-		border: 1px solid var(--stroke);
-		background: radial-gradient(circle at 0% 50%, rgba(255, 180, 84, 0.08), transparent 30%),
-			radial-gradient(circle at 100% 50%, rgba(127, 231, 211, 0.08), transparent 30%),
-			rgba(255, 255, 255, 0.03);
-		overflow: hidden;
-		position: relative;
-	}
-
-	.ticker::after,
-	.ticker::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		width: 24px;
-		height: 100%;
-		pointer-events: none;
-	}
-
-	.ticker::before {
-		left: 0;
-		background: linear-gradient(90deg, var(--paper), transparent);
-	}
-
-	.ticker::after {
-		right: 0;
-		background: linear-gradient(270deg, var(--paper), transparent);
-	}
-
-	.ticker-track {
-		display: inline-block;
-		white-space: nowrap;
-		padding: 10px 20px;
-		animation: ticker 26s linear infinite;
-		color: var(--muted);
-		font-weight: 600;
-		letter-spacing: 0.04em;
-	}
-
-	@keyframes ticker {
-		from {
-			transform: translateX(0);
-		}
-		to {
-			transform: translateX(-50%);
-		}
-	}
-
-	.section {
-		padding: 36px 16px;
-	}
-
-	.section-head {
-		max-width: 720px;
-		margin-bottom: 20px;
-	}
-
-	h2 {
-		margin: 8px 0;
-		font-size: clamp(24px, 3vw, 34px);
-	}
-
-	h3 {
-		margin: 0 0 8px;
-		font-size: 20px;
-	}
-
-	.eyebrow {
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		font-size: 12px;
-		color: var(--muted);
-		margin: 0;
-	}
-
-	.muted {
-		color: var(--muted);
-		margin: 0;
-		line-height: 1.6;
-	}
-
-	.grid.services {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-		gap: 16px;
-	}
-
-	.card {
-		border: 1px solid var(--stroke);
-		border-radius: 16px;
-		background: rgba(255, 255, 255, 0.02);
-		padding: 20px;
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
-	}
-
-	.card-top p {
-		margin: 0;
-	}
-
-	.card ul {
-		padding-left: 20px;
-		margin: 0;
-		color: var(--muted);
-		display: grid;
-		gap: 6px;
-	}
-
-	.card li {
-		line-height: 1.4;
-	}
-
-	.split {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 16px;
-		align-items: stretch;
-	}
-
-	.panel {
-		border: 1px solid var(--stroke);
-		border-radius: 16px;
-		background: rgba(255, 255, 255, 0.03);
-		padding: 20px;
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
-	}
-
-	.panel-accent {
-		background: linear-gradient(160deg, rgba(127, 231, 211, 0.08), rgba(255, 180, 84, 0.05));
-	}
-
-	.steps {
-		list-style: none;
-		padding: 0;
-		margin: 8px 0;
-		display: grid;
-		gap: 12px;
-	}
-
-	.steps li {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: 12px;
-		align-items: center;
-	}
-
-	.step-marker {
-		width: 32px;
-		height: 32px;
-		border-radius: 10px;
-		border: 1px solid var(--stroke);
-		display: grid;
-		place-items: center;
-		background: rgba(255, 255, 255, 0.06);
-		font-weight: 700;
-		font-family: 'Space Grotesk', 'Manrope', sans-serif;
-	}
-
-	.step-title {
-		margin: 0 0 4px;
-		font-weight: 700;
-	}
-
-	.cta-note {
-		border-top: 1px solid var(--stroke);
-		padding-top: 12px;
-	}
-
-	.wins {
-		display: grid;
-		gap: 12px;
-	}
-
-	.win-card {
-		border: 1px solid var(--stroke);
-		border-radius: 14px;
-		padding: 16px;
-		background: rgba(255, 255, 255, 0.04);
-	}
-
-	.win-card h3 {
-		margin: 4px 0 6px;
-	}
-
-	.tag {
-		display: inline-flex;
-		align-items: center;
-		gap: 6px;
-		font-size: 12px;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: #0f162c;
-		background: rgba(255, 180, 84, 0.9);
-		border-radius: 999px;
-		padding: 6px 10px;
-		font-weight: 700;
-	}
-
-	.score {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		gap: 12px;
-		margin-top: 8px;
-	}
-
-	.score-number {
-		font-size: 26px;
-		margin: 0 0 4px;
-		font-weight: 700;
-	}
-
-	.narrow {
-		padding: 20px 16px 28px;
-	}
-
-	.badge-row {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		gap: 12px;
-	}
-
-	.badge {
-		border: 1px solid var(--stroke);
-		border-radius: 12px;
-		padding: 14px;
-		background: rgba(255, 255, 255, 0.02);
-	}
-
-	.founders {
-		padding-top: 12px;
-	}
-
-	.founder-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		gap: 12px;
-	}
-
-	.founder-card {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: 12px;
-		align-items: center;
-		border: 1px solid var(--stroke);
-		border-radius: 14px;
-		padding: 14px;
-		background: rgba(255, 255, 255, 0.02);
-	}
-
-	.founder-card.accent {
-		background: linear-gradient(135deg, rgba(255, 180, 84, 0.12), rgba(127, 231, 211, 0.12));
-	}
-
-	.initial {
-		width: 44px;
-		height: 44px;
-		border-radius: 12px;
-		border: 1px solid var(--stroke);
-		display: grid;
-		place-items: center;
-		font-weight: 800;
-		font-family: 'Space Grotesk', 'Manrope', sans-serif;
-		background: rgba(255, 255, 255, 0.06);
-	}
-
-	.cta {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-		gap: 16px;
-		align-items: center;
-	}
-
-	.cta-card {
-		border: 1px solid var(--stroke);
-		border-radius: 14px;
-		padding: 18px;
-		background: rgba(255, 255, 255, 0.03);
-	}
-
-	.orb {
-		position: absolute;
-		filter: blur(90px);
-		opacity: 0.65;
-		z-index: -1;
-	}
-
-	.orb-a {
-		width: 360px;
-		height: 360px;
-		background: radial-gradient(circle, rgba(255, 180, 84, 0.4), transparent 60%);
-		top: -40px;
-		left: 10%;
-	}
-
-	.orb-b {
-		width: 420px;
-		height: 420px;
-		background: radial-gradient(circle, rgba(127, 231, 211, 0.35), transparent 65%);
-		top: 120px;
-		right: 5%;
-	}
-
-	.footer {
-		padding: 18px 16px 0;
-		margin-top: 12px;
-		border-top: 1px solid var(--stroke);
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		gap: 12px;
-		color: var(--muted);
-	}
-
-	.footer-links {
-		display: flex;
-		gap: 12px;
-		flex-wrap: wrap;
-	}
-
-	@media (max-width: 900px) {
-		.topbar {
-			position: static;
-		}
-	}
-
-	@media (max-width: 720px) {
-		.page {
-			padding: 20px 16px 72px;
-		}
-
-		.topbar {
-			flex-direction: column;
-			align-items: flex-start;
-		}
-
-		.cta {
-			grid-template-columns: 1fr;
-		}
-	}
-</style>
