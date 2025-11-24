@@ -102,28 +102,26 @@ const accelerators = [
 		/>
 
 		<nav
-			class="sticky top-4 z-20 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur"
+			class="sticky top-4 z-20 flex flex-wrap items-center justify-between gap-3 rounded-xl border-2 border-neutral-900 bg-[#f8cd24] px-4 py-3 shadow-[8px_8px_0_#0f0f0f]"
 		>
 			<div class="flex items-center gap-3">
 				<span
-					class="flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-amber-400/60 to-emerald-300/50 text-sm font-black text-slate-900"
+					class="flex h-11 w-11 items-center justify-center rounded-lg border-2 border-neutral-900 bg-white text-sm font-black text-neutral-900"
 				>
 					G&K
 				</span>
 				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">
-						G&K Software, LLC
-					</p>
-					<p class="text-sm text-slate-200/80">Software contracting, minus the agency overhead</p>
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-900">G&K Software, LLC</p>
+					<p class="text-sm text-neutral-900/80">Software contracting, minus the agency overhead</p>
 				</div>
 			</div>
-			<div class="flex flex-wrap items-center justify-end gap-2">
-				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#services">Services</a>
-				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#approach">Approach</a>
-				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#about">About</a>
-				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#contact">Contact</a>
+			<div class="flex flex-wrap items-center justify-end gap-2 text-neutral-900">
+				<a class="text-sm font-semibold underline-offset-4 hover:underline" href="/#services">Services</a>
+				<a class="text-sm font-semibold underline-offset-4 hover:underline" href="/#approach">Approach</a>
+				<a class="text-sm font-semibold underline-offset-4 hover:underline" href="/#about">About</a>
+				<a class="text-sm font-semibold underline-offset-4 hover:underline" href="/#contact">Contact</a>
 				<a
-					class="inline-flex items-center justify-center rounded-full bg-linear-to-br from-amber-300 to-amber-500 px-4 py-2 text-sm font-semibold text-slate-900 shadow-[0_12px_38px_rgba(255,180,84,0.45)] transition hover:brightness-105"
+					class="inline-flex items-center justify-center rounded-lg border-2 border-[#f8cd24] bg-neutral-900 px-4 py-2 text-sm font-semibold text-[#f8cd24] shadow-[4px_4px_0_#0f0f0f] transition hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0f0f0f]"
 					href="mailto:hello@gnksoftware.com"
 				>
 					Book an intro
@@ -131,189 +129,168 @@ const accelerators = [
 			</div>
 		</nav>
 
-		<section class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-6 py-12 md:py-16">
+		<section class="relative overflow-hidden rounded-xl border-2 border-neutral-900 bg-white px-6 py-12 md:py-14 shadow-[14px_14px_0_#0f0f0f]">
 			<div
 				aria-hidden="true"
-				class="absolute -left-20 -top-28 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(255,180,84,0.32),transparent_60%)] blur-3xl opacity-80"
-			></div>
-			<div
-				aria-hidden="true"
-				class="absolute -right-10 -top-10 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(127,231,211,0.3),transparent_60%)] blur-3xl opacity-80"
-			></div>
-			<div
-				aria-hidden="true"
-				class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.08),transparent_45%),radial-gradient(circle_at_30%_70%,rgba(124,146,255,0.08),transparent_40%)] opacity-70"
+				class="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(135deg,rgba(0,0,0,0.06)_0,rgba(0,0,0,0.06)_12px,transparent_12px,transparent_24px)] opacity-40"
 			></div>
 
-			<div class="mb-4 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.26em] text-slate-200/70">
-				<span class="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px]">Founder-led</span>
-				<span class="rounded-full border border-white/10 bg-emerald-300/20 px-3 py-1 text-[11px] text-emerald-50">
-					Build in public
-				</span>
-				<span class="rounded-full border border-white/10 bg-amber-300/20 px-3 py-1 text-[11px] text-amber-950">
-					6–8 week delivery
-				</span>
+			<div class="relative mb-4 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-neutral-900">
+				<span class="rounded-md border-2 border-neutral-900 bg-[#f8cd24] px-3 py-1 text-[11px]">Founder-led</span>
+				<span class="rounded-md border-2 border-neutral-900 bg-[#d1ff4e] px-3 py-1 text-[11px]">Build in public</span>
+				<span class="rounded-md border-2 border-neutral-900 bg-white px-3 py-1 text-[11px]">6–8 week delivery</span>
 			</div>
 
-			<div class="grid items-start gap-10 lg:grid-cols-[1.1fr,0.9fr]">
+			<div class="relative grid items-start gap-10 lg:grid-cols-[1.05fr,0.95fr]">
 				<div class="space-y-5">
-					<h1 class="text-3xl font-semibold leading-tight md:text-5xl">
+					<h1 class="text-3xl font-black leading-tight md:text-5xl">
 						Less agency theater. More build time.
 					</h1>
-					<p class="max-w-2xl text-lg leading-8 text-slate-200/85">
+					<p class="max-w-2xl text-lg leading-8 text-neutral-800">
 						We’re Gibson Martin and Kyle Dougan—two senior founders crafting lean, reliable software from
-						Texas. You get strategy, architecture, and hands-on builds in one cadence, not a chain of
-						handoffs.
+						Texas. You get strategy, architecture, and hands-on builds in one cadence, not a chain of handoffs.
 					</p>
 					<div class="flex flex-wrap gap-3">
 						<a
-							class="inline-flex items-center justify-center rounded-full bg-linear-to-r from-amber-300 to-amber-500 px-5 py-3 text-sm font-semibold text-slate-900 shadow-[0_12px_38px_rgba(255,180,84,0.45)] transition hover:brightness-105"
+							class="inline-flex items-center justify-center rounded-md border-2 border-[#f8cd24] bg-neutral-900 px-5 py-3 text-sm font-semibold text-[#f8cd24] shadow-[6px_6px_0_#0f0f0f] transition hover:-translate-y-0.5 hover:shadow-[8px_8px_0_#0f0f0f]"
 							href="mailto:hello@gnksoftware.com"
 						>
 							Start a project
 						</a>
 						<a
-							class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/30"
+							class="inline-flex items-center justify-center rounded-md border-2 border-neutral-900 bg-[#d1ff4e] px-5 py-3 text-sm font-semibold text-neutral-900 shadow-[6px_6px_0_#0f0f0f] transition hover:-translate-y-0.5 hover:shadow-[8px_8px_0_#0f0f0f]"
 							href="#services"
 						>
 							See how we work
 						</a>
 					</div>
-					<div class="flex flex-wrap gap-3 text-sm text-slate-200/80">
-						<span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">Direct access to builders</span>
-						<span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">Weekly demos & visibility</span>
-						<span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">Infra + observability included</span>
+					<div class="flex flex-wrap gap-3 text-sm text-neutral-800">
+						<span class="rounded-md border-2 border-neutral-900 bg-white px-3 py-1">Direct access to builders</span>
+						<span class="rounded-md border-2 border-neutral-900 bg-white px-3 py-1">Weekly demos & visibility</span>
+						<span class="rounded-md border-2 border-neutral-900 bg-white px-3 py-1">Infra + observability included</span>
 					</div>
 
 					<div class="grid gap-3 sm:grid-cols-2">
-						<div class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-[0_10px_50px_rgba(0,0,0,0.18)]">
-							<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/60">Time to first deploy</p>
-							<p class="mt-2 text-3xl font-semibold leading-tight">Days 3–5</p>
-							<p class="mt-1 text-sm text-slate-200/80">
+						<div class="rounded-lg border-2 border-neutral-900 bg-[#f8cd24] p-4 shadow-[8px_8px_0_#0f0f0f]">
+							<p class="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-900">Time to first deploy</p>
+							<p class="mt-2 text-3xl font-black leading-tight">Days 3–5</p>
+							<p class="mt-1 text-sm text-neutral-900">
 								Staging live with feature flags, health checks, and rollbacks wired.
 							</p>
 						</div>
-						<div class="rounded-2xl border border-white/10 bg-linear-to-br from-emerald-300/15 via-white/5 to-amber-300/15 p-4 shadow-[0_10px_50px_rgba(0,0,0,0.18)]">
-							<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/60">First production slice</p>
-							<p class="mt-2 text-3xl font-semibold leading-tight">6–8 weeks</p>
-							<p class="mt-1 text-sm text-slate-200/80">
+						<div class="rounded-lg border-2 border-neutral-900 bg-white p-4 shadow-[8px_8px_0_#0f0f0f]">
+							<p class="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-900">First production slice</p>
+							<p class="mt-2 text-3xl font-black leading-tight">6–8 weeks</p>
+							<p class="mt-1 text-sm text-neutral-900">
 								One core flow live (e.g., onboarding + primary workflow + billing) with handover-ready docs.
 							</p>
 						</div>
 					</div>
-					<div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs leading-5 text-slate-200/75 shadow-[0_10px_50px_rgba(0,0,0,0.18)]">
+					<div class="rounded-lg border-2 border-neutral-900 bg-[#f1ede1] p-4 text-xs leading-5 text-neutral-900 shadow-[8px_8px_0_#0f0f0f]">
 						Caveats we call out in week 1: SSO/SCIM, complex data migrations, and heavy third-party integrations
 						can stretch timelines. We flag risks early and adjust scope before we commit to dates.
 					</div>
 				</div>
 
 				<div class="relative">
-					<div
-						aria-hidden="true"
-						class="absolute -right-8 -top-10 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.18),transparent_60%)] blur-3xl opacity-70"
-					></div>
-					<div class="relative space-y-4 rounded-3xl border border-white/10 bg-linear-to-br from-white/10 to-white/5 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.25)]">
+					<div class="relative space-y-4 rounded-xl border-2 border-neutral-900 bg-[#f7f4ed] p-5 shadow-[12px_12px_0_#0f0f0f]">
 						<div class="flex items-start justify-between gap-3">
 							<div>
-								<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Engagement signal</p>
-								<p class="text-base font-semibold text-white">What working together feels like</p>
+								<p class="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-800">Engagement signal</p>
+								<p class="text-base font-semibold text-neutral-900">What working together feels like</p>
 							</div>
-							<span class="rounded-full bg-emerald-300/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-50">
+							<span class="rounded-md border-2 border-neutral-900 bg-[#d1ff4e] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-900">
 								Live
 							</span>
 						</div>
-						<div class="grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
+						<div class="grid gap-3 rounded-lg border-2 border-neutral-900 bg-white p-3">
 							{signals.map((signal) => (
-								<div class="grid grid-cols-[auto,1fr] items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-									<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-amber-300/70 to-amber-400/70 text-slate-900 text-sm font-black">
+								<div class="grid grid-cols-[auto,1fr] items-start gap-3 rounded-md border-2 border-neutral-900 bg-[#f1ede1] px-3 py-2">
+									<div class="flex h-10 w-10 items-center justify-center rounded-sm border-2 border-neutral-900 bg-[#f8cd24] text-sm font-black text-neutral-900">
 										{signal.label.slice(0, 2)}
 									</div>
 									<div>
-										<p class="text-sm font-semibold text-white">{signal.label}</p>
-										<p class="text-base font-semibold leading-tight text-amber-100/90">{signal.value}</p>
-										<p class="text-xs leading-5 text-slate-200/70">{signal.hint}</p>
+										<p class="text-sm font-semibold text-neutral-900">{signal.label}</p>
+										<p class="text-base font-black leading-tight text-neutral-900">{signal.value}</p>
+										<p class="text-xs leading-5 text-neutral-800">{signal.hint}</p>
 									</div>
 								</div>
 							))}
 						</div>
-						<div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-							<p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-200/70">Stack in motion</p>
-							<div class="mt-2 grid gap-2 text-sm text-slate-200/85">
-								<div class="flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-									<span class="font-semibold text-white">TypeScript, Astro, Vue, Node</span>
-									<span class="rounded-full bg-emerald-300/80 px-2 py-1 text-[11px] font-semibold text-slate-900">
+						<div class="rounded-lg border-2 border-neutral-900 bg-white p-4">
+							<p class="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-800">Stack in motion</p>
+							<div class="mt-2 grid gap-2 text-sm text-neutral-900">
+								<div class="flex items-center justify-between gap-2 rounded-md border-2 border-neutral-900 bg-[#f8cd24] px-3 py-2">
+									<span class="font-semibold text-neutral-900">TypeScript, Astro, React, Node</span>
+									<span class="rounded-sm border-2 border-neutral-900 bg-neutral-900 px-2 py-1 text-[11px] font-semibold text-[#f8cd24]">
 										shipping
 									</span>
 								</div>
-								<div class="flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-									<span class="font-semibold text-white">Postgres, Redis, queues</span>
-									<span class="rounded-full bg-white/10 px-2 py-1 text-[11px] font-semibold text-amber-100">ready</span>
+								<div class="flex items-center justify-between gap-2 rounded-md border-2 border-neutral-900 bg-white px-3 py-2">
+									<span class="font-semibold text-neutral-900">Postgres, Redis, queues</span>
+									<span class="rounded-sm border-2 border-neutral-900 bg-[#f7f4ed] px-2 py-1 text-[11px] font-semibold text-neutral-900">ready</span>
 								</div>
-								<div class="flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-									<span class="font-semibold text-white">Supabase, Vercel, Fly.io, AWS</span>
-									<span class="rounded-full bg-white/10 px-2 py-1 text-[11px] font-semibold text-amber-100">multi-cloud</span>
+								<div class="flex items-center justify-between gap-2 rounded-md border-2 border-neutral-900 bg-white px-3 py-2">
+									<span class="font-semibold text-neutral-900">Supabase, Vercel, Fly.io, AWS</span>
+									<span class="rounded-sm border-2 border-neutral-900 bg-[#f7f4ed] px-2 py-1 text-[11px] font-semibold text-neutral-900">multi-cloud</span>
 								</div>
 							</div>
 						</div>
-						<div class="flex items-center justify-between rounded-2xl border border-white/10 bg-emerald-300/10 px-4 py-3 text-sm text-emerald-50">
+						<div class="flex items-center justify-between rounded-lg border-2 border-neutral-900 bg-[#d1ff4e] px-4 py-3 text-sm text-neutral-900">
 							<div class="flex items-center gap-2">
-								<span class="h-2 w-2 animate-pulse rounded-full bg-emerald-300"></span>
+								<span class="h-2 w-2 animate-pulse rounded-full bg-neutral-900"></span>
 								<p class="font-semibold uppercase tracking-[0.16em]">Status</p>
 							</div>
-							<p class="font-semibold text-white">Founders online • Response in <span class="text-amber-200">&lt; 2 hrs</span></p>
+							<p class="font-semibold text-neutral-900">Founders online • Response in <span class="underline decoration-neutral-900 decoration-2">&lt; 2 hrs</span></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<div class="relative overflow-hidden rounded-full border border-white/10 bg-white/5 py-3">
-			<div class="flex animate-ticker gap-6 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.3em] text-slate-200/70">
+		<div class="relative overflow-hidden rounded-lg border-2 border-neutral-900 bg-white py-3 shadow-[10px_10px_0_#0f0f0f]">
+			<div class="flex animate-ticker gap-6 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.28em] text-neutral-900">
 				{[...tickerItems, ...tickerItems].map((item, idx) => (
-					<span class="rounded-full border border-white/10 bg-white/5 px-4 py-2" key={`${item}-${idx}`}>
+					<span class="rounded-md border-2 border-neutral-900 bg-[#f8cd24] px-4 py-2">
 						{item}
 					</span>
 				))}
 			</div>
 			<div
 				aria-hidden="true"
-				class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-linear-to-r from-[#0c1327] to-transparent"
+				class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-linear-to-r from-[#f7f4ed] to-transparent"
 			/>
 			<div
 				aria-hidden="true"
-				class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-linear-to-l from-[#0c1327] to-transparent"
+				class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-linear-to-l from-[#f7f4ed] to-transparent"
 			/>
 		</div>
 
-		<section id="services" class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-6 py-10">
-			<div
-				aria-hidden="true"
-				class="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(255,255,255,0.08),transparent_40%),radial-gradient(circle_at_85%_70%,rgba(255,180,84,0.12),transparent_45%)]"
-			></div>
+		<section id="services" class="relative overflow-hidden rounded-xl border-2 border-neutral-900 bg-white px-6 py-10 shadow-[12px_12px_0_#0f0f0f]">
 			<div class="relative flex flex-wrap items-center justify-between gap-3">
 				<div class="space-y-2">
-					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Capabilities</p>
-					<h2 class="text-2xl font-semibold md:text-3xl">Web products with senior ownership.</h2>
-					<p class="text-base leading-7 text-slate-200/80">
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-800">Capabilities</p>
+					<h2 class="text-2xl font-black md:text-3xl">Web products with senior ownership.</h2>
+					<p class="text-base leading-7 text-neutral-800">
 						No handoffs, just disciplined engineering and design that keeps your roadmap moving.
 					</p>
 				</div>
-				<div class="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-amber-100">
+				<div class="rounded-md border-2 border-neutral-900 bg-[#d1ff4e] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-900 shadow-[6px_6px_0_#0f0f0f]">
 					Delivery in weeks, not quarters
 				</div>
 			</div>
 			<div class="relative mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
 				{services.map((service) => (
-					<article class="flex h-full flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-white/10 bg-linear-to-b from-white/10 via-white/5 to-white/5 p-5 shadow-[0_12px_44px_rgba(0,0,0,0.16)]">
+					<article class="flex h-full flex-col justify-between gap-4 rounded-lg border-2 border-neutral-900 bg-[#f1ede1] p-5 shadow-[8px_8px_0_#0f0f0f]">
 						<div class="space-y-2">
-							<div class="mb-2 h-[2px] w-16 rounded-full bg-linear-to-r from-amber-300 to-emerald-300"></div>
+							<div class="mb-2 h-1 w-12 bg-neutral-900"></div>
 							<h3 class="text-lg font-semibold">{service.title}</h3>
-							<p class="text-sm leading-6 text-slate-200/80">{service.body}</p>
+							<p class="text-sm leading-6 text-neutral-800">{service.body}</p>
 						</div>
-						<ul class="space-y-2 text-sm text-slate-200/80">
+						<ul class="space-y-2 text-sm text-neutral-800">
 							{service.items.map((item) => (
 								<li class="flex items-start gap-2">
-									<span class="mt-1 h-2 w-2 rounded-full bg-amber-300/80"></span>
+									<span class="mt-1 h-2 w-2 border-2 border-neutral-900 bg-[#f8cd24]"></span>
 									<span>{item}</span>
 								</li>
 							))}
@@ -324,81 +301,77 @@ const accelerators = [
 		</section>
 
 		<section id="approach" class="grid gap-4 lg:grid-cols-2">
-			<div class="flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/5 p-6">
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Engagement model</p>
-				<h2 class="text-2xl font-semibold md:text-3xl">Pragmatic, visible, predictable.</h2>
+			<div class="flex flex-col gap-4 rounded-xl border-2 border-neutral-900 bg-white p-6 shadow-[12px_12px_0_#0f0f0f]">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-800">Engagement model</p>
+				<h2 class="text-2xl font-black md:text-3xl">Pragmatic, visible, predictable.</h2>
 				<ol class="space-y-4">
 					{steps.map((step, index) => (
 						<li class="grid grid-cols-[auto,1fr] items-start gap-3">
-							<div class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-sm font-bold">
+							<div class="flex h-10 w-10 items-center justify-center rounded-sm border-2 border-neutral-900 bg-[#f8cd24] text-sm font-black">
 								{index + 1}
 							</div>
 							<div class="space-y-1">
 								<p class="text-base font-semibold">{step.title}</p>
-								<p class="text-sm leading-6 text-slate-200/80">{step.body}</p>
+								<p class="text-sm leading-6 text-neutral-800">{step.body}</p>
 							</div>
 						</li>
 					))}
 				</ol>
-				<div class="border-t border-white/10 pt-3 text-sm text-slate-200/80">
+				<div class="border-t-2 border-neutral-900 pt-3 text-sm text-neutral-800">
 					We slot into your stack and rhythms—Slack, Linear, Notion, or whatever keeps your team aligned.
 					If we spot risk (SSO/SCIM, compliance reviews, data migrations), we surface it in the first week so
 					timelines stay honest.
 				</div>
 			</div>
-			<div class="flex flex-col gap-4 rounded-3xl border border-white/10 bg-linear-to-br from-emerald-300/10 to-amber-200/10 p-6">
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Recent wins</p>
+			<div class="flex flex-col gap-4 rounded-xl border-2 border-neutral-900 bg-[#f1ede1] p-6 shadow-[12px_12px_0_#0f0f0f]">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-800">Recent wins</p>
 				<div class="grid gap-3">
 					{wins.map((win) => (
-						<div class="rounded-2xl border border-white/15 bg-white/5 p-4">
-							<span class="inline-flex items-center rounded-full bg-amber-300/90 px-2 py-1 text-xs font-bold uppercase tracking-[0.14em] text-slate-900">
+						<div class="rounded-lg border-2 border-neutral-900 bg-white p-4">
+							<span class="inline-flex items-center rounded-sm border-2 border-neutral-900 bg-[#f8cd24] px-2 py-1 text-xs font-black uppercase tracking-[0.14em] text-neutral-900">
 								{win.tag}
 							</span>
 							<h3 class="mt-3 text-lg font-semibold">{win.title}</h3>
-							<p class="text-sm leading-6 text-slate-200/80">{win.body}</p>
+							<p class="text-sm leading-6 text-neutral-800">{win.body}</p>
 						</div>
 					))}
 				</div>
-				<div class="grid gap-3 border-t border-white/10 pt-4 md:grid-cols-2">
+				<div class="grid gap-3 border-t-2 border-neutral-900 pt-4 md:grid-cols-2">
 					<div>
-						<p class="text-3xl font-semibold leading-none">6–8</p>
-						<p class="text-sm text-slate-200/80">week delivery window for most engagements</p>
+						<p class="text-3xl font-black leading-none">6–8</p>
+						<p class="text-sm text-neutral-800">week delivery window for most engagements</p>
 					</div>
 					<div>
-						<p class="text-3xl font-semibold leading-none">100%</p>
-						<p class="text-sm text-slate-200/80">senior talent; founders build, not account managers</p>
+						<p class="text-3xl font-black leading-none">100%</p>
+						<p class="text-sm text-neutral-800">senior talent; founders build, not account managers</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-6 py-10">
-			<div
-				aria-hidden="true"
-				class="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(255,180,84,0.12),transparent_45%),radial-gradient(circle_at_80%_60%,rgba(127,231,211,0.12),transparent_40%)]"
-			></div>
+		<section class="rounded-xl border-2 border-neutral-900 bg-white px-6 py-10 shadow-[12px_12px_0_#0f0f0f]">
 			<div class="relative flex flex-wrap items-center justify-between gap-4">
 				<div class="space-y-1">
-					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Operating principles</p>
-					<h2 class="text-2xl font-semibold md:text-3xl">How we keep momentum without losing rigor.</h2>
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-800">Operating principles</p>
+					<h2 class="text-2xl font-black md:text-3xl">How we keep momentum without losing rigor.</h2>
 				</div>
-				<div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-200/80">
-					<span class="h-2 w-2 animate-pulse rounded-full bg-emerald-300"></span>
+				<div class="flex items-center gap-2 rounded-md border-2 border-neutral-900 bg-[#f8cd24] px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-900 shadow-[6px_6px_0_#0f0f0f]">
+					<span class="h-2 w-2 animate-pulse rounded-full bg-neutral-900"></span>
 					<span>In production mindset</span>
 				</div>
 			</div>
 			<div class="relative mt-6 grid gap-4 md:grid-cols-3">
 				{accelerators.map((accelerator) => (
-					<article class="flex h-full flex-col justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[0_12px_48px_rgba(0,0,0,0.18)]">
+					<article class="flex h-full flex-col justify-between gap-3 rounded-lg border-2 border-neutral-900 bg-[#f1ede1] p-5 shadow-[8px_8px_0_#0f0f0f]">
 						<div class="space-y-2">
-							<div class="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-100">
+							<div class="inline-flex items-center rounded-sm border-2 border-neutral-900 bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-900">
 								Signal
 							</div>
 							<h3 class="text-lg font-semibold">{accelerator.title}</h3>
-							<p class="text-sm leading-6 text-slate-200/80">{accelerator.body}</p>
+							<p class="text-sm leading-6 text-neutral-800">{accelerator.body}</p>
 						</div>
-						<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-100">
-							<span class="h-[5px] w-[5px] rounded-full bg-emerald-300"></span>
+						<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-900">
+							<span class="h-[5px] w-[5px] border-2 border-neutral-900 bg-[#d1ff4e]"></span>
 							<span>Shipped weekly</span>
 						</div>
 					</article>
@@ -406,29 +379,29 @@ const accelerators = [
 			</div>
 		</section>
 
-		<section id="about" class="rounded-3xl border border-white/10 bg-white/5 px-6 py-10">
+		<section id="about" class="rounded-xl border-2 border-neutral-900 bg-white px-6 py-10 shadow-[12px_12px_0_#0f0f0f]">
 			<div class="max-w-3xl space-y-2">
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Who we are</p>
-				<h2 class="text-2xl font-semibold md:text-3xl">Founders stay in the work.</h2>
-				<p class="text-base leading-7 text-slate-200/80">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-800">Who we are</p>
+				<h2 class="text-2xl font-black md:text-3xl">Founders stay in the work.</h2>
+				<p class="text-base leading-7 text-neutral-800">
 					G&K Software, LLC is Texas-registered and entirely founder-built.
 				</p>
 			</div>
 			<div class="mt-6 grid gap-4 md:grid-cols-2">
-				<div class="flex items-start justify-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-						<img src={gibson.src} alt="Gibson Martin" class="h-11 w-11 rounded-full border border-white/15 bg-white/5 object-cover" />
+				<div class="flex items-start justify-start gap-3 rounded-lg border-2 border-neutral-900 bg-[#f1ede1] p-4 shadow-[8px_8px_0_#0f0f0f]">
+					<img src={gibson.src} alt="Gibson Martin" class="h-12 w-12 rounded-sm border-2 border-neutral-900 bg-white object-cover" />
 					<div class="space-y-1">
 						<p class="text-base font-semibold">Gibson Martin</p>
-						<p class="text-sm leading-6 text-slate-200/80">
+						<p class="text-sm leading-6 text-neutral-800">
 							Systems-minded builder who loves simplifying data flows and making ops painless.
 						</p>
 					</div>
 				</div>
-				<div class="flex items-start justify-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-						<img src={kyle.src} alt="Kyle Dougan" class="h-11 w-11 rounded-full border border-white/15 bg-white/5 object-cover" />
+				<div class="flex items-start justify-start gap-3 rounded-lg border-2 border-neutral-900 bg-[#f1ede1] p-4 shadow-[8px_8px_0_#0f0f0f]">
+					<img src={kyle.src} alt="Kyle Dougan" class="h-12 w-12 rounded-sm border-2 border-neutral-900 bg-white object-cover" />
 					<div class="space-y-1">
 						<p class="text-base font-semibold">Kyle Dougan</p>
-						<p class="text-sm leading-6 text-slate-200/80">
+						<p class="text-sm leading-6 text-neutral-800">
 							Full-stack product engineer focused on fast feedback loops and production readiness.
 						</p>
 					</div>
@@ -438,44 +411,44 @@ const accelerators = [
 
 		<section
 			id="contact"
-			class="grid gap-4 rounded-3xl border border-white/10 bg-white/5 px-6 py-10 md:grid-cols-[2fr,1fr]"
+			class="grid gap-4 rounded-xl border-2 border-neutral-900 bg-white px-6 py-10 shadow-[12px_12px_0_#0f0f0f] md:grid-cols-[2fr,1fr]"
 		>
 			<div class="space-y-3">
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Let’s talk</p>
-				<h2 class="text-2xl font-semibold md:text-3xl">Need momentum? We can help.</h2>
-				<p class="text-base leading-7 text-slate-200/80">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-800">Let’s talk</p>
+				<h2 class="text-2xl font-black md:text-3xl">Need momentum? We can help.</h2>
+				<p class="text-base leading-7 text-neutral-800">
 					Tell us about your product and timelines. We’ll respond within one business day with next steps.
 				</p>
 				<div class="flex flex-wrap gap-3">
 					<a
-						class="inline-flex items-center justify-center rounded-full bg-linear-to-r from-amber-300 to-amber-500 px-5 py-3 text-sm font-semibold text-slate-900 shadow-[0_12px_38px_rgba(255,180,84,0.45)] transition hover:brightness-105"
+						class="inline-flex items-center justify-center rounded-md border-2 border-[#f8cd24] bg-neutral-900 px-5 py-3 text-sm font-semibold text-[#f8cd24] shadow-[6px_6px_0_#0f0f0f] transition hover:-translate-y-0.5 hover:shadow-[8px_8px_0_#0f0f0f]"
 						href="mailto:hello@gnksoftware.com?subject=Intro%20call%20request"
 					>
 						Book an intro call
 					</a>
 					<a
-						class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/30"
+						class="inline-flex items-center justify-center rounded-md border-2 border-neutral-900 bg-[#d1ff4e] px-5 py-3 text-sm font-semibold text-neutral-900 shadow-[6px_6px_0_#0f0f0f] transition hover:-translate-y-0.5 hover:shadow-[8px_8px_0_#0f0f0f]"
 						href="mailto:hello@gnksoftware.com?subject=Project%20details"
 					>
 						Send project details
 					</a>
 				</div>
 			</div>
-			<div class="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-slate-200/80">
+			<div class="space-y-2 rounded-lg border-2 border-neutral-900 bg-[#f1ede1] p-5 text-sm text-neutral-900 shadow-[8px_8px_0_#0f0f0f]">
 				<p>Registered in Texas. Remote-first globally.</p>
-				<p>Email: <a href="mailto:hello@gnksoftware.com">hello@gnksoftware.com</a></p>
+				<p>Email: <a class="underline decoration-neutral-900 decoration-2" href="mailto:hello@gnksoftware.com">hello@gnksoftware.com</a></p>
 			</div>
 		</section>
 
-		<footer class="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-200/70">
+		<footer class="mt-6 flex flex-wrap items-center justify-between gap-3 border-t-2 border-neutral-900 pt-6 text-sm text-neutral-900">
 			<div>
-				<p class="font-semibold uppercase tracking-[0.18em]">G&K Software, LLC</p>
+				<p class="font-black uppercase tracking-[0.18em]">G&K Software, LLC</p>
 				<p>Texas registered. Built by Gibson Martin and Kyle Dougan.</p>
 			</div>
 			<div class="flex flex-wrap items-center gap-3">
-				<a class="font-semibold text-slate-200/80 hover:text-white" href="/">Home</a>
-				<a class="font-semibold text-slate-200/80 hover:text-white" href="/#about">About</a>
-				<a class="font-semibold text-slate-200/80 hover:text-white" href="mailto:hello@gnksoftware.com">Contact</a>
+				<a class="font-semibold text-neutral-900 underline-offset-4 hover:underline" href="/">Home</a>
+				<a class="font-semibold text-neutral-900 underline-offset-4 hover:underline" href="/#about">About</a>
+				<a class="font-semibold text-neutral-900 underline-offset-4 hover:underline" href="mailto:hello@gnksoftware.com">Contact</a>
 			</div>
 		</footer>
 	</main>
