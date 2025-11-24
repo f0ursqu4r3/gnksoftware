@@ -1,11 +1,569 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const services = [
+	{
+		title: 'Product engineering',
+		body: 'Full-stack builds for SaaS and platforms with reliability baked in.',
+		items: ['Architecture & cloud setup', 'APIs that stay boring', 'Interfaces that ship fast'],
+	},
+	{
+		title: 'Internal tools',
+		body: 'Dashboards, ops automation, and data flows that remove manual work.',
+		items: ['Process automation', 'Data pipelines & reporting', 'Secure admin experiences'],
+	},
+	{
+		title: 'Technical advisory',
+		body: 'Fractional leadership when you need senior direction without the overhead.',
+		items: ['Roadmaps that reduce risk', 'Hands-on code reviews', 'Hiring & onboarding support'],
+	},
+];
+
+const steps = [
+	{
+		title: 'Orientation',
+		body: 'We audit your current state, clarify outcomes, and cut the noise to a 6-week plan.',
+	},
+	{ title: 'Build in public', body: 'Design, ship, and demo weekly. No handoffs, just direct access.' },
+	{
+		title: 'Stabilize & hand over',
+		body: 'Monitoring, docs, and onboarding so your team can run with what we built.',
+	},
+];
+
+const wins = [
+	{
+		tag: 'Ops lift',
+		title: 'Logistics platform',
+		body: 'Consolidated scheduling and auditing, removing 40% of manual back-office work.',
+	},
+	{
+		tag: 'Speed to market',
+		title: 'Fintech dashboard',
+		body: 'Launched billing and reporting in 5 weeks for a seed-stage team scaling revenue.',
+	},
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="G&K Software, LLC — Software contracting without the drag"
+	description="Senior engineers building SaaS, internal tools, and reliable web platforms with clear communication and fast delivery."
+>
+	<main class="page">
+		<nav class="topbar">
+			<div class="brand">
+				<span class="pill">G&K</span>
+				<div>
+					<p class="eyebrow">G&K Software, LLC</p>
+					<p class="muted">Software contracting, minus the agency overhead</p>
+				</div>
+			</div>
+			<div class="nav-actions">
+				<a class="ghost-link" href="#services">Services</a>
+				<a class="ghost-link" href="#approach">Approach</a>
+				<a class="ghost-link" href="#contact">Contact</a>
+				<a class="btn primary" href="mailto:hello@gnksoftware.com">Book an intro</a>
+			</div>
+		</nav>
+
+		<section class="hero">
+			<div class="orb orb-a"></div>
+			<div class="orb orb-b"></div>
+			<p class="eyebrow">G&K Software, LLC</p>
+			<h1>Ship-ready software without the agency drag.</h1>
+			<p class="lede">
+				We are a two-senior-engineer studio crafting lean, reliable web products. Strategy,
+				architecture, and hands-on builds—all in one cadence.
+			</p>
+			<div class="hero-actions">
+				<a class="btn primary" href="mailto:hello@gnksoftware.com">Start a project</a>
+				<a class="btn ghost" href="#services">See how we work</a>
+			</div>
+			<div class="chips">
+				<span class="chip">Weekly demos & visibility</span>
+				<span class="chip">Infrastructure included</span>
+				<span class="chip">Direct access to builders</span>
+			</div>
+		</section>
+
+		<section id="services" class="section">
+			<div class="section-head">
+				<p class="eyebrow">Capabilities</p>
+				<h2>Web products with senior ownership.</h2>
+				<p class="muted">
+					No handoffs, just disciplined engineering and design that keeps your roadmap moving.
+				</p>
+			</div>
+			<div class="grid services">
+				{services.map((service) => (
+					<article class="card">
+						<div class="card-top">
+							<h3>{service.title}</h3>
+							<p class="muted">{service.body}</p>
+						</div>
+						<ul>
+							{service.items.map((item) => (
+								<li>{item}</li>
+							))}
+						</ul>
+					</article>
+				))}
+			</div>
+		</section>
+
+		<section id="approach" class="section split">
+			<div class="panel">
+				<p class="eyebrow">Engagement model</p>
+				<h2>Pragmatic, visible, predictable.</h2>
+				<ol class="steps">
+					{steps.map((step, index) => (
+						<li>
+							<div class="step-marker">{index + 1}</div>
+							<div>
+								<p class="step-title">{step.title}</p>
+								<p class="muted">{step.body}</p>
+							</div>
+						</li>
+					))}
+				</ol>
+				<div class="cta-note">
+					<p class="muted">
+						We slot into your stack and rhythms—Slack, Linear, Notion, or whatever keeps your team
+						aligned.
+					</p>
+				</div>
+			</div>
+			<div class="panel panel-accent">
+				<p class="eyebrow">Recent wins</p>
+				<div class="wins">
+					{wins.map((win) => (
+						<div class="win-card">
+							<span class="tag">{win.tag}</span>
+							<h3>{win.title}</h3>
+							<p class="muted">{win.body}</p>
+						</div>
+					))}
+				</div>
+				<div class="score">
+					<div>
+						<p class="score-number">6–8</p>
+						<p class="muted">week delivery window for most engagements</p>
+					</div>
+					<div>
+						<p class="score-number">100%</p>
+						<p class="muted">senior talent; founders build, not account managers</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section narrow">
+			<div class="badge-row">
+				<div class="badge">
+					<p class="eyebrow">Focus</p>
+					<p class="muted">Limited concurrent clients for deep attention.</p>
+				</div>
+				<div class="badge">
+					<p class="eyebrow">Observability</p>
+					<p class="muted">Logging, alerts, and health checks from day one.</p>
+				</div>
+				<div class="badge">
+					<p class="eyebrow">Handover ready</p>
+					<p class="muted">Docs, patterns, and pairing to equip your team.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="section cta">
+			<div>
+				<p class="eyebrow">Let’s talk</p>
+				<h2>Need momentum? We can help.</h2>
+				<p class="muted">
+					Tell us about your product and timelines. We’ll respond within one business day with next
+					steps.
+				</p>
+				<div class="hero-actions">
+					<a class="btn primary" href="mailto:hello@gnksoftware.com">Book an intro call</a>
+					<a class="btn ghost" href="mailto:hello@gnksoftware.com?subject=Project%20details">
+						Send project details
+					</a>
+				</div>
+			</div>
+			<div class="cta-card">
+				<p class="muted">Based in the Pacific Northwest. Available globally.</p>
+				<p class="muted">Email: hello@gnksoftware.com</p>
+			</div>
+		</section>
+	</main>
 </Layout>
+
+<style>
+	.page {
+		max-width: 1180px;
+		margin: 0 auto;
+		padding: 32px 20px 96px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.topbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 12px 16px;
+		border: 1px solid var(--stroke);
+		background: rgba(255, 255, 255, 0.02);
+		border-radius: 16px;
+		backdrop-filter: blur(10px);
+		gap: 16px;
+		position: sticky;
+		top: 16px;
+		z-index: 10;
+	}
+
+	.brand {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+	}
+
+	.pill {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
+		border-radius: 16px;
+		background: linear-gradient(135deg, rgba(255, 180, 84, 0.35), rgba(127, 231, 211, 0.25));
+		color: white;
+		font-weight: 700;
+		font-family: 'Space Grotesk', 'Manrope', sans-serif;
+		letter-spacing: 0.04em;
+	}
+
+	.nav-actions {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+
+	.ghost-link {
+		color: var(--muted);
+		text-decoration: none;
+		font-weight: 600;
+		transition: color 0.2s ease;
+	}
+
+	.ghost-link:hover {
+		color: white;
+	}
+
+	.hero {
+		position: relative;
+		padding: 80px 16px 48px;
+	}
+
+	.hero h1 {
+		font-size: clamp(32px, 5vw, 56px);
+		line-height: 1.1;
+		margin: 12px 0 12px;
+		font-family: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
+	}
+
+	.lede {
+		max-width: 720px;
+		font-size: 18px;
+		color: var(--muted);
+		line-height: 1.6;
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: 12px;
+		margin: 24px 0 12px;
+		flex-wrap: wrap;
+	}
+
+	.btn {
+		border: 1px solid transparent;
+		border-radius: 999px;
+		padding: 12px 18px;
+		font-weight: 700;
+		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+	}
+
+	.btn.primary {
+		background: linear-gradient(135deg, #ffb454, #ffd699);
+		color: #0f162c;
+		box-shadow: 0 8px 24px rgba(255, 180, 84, 0.35);
+	}
+
+	.btn.ghost {
+		border-color: var(--stroke);
+		color: white;
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-top: 10px;
+	}
+
+	.chip {
+		border: 1px solid var(--stroke);
+		border-radius: 999px;
+		padding: 8px 12px;
+		color: var(--muted);
+		background: rgba(255, 255, 255, 0.03);
+		font-size: 14px;
+	}
+
+	.section {
+		padding: 36px 16px;
+	}
+
+	.section-head {
+		max-width: 720px;
+		margin-bottom: 20px;
+	}
+
+	h2 {
+		margin: 8px 0;
+		font-size: clamp(24px, 3vw, 34px);
+	}
+
+	h3 {
+		margin: 0 0 8px;
+		font-size: 20px;
+	}
+
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 12px;
+		color: var(--muted);
+		margin: 0;
+	}
+
+	.muted {
+		color: var(--muted);
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	.grid.services {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 16px;
+	}
+
+	.card {
+		border: 1px solid var(--stroke);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.02);
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.card-top p {
+		margin: 0;
+	}
+
+	.card ul {
+		padding-left: 20px;
+		margin: 0;
+		color: var(--muted);
+		display: grid;
+		gap: 6px;
+	}
+
+	.card li {
+		line-height: 1.4;
+	}
+
+	.split {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 16px;
+		align-items: stretch;
+	}
+
+	.panel {
+		border: 1px solid var(--stroke);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.03);
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.panel-accent {
+		background: linear-gradient(160deg, rgba(127, 231, 211, 0.08), rgba(255, 180, 84, 0.05));
+	}
+
+	.steps {
+		list-style: none;
+		padding: 0;
+		margin: 8px 0;
+		display: grid;
+		gap: 12px;
+	}
+
+	.steps li {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 12px;
+		align-items: center;
+	}
+
+	.step-marker {
+		width: 32px;
+		height: 32px;
+		border-radius: 10px;
+		border: 1px solid var(--stroke);
+		display: grid;
+		place-items: center;
+		background: rgba(255, 255, 255, 0.06);
+		font-weight: 700;
+		font-family: 'Space Grotesk', 'Manrope', sans-serif;
+	}
+
+	.step-title {
+		margin: 0 0 4px;
+		font-weight: 700;
+	}
+
+	.cta-note {
+		border-top: 1px solid var(--stroke);
+		padding-top: 12px;
+	}
+
+	.wins {
+		display: grid;
+		gap: 12px;
+	}
+
+	.win-card {
+		border: 1px solid var(--stroke);
+		border-radius: 14px;
+		padding: 16px;
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	.win-card h3 {
+		margin: 4px 0 6px;
+	}
+
+	.tag {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #0f162c;
+		background: rgba(255, 180, 84, 0.9);
+		border-radius: 999px;
+		padding: 6px 10px;
+		font-weight: 700;
+	}
+
+	.score {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 12px;
+		margin-top: 8px;
+	}
+
+	.score-number {
+		font-size: 26px;
+		margin: 0 0 4px;
+		font-weight: 700;
+	}
+
+	.narrow {
+		padding: 20px 16px 28px;
+	}
+
+	.badge-row {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 12px;
+	}
+
+	.badge {
+		border: 1px solid var(--stroke);
+		border-radius: 12px;
+		padding: 14px;
+		background: rgba(255, 255, 255, 0.02);
+	}
+
+	.cta {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 16px;
+		align-items: center;
+	}
+
+	.cta-card {
+		border: 1px solid var(--stroke);
+		border-radius: 14px;
+		padding: 18px;
+		background: rgba(255, 255, 255, 0.03);
+	}
+
+	.orb {
+		position: absolute;
+		filter: blur(90px);
+		opacity: 0.65;
+		z-index: -1;
+	}
+
+	.orb-a {
+		width: 360px;
+		height: 360px;
+		background: radial-gradient(circle, rgba(255, 180, 84, 0.4), transparent 60%);
+		top: -40px;
+		left: 10%;
+	}
+
+	.orb-b {
+		width: 420px;
+		height: 420px;
+		background: radial-gradient(circle, rgba(127, 231, 211, 0.35), transparent 65%);
+		top: 120px;
+		right: 5%;
+	}
+
+	@media (max-width: 900px) {
+		.topbar {
+			position: static;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.page {
+			padding: 20px 16px 72px;
+		}
+
+		.topbar {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.cta {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
