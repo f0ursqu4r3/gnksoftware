@@ -13,7 +13,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -27,10 +27,71 @@ const {
 			href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
+		<script>
+			(() => {
+				try {
+					const storageKey = 'gnk-theme';
+					const root = document.documentElement;
+					const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					const stored = localStorage.getItem(storageKey);
+					const theme = stored === 'light' || stored === 'dark' ? stored : prefersDark ? 'dark' : 'light';
+					root.dataset.theme = theme;
+				} catch (error) {
+					console.error('Theme bootstrap failed', error);
+				}
+			})();
+		</script>
 	</head>
-	<body
-		class="m-0 min-h-screen bg-[#f7f4ed] text-[#0f0f0f] font-['Bricolage_Grotesque','Space_Grotesk',system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI',sans-serif] antialiased selection:bg-yellow-300 selection:text-[#0f0f0f] bg-[linear-gradient(#e6e0d1_1px,transparent_1px),linear-gradient(90deg,#e6e0d1_1px,transparent_1px)] bg-[32px_32px]"
-	>
+	<body class="theme-shell m-0 min-h-screen font-['Bricolage_Grotesque','Space_Grotesk',system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI',sans-serif] antialiased">
 		<slot />
+		<script>
+			(() => {
+				try {
+					const storageKey = 'gnk-theme';
+					const root = document.documentElement;
+					const toggle = document.querySelector('[data-theme-toggle]') as HTMLElement | null;
+					const label = document.querySelector('[data-theme-toggle-label]') as HTMLElement | null;
+					const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+					const setTheme = (theme: string, persist = true) => {
+						root.dataset.theme = theme;
+						if (persist) {
+							localStorage.setItem(storageKey, theme);
+						}
+						if (toggle) {
+							toggle.dataset.state = theme;
+							toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+						}
+						if (label) {
+							label.textContent = theme === 'dark' ? 'Dark' : 'Light';
+						}
+					};
+
+					const getPreferred = () => {
+						const stored = localStorage.getItem(storageKey);
+						if (stored === 'light' || stored === 'dark') return stored;
+						return media.matches ? 'dark' : 'light';
+					};
+
+					const syncSystem = (event: { matches: any; }) => {
+						if (localStorage.getItem(storageKey)) return;
+						setTheme(event.matches ? 'dark' : 'light', false);
+					};
+
+					setTheme(getPreferred(), false);
+
+					if (toggle) {
+						toggle.addEventListener('click', () => {
+							const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+							setTheme(next);
+						});
+					}
+
+					media.addEventListener('change', syncSystem);
+				} catch (error) {
+					console.error('Theme toggle failed', error);
+				}
+			})();
+		</script>
 	</body>
 </html>
