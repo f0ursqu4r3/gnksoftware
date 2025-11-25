@@ -5,432 +5,275 @@ import kyle from '../assets/kyle.png';
 
 const services = [
 	{
-		title: 'Product engineering',
-		body: 'Full-stack builds for SaaS and platforms with reliability baked in.',
-		items: ['Architecture & cloud setup', 'APIs that stay boring', 'Interfaces that ship fast'],
+		title: 'Legacy modernization',
+		body: 'Wrap or replace mainframe, COBOL, or Access workloads with stable services.',
+		items: ['Strangler patterns and APIs with contracts', 'Logging, tracing, and dashboards from day one', 'Cutovers with rollback and DR paths'],
 	},
 	{
-		title: 'Internal tools',
-		body: 'Dashboards, ops automation, and data flows that remove manual work.',
-		items: ['Process automation', 'Data pipelines & reporting', 'Secure admin experiences'],
+		title: 'Internal platforms',
+		body: 'Dashboards, approvals, and automation aligned with IT and audit.',
+		items: ['Workflow orchestration and queues', 'SSO/SCIM, RBAC, audit logging', 'Data reconciliation and alerts'],
 	},
 	{
-		title: 'Technical advisory',
-		body: 'Fractional leadership when you need senior direction without the overhead.',
-		items: ['Roadmaps that reduce risk', 'Hands-on code reviews', 'Hiring & onboarding support'],
+		title: 'Advisory & program leadership',
+		body: 'Hands-on architecture and delivery guidance to keep initiatives on track.',
+		items: ['Roadmaps and governance across vendors', 'Production reviews and runbooks', 'Vendor evaluations and onboarding'],
 	},
 ];
 
 const steps = [
 	{
-		title: 'Orientation',
-		body: 'We audit your current state, clarify outcomes, and cut the noise to a 6-week plan.',
+		title: 'Assessment',
+		body: 'Interview SMEs, map systems and risks, and define a pilot with a contained scope.',
 	},
-	{ title: 'Build in public', body: 'Design, ship, and demo weekly. No handoffs, just direct access.' },
 	{
-		title: 'Stabilize & hand over',
-		body: 'Monitoring, docs, and onboarding so your team can run with what we built.',
+		title: 'Pilot & validate',
+		body: 'Ship the first slice in production behind flags with monitoring and DR rehearsed.',
+	},
+	{
+		title: 'Rollout & transition',
+		body: 'Tighten controls, train teams, and hand over so your staff can operate confidently.',
 	},
 ];
 
 const wins = [
 	{
-		tag: 'Ops lift',
-		title: 'Logistics platform',
-		body: 'Consolidated scheduling and auditing, removing 40% of manual back-office work.',
+		tag: 'Legacy cutover',
+		title: 'Mainframe to services',
+		body: 'Wrapped COBOL batch jobs with APIs, enabling phased migration while meeting SLAs.',
 	},
 	{
-		tag: 'Speed to market',
-		title: 'Fintech dashboard',
-		body: 'Launched billing and reporting in 5 weeks for a seed-stage team scaling revenue.',
+		tag: 'Internal tooling',
+		title: 'Finance controls hub',
+		body: 'Built approvals, audit trails, and reporting for finance to pass SOC/SOX reviews on first pass.',
 	},
 ];
 
-const tickerItems = [
-	'SaaS launches',
-	'Internal tooling',
-	'Data platforms',
-	'AI workflows',
-	'Customer portals',
-	'Billing rails',
-	'Ops automation',
-	'Design systems',
-];
-
-const signals = [
+const assurances = [
 	{
-		label: 'First deploy',
-		value: 'Day 3–5',
-		hint: 'Staging live with monitoring and rollback guards.',
+		title: 'Governance ready',
+		body: 'Works with CAB windows, ITSM, procurement, and security reviews.',
 	},
 	{
-		label: 'Weekly demos',
-		value: 'Fridays',
-		hint: 'Clips, notes, and the next sprint plan within 24 hours.',
+		title: 'Controls included',
+		body: 'SSO/SCIM, RBAC, audit logging, and change history are default.',
 	},
 	{
-		label: 'Reliability',
-		value: 'SLOs + runbooks',
-		hint: 'The boring bits—alerts, dashboards, and docs—ready for handover.',
+		title: 'Operational handover',
+		body: 'Runbooks, SLOs, DR tests, and clear owners before we exit.',
 	},
 ];
 
-const accelerators = [
-	{
-		title: 'Production muscle',
-		body: 'We lay observability, CI, and safe deploys before feature flags come off.',
-	},
-	{
-		title: 'Secure by default',
-		body: 'Principle-of-least-privilege infra, secret hygiene, and audit-friendly changes.',
-	},
-	{
-		title: 'Design-to-build',
-		body: 'We prototype with the same stack we ship, so you react to real interactions.',
-	},
+const stats = [
+	{ label: 'Assessment output', value: 'Day 3–5', hint: 'System map, risks, and pilot plan.' },
+	{ label: 'Pilot live', value: '6–8 weeks', hint: 'One critical flow in production behind flags.' },
+	{ label: 'Response time', value: '< 2 hrs', hint: 'Direct access to the founders.' },
 ];
 ---
 
 <Layout
-	title="G&K Software, LLC — Software contracting without the drag"
-	description="Senior engineers building SaaS, internal tools, and reliable web platforms with clear communication and fast delivery."
+	title="G&K Software, LLC — Modernization and internal tooling for enterprise teams"
+	description="Founding engineers modernizing legacy systems and building internal platforms with clear governance and production standards."
 >
-	<main class="relative mx-auto flex max-w-6xl flex-col gap-8 px-5 pb-24 pt-8 md:pt-10">
-		<div
-			aria-hidden="true"
-			class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-linear-to-b from-white/10 to-transparent blur-3xl"
-		/>
-
-		<nav
-			class="sticky top-4 z-20 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur"
-		>
-			<div class="flex items-center gap-3">
+	<main class="flex w-full flex-col gap-10 pb-20 pt-8 md:gap-12">
+		<header class="w-full border-b border-(--color-line) pb-5">
+			<div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-5">
+				<div class="flex items-center gap-3">
 				<span
-					class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-900 bg-white/90 text-sm font-black text-slate-900"
+					class="flex h-11 w-11 items-center justify-center rounded-xl border border-(--color-ink) bg-(--color-ink) text-sm font-black text-(--color-cream)"
 				>
 					G&K
 				</span>
 				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">
-						G&K Software, LLC
-					</p>
-					<p class="text-sm text-slate-200/80">Software contracting, minus the agency overhead</p>
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">G&K Software, LLC</p>
+					<p class="text-sm text-(--color-ink-soft)">Modernization and internal tooling for enterprises</p>
 				</div>
 			</div>
-			<div class="flex flex-wrap items-center justify-end gap-2">
-				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#services">Services</a>
-				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#approach">Approach</a>
-				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#about">About</a>
-				<a class="text-sm font-semibold text-slate-200/80 hover:text-white" href="/#contact">Contact</a>
+			<div class="flex flex-wrap items-center gap-3">
+				<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#services">Services</a>
+				<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#approach">Approach</a>
+				<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#about">About</a>
+				<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#contact">Contact</a>
 				<a
-					class="inline-flex items-center justify-center rounded-full bg-linear-to-br from-amber-300 to-amber-500 px-4 py-2 text-sm font-semibold text-slate-900 shadow-[0_12px_38px_rgba(255,180,84,0.45)] transition hover:brightness-105"
+					class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-4 py-2 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
 					href="mailto:hello@gnksoftware.com"
 				>
-					Book an intro
+					Email
 				</a>
 			</div>
-		</nav>
-
-		<section class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-6 py-12 md:py-16">
-			<div
-				aria-hidden="true"
-				class="absolute -left-20 -top-28 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(255,180,84,0.32),transparent_60%)] blur-3xl opacity-80"
-			></div>
-			<div
-				aria-hidden="true"
-				class="absolute -right-10 -top-10 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(127,231,211,0.3),transparent_60%)] blur-3xl opacity-80"
-			></div>
-			<div
-				aria-hidden="true"
-				class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.08),transparent_45%),radial-gradient(circle_at_30%_70%,rgba(124,146,255,0.08),transparent_40%)] opacity-70"
-			></div>
-
-			<div class="mb-4 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.26em] text-slate-200/70">
-				<span class="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px]">Founder-led</span>
-				<span class="rounded-full border border-white/10 bg-emerald-300/20 px-3 py-1 text-[11px] text-emerald-50">
-					Build in public
-				</span>
-				<span class="rounded-full border border-white/10 bg-amber-300/20 px-3 py-1 text-[11px] text-amber-950">
-					6–8 week delivery
-				</span>
 			</div>
+		</header>
 
-			<div class="grid items-start gap-10 lg:grid-cols-[1.1fr,0.9fr]">
-				<div class="space-y-5">
-					<h1 class="text-3xl font-semibold leading-tight md:text-5xl">
-						Less agency theater. More build time.
-					</h1>
-					<p class="max-w-2xl text-lg leading-8 text-slate-200/85">
-						We’re Gibson Martin and Kyle Dougan—two senior founders crafting lean, reliable software from
-						Texas. You get strategy, architecture, and hands-on builds in one cadence, not a chain of
-						handoffs.
-					</p>
-					<div class="flex flex-wrap gap-3">
-						<a
-							class="inline-flex items-center justify-center rounded-full bg-linear-to-r from-amber-300 to-amber-500 px-5 py-3 text-sm font-semibold text-slate-900 shadow-[0_12px_38px_rgba(255,180,84,0.45)] transition hover:brightness-105"
-							href="mailto:hello@gnksoftware.com"
-						>
-							Start a project
-						</a>
-						<a
-							class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/30"
-							href="#services"
-						>
-							See how we work
-						</a>
-					</div>
-					<div class="flex flex-wrap gap-3 text-sm text-slate-200/80">
-						<span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">Direct access to builders</span>
-						<span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">Weekly demos & visibility</span>
-						<span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">Infra + observability included</span>
-					</div>
-
-					<div class="grid gap-3 sm:grid-cols-2">
-						<div class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-[0_10px_50px_rgba(0,0,0,0.18)]">
-							<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/60">Time to first deploy</p>
-							<p class="mt-2 text-3xl font-semibold leading-tight">Days 3–5</p>
-							<p class="mt-1 text-sm text-slate-200/80">
-								Staging live with feature flags, health checks, and rollbacks wired.
-							</p>
-						</div>
-						<div class="rounded-2xl border border-white/10 bg-linear-to-br from-emerald-300/15 via-white/5 to-amber-300/15 p-4 shadow-[0_10px_50px_rgba(0,0,0,0.18)]">
-							<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/60">First production slice</p>
-							<p class="mt-2 text-3xl font-semibold leading-tight">6–8 weeks</p>
-							<p class="mt-1 text-sm text-slate-200/80">
-								One core flow live (e.g., onboarding + primary workflow + billing) with handover-ready docs.
-							</p>
-						</div>
-					</div>
-					<div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs leading-5 text-slate-200/75 shadow-[0_10px_50px_rgba(0,0,0,0.18)]">
-						Caveats we call out in week 1: SSO/SCIM, complex data migrations, and heavy third-party integrations
-						can stretch timelines. We flag risks early and adjust scope before we commit to dates.
-					</div>
+		<section class="w-full border-b border-(--color-line) bg-(--color-panel) py-8">
+			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[1.2fr,0.8fr]">
+			<div class="space-y-5">
+				<h1 class="font-['DM_Serif_Display'] text-3xl leading-tight text-(--color-ink) md:text-4xl">
+					Modernize critical systems with steady, production-first delivery.
+				</h1>
+				<p class="text-base leading-7 text-(--color-ink-soft)">
+					We are Gibson Martin and Kyle Dougan. We run modernization and internal tooling projects with clear owners,
+					disciplined communication, and production standards from day one.
+				</p>
+				<div class="flex flex-wrap gap-3">
+					<a
+						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-5 py-3 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+						href="mailto:hello@gnksoftware.com?subject=Assessment%20request"
+					>
+						Request an assessment
+					</a>
+					<a
+						class="inline-flex items-center justify-center border border-(--color-line) bg-(--color-panel-strong) px-5 py-3 text-sm font-semibold text-(--color-ink) transition hover:border-(--color-ink-muted)"
+						href="#services"
+					>
+						View services
+					</a>
 				</div>
-
-				<div class="relative">
-					<div
-						aria-hidden="true"
-						class="absolute -right-8 -top-10 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.18),transparent_60%)] blur-3xl opacity-70"
-					></div>
-					<div class="relative space-y-4 rounded-3xl border border-white/10 bg-linear-to-br from-white/10 to-white/5 p-5 shadow-[0_18px_70px_rgba(0,0,0,0.25)]">
-						<div class="flex items-start justify-between gap-3">
-							<div>
-								<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Engagement signal</p>
-								<p class="text-base font-semibold text-white">What working together feels like</p>
-							</div>
-							<span class="rounded-full bg-emerald-300/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-50">
-								Live
-							</span>
-						</div>
-						<div class="grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
-							{signals.map((signal) => (
-								<div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-									<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-amber-300/70 to-amber-400/70 text-slate-900 text-sm font-black">
-										{signal.label.slice(0, 2)}
-									</div>
-									<div>
-										<p class="text-sm font-semibold text-white">{signal.label}</p>
-										<p class="text-base font-semibold leading-tight text-amber-100/90">{signal.value}</p>
-										<p class="text-xs leading-5 text-slate-200/70">{signal.hint}</p>
-									</div>
-								</div>
-							))}
-						</div>
-						<div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-							<p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-200/70">Stack in motion</p>
-							<div class="mt-2 grid gap-2 text-sm text-slate-200/85">
-								<div class="flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-									<span class="font-semibold text-white">TypeScript, Astro, Vue, Node</span>
-									<span class="rounded-full bg-emerald-300/80 px-2 py-1 text-[11px] font-semibold text-slate-900">
-										shipping
-									</span>
-								</div>
-								<div class="flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-									<span class="font-semibold text-white">Postgres, Redis, queues</span>
-									<span class="rounded-full bg-white/10 px-2 py-1 text-[11px] font-semibold text-amber-100">ready</span>
-								</div>
-								<div class="flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-									<span class="font-semibold text-white">Supabase, Vercel, Fly.io, AWS</span>
-									<span class="rounded-full bg-white/10 px-2 py-1 text-[11px] font-semibold text-amber-100">multi-cloud</span>
-								</div>
-							</div>
-						</div>
-						<div class="flex items-center justify-between rounded-2xl border border-white/10 bg-emerald-300/10 px-4 py-3 text-sm text-emerald-50">
-							<div class="flex items-center gap-2">
-								<span class="h-2 w-2 animate-pulse rounded-full bg-emerald-300"></span>
-								<p class="font-semibold uppercase tracking-[0.16em]">Status</p>
-							</div>
-							<p class="font-semibold text-white">Founders online • Response in <span class="text-amber-200">&lt; 2 hrs</span></p>
-						</div>
+				<ul class="grid gap-2 text-sm text-(--color-ink-soft) md:grid-cols-2">
+					<li class="border-t border-(--color-line) pt-2">Direct access to the founders</li>
+					<li class="border-t border-(--color-line) pt-2">Works with IT, security, and audit</li>
+					<li class="border-t border-(--color-line) pt-2">Runbooks and observability included</li>
+					<li class="border-t border-(--color-line) pt-2">Risk surfaced in week one</li>
+				</ul>
+			</div>
+			<div class="space-y-4 text-sm text-(--color-ink-soft)">
+				{stats.map((stat) => (
+					<div class="border-t border-(--color-line) pt-3">
+						<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">{stat.label}</p>
+						<p class="text-2xl font-semibold text-(--color-ink)">{stat.value}</p>
+						<p>{stat.hint}</p>
 					</div>
+				))}
+				<div class="border-t border-(--color-line) pt-3">
+					Caveats we surface early: data migrations, SSO/SCIM, compliance reviews, vendor approvals, and cross-team dependencies.
+				</div>
+			</div>
+			</div>
+		</section>
+
+		<section id="services" class="w-full border-b border-(--color-line) bg-(--color-panel) py-8">
+			<div class="mx-auto flex max-w-5xl flex-col gap-4 px-5">
+				<div class="flex flex-wrap items-start justify-between gap-3">
+					<div>
+						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Capabilities</p>
+						<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-ink) md:text-3xl">Modernization with senior ownership.</h2>
+						<p class="text-sm text-(--color-ink-soft)">Plain communication, predictable delivery, and governance-ready controls.</p>
+					</div>
+					<span class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Pilots in weeks</span>
+				</div>
+				<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+					{services.map((service) => (
+						<article class="flex h-full flex-col gap-3 border-t border-(--color-line) pt-3">
+							<h3 class="text-lg font-semibold text-(--color-ink)">{service.title}</h3>
+							<p class="text-sm text-(--color-ink-soft)">{service.body}</p>
+							<ul class="space-y-2 text-sm text-(--color-ink-soft)">
+								{service.items.map((item) => (
+									<li class="flex items-start gap-2">
+										<span class="mt-1.5 h-2 w-2 rounded-full bg-(--color-ink)"></span>
+										<span>{item}</span>
+									</li>
+								))}
+							</ul>
+						</article>
+					))}
 				</div>
 			</div>
 		</section>
 
-		<div class="relative overflow-hidden rounded-full border border-white/10 bg-white/5 py-3">
-			<div class="flex animate-ticker gap-6 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.3em] text-slate-200/70">
-				{[...tickerItems, ...tickerItems].map((item, _idx) => (
-					<span class="rounded-full border border-white/10 bg-white/5 px-4 py-2">
-						{item}
-					</span>
-				))}
-			</div>
-			<div
-				aria-hidden="true"
-				class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-linear-to-r from-[#0c1327] to-transparent"
-			/>
-			<div
-				aria-hidden="true"
-				class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-linear-to-l from-[#0c1327] to-transparent"
-			/>
-		</div>
-
-		<section id="services" class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-6 py-10">
-			<div
-				aria-hidden="true"
-				class="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(255,255,255,0.08),transparent_40%),radial-gradient(circle_at_85%_70%,rgba(255,180,84,0.12),transparent_45%)]"
-			></div>
-			<div class="relative flex flex-wrap items-center justify-between gap-3">
-				<div class="space-y-2">
-					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Capabilities</p>
-					<h2 class="text-2xl font-semibold md:text-3xl">Web products with senior ownership.</h2>
-					<p class="text-base leading-7 text-slate-200/80">
-						No handoffs, just disciplined engineering and design that keeps your roadmap moving.
-					</p>
-				</div>
-				<div class="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-amber-100">
-					Delivery in weeks, not quarters
-				</div>
-			</div>
-			<div class="relative mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-				{services.map((service) => (
-					<article class="flex h-full flex-col justify-between gap-4 overflow-hidden rounded-2xl border border-white/10 bg-linear-to-b from-white/10 via-white/5 to-white/5 p-5 shadow-[0_12px_44px_rgba(0,0,0,0.16)]">
-						<div class="space-y-2">
-							<div class="mb-2 h-0.5 w-16 rounded-full bg-linear-to-r from-amber-300 to-emerald-300"></div>
-							<h3 class="text-lg font-semibold">{service.title}</h3>
-							<p class="text-sm leading-6 text-slate-200/80">{service.body}</p>
-						</div>
-						<ul class="space-y-2 text-sm text-slate-200/80">
-							{service.items.map((item) => (
-								<li class="flex items-start gap-2">
-									<span class="mt-1 h-2 w-2 rounded-full bg-amber-300/80"></span>
-									<span>{item}</span>
-								</li>
-							))}
-						</ul>
-					</article>
-				))}
-			</div>
-		</section>
-
-		<section id="approach" class="grid gap-4 lg:grid-cols-2">
-			<div class="flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/5 p-6">
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Engagement model</p>
-				<h2 class="text-2xl font-semibold md:text-3xl">Pragmatic, visible, predictable.</h2>
-				<ol class="space-y-4">
+		<section id="approach" class="w-full border-b border-(--color-line) bg-(--color-panel-strong) py-8">
+			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-2">
+			<div class="space-y-3">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Approach</p>
+				<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-ink) md:text-3xl">Predictable, compliant, observable.</h2>
+				<ol class="space-y-3 text-(--color-ink-soft)">
 					{steps.map((step, index) => (
-						<li class="flex items-start gap-3">
-							<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-sm font-bold">
+						<li class="flex gap-3 border-t border-(--color-line) pt-3">
+							<div class="flex h-9 w-9 shrink-0 items-center justify-center border border-(--color-line) text-sm font-semibold text-(--color-ink)">
 								{index + 1}
 							</div>
-							<div class="space-y-1">
-								<p class="text-base font-semibold">{step.title}</p>
-								<p class="text-sm leading-6 text-slate-200/80">{step.body}</p>
+							<div>
+								<p class="text-base font-semibold text-(--color-ink)">{step.title}</p>
+								<p class="text-sm leading-6">{step.body}</p>
 							</div>
 						</li>
 					))}
 				</ol>
-				<div class="border-t border-white/10 pt-3 text-sm text-slate-200/80">
-					We slot into your stack and rhythms—Slack, Linear, Notion, or whatever keeps your team aligned.
-					If we spot risk (SSO/SCIM, compliance reviews, data migrations), we surface it in the first week so
-					timelines stay honest.
-				</div>
+				<p class="text-sm text-(--color-ink-soft)">
+					We align with your governance—Slack or Teams, CAB windows, SOC/SOX requirements, ITSM, or vendor security reviews.
+				</p>
 			</div>
-			<div class="flex flex-col gap-4 rounded-3xl border border-white/10 bg-linear-to-br from-emerald-300/10 to-amber-200/10 p-6">
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Recent wins</p>
-				<div class="grid gap-3">
+			<div class="space-y-4">
+				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Selected work</p>
+				<div class="space-y-3">
 					{wins.map((win) => (
-						<div class="rounded-2xl border border-white/15 bg-white/5 p-4">
-							<span class="inline-flex items-center rounded-full bg-amber-300/90 px-2 py-1 text-xs font-bold uppercase tracking-[0.14em] text-slate-900">
-								{win.tag}
-							</span>
-							<h3 class="mt-3 text-lg font-semibold">{win.title}</h3>
-							<p class="text-sm leading-6 text-slate-200/80">{win.body}</p>
+						<div class="space-y-1 border-t border-(--color-line) pt-3">
+							<p class="text-xs font-semibold uppercase tracking-[0.14em] text-(--color-ink-muted)">{win.tag}</p>
+							<h3 class="text-lg font-semibold text-(--color-ink)">{win.title}</h3>
+							<p class="text-sm text-(--color-ink-soft)">{win.body}</p>
 						</div>
 					))}
 				</div>
-				<div class="grid gap-3 border-t border-white/10 pt-4 md:grid-cols-2">
+				<div class="grid gap-3 border-t border-(--color-line) pt-3 text-(--color-ink-soft) md:grid-cols-2">
 					<div>
-						<p class="text-3xl font-semibold leading-none">6–8</p>
-						<p class="text-sm text-slate-200/80">week delivery window for most engagements</p>
+						<p class="text-3xl font-semibold text-(--color-ink)">6–8</p>
+						<p class="text-sm">week window for most pilots</p>
 					</div>
 					<div>
-						<p class="text-3xl font-semibold leading-none">100%</p>
-						<p class="text-sm text-slate-200/80">senior talent; founders build, not account managers</p>
+						<p class="text-3xl font-semibold text-(--color-ink)">100%</p>
+						<p class="text-sm">senior talent; founders build</p>
 					</div>
+				</div>
+			</div>
+			</div>
+		</section>
+
+		<section class="w-full border-b border-(--color-line) bg-(--color-ink) py-8 text-(--color-cream)">
+			<div class="mx-auto flex max-w-5xl flex-col gap-4 px-5">
+				<div class="flex flex-wrap items-start justify-between gap-3">
+					<div>
+						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-cream)/80">Operating guardrails</p>
+						<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-cream) md:text-3xl">What is included by default.</h2>
+					</div>
+					<span class="text-xs font-semibold text-(--color-cream)/80">No add-ons</span>
+				</div>
+				<div class="grid gap-4 md:grid-cols-3">
+					{assurances.map((assurance) => (
+						<div class="space-y-2 border-t border-(--color-cream)/30 pt-3">
+							<h3 class="text-base font-semibold text-(--color-cream)">{assurance.title}</h3>
+							<p class="text-sm text-(--color-cream)/80">{assurance.body}</p>
+						</div>
+					))}
 				</div>
 			</div>
 		</section>
 
-		<section class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-6 py-10">
-			<div
-				aria-hidden="true"
-				class="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(255,180,84,0.12),transparent_45%),radial-gradient(circle_at_80%_60%,rgba(127,231,211,0.12),transparent_40%)]"
-			></div>
-			<div class="relative flex flex-wrap items-center justify-between gap-4">
-				<div class="space-y-1">
-					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Operating principles</p>
-					<h2 class="text-2xl font-semibold md:text-3xl">How we keep momentum without losing rigor.</h2>
+		<section id="about" class="w-full border-b border-(--color-line) bg-(--color-panel) py-8">
+			<div class="mx-auto flex max-w-5xl flex-col gap-6 px-5">
+				<div class="space-y-2">
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Who we are</p>
+					<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-ink) md:text-3xl">Founders stay in the work.</h2>
+					<p class="text-sm leading-7 text-(--color-ink-soft)">
+						G&K Software, LLC is Texas-registered and founder-built. We modernize complex stacks, build internal platforms,
+						and stay hands-on through production.
+					</p>
 				</div>
-				<div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-200/80">
-					<span class="h-2 w-2 animate-pulse rounded-full bg-emerald-300"></span>
-					<span>In production mindset</span>
-				</div>
-			</div>
-			<div class="relative mt-6 grid gap-4 md:grid-cols-3">
-				{accelerators.map((accelerator) => (
-					<article class="flex h-full flex-col justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[0_12px_48px_rgba(0,0,0,0.18)]">
-						<div class="space-y-2">
-							<div class="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-100">
-								Signal
-							</div>
-							<h3 class="text-lg font-semibold">{accelerator.title}</h3>
-							<p class="text-sm leading-6 text-slate-200/80">{accelerator.body}</p>
+				<div class="grid gap-6 md:grid-cols-2">
+					<div class="flex items-start gap-3 border-t border-(--color-line) pt-3">
+							<img src={gibson.src} alt="Gibson Martin" class="h-11 w-11 rounded-full border border-(--color-line) bg-(--color-panel-strong) object-cover" />
+						<div class="space-y-1">
+							<p class="text-base font-semibold text-(--color-ink)">Gibson Martin</p>
+							<p class="text-sm leading-6 text-(--color-ink-soft)">
+								Systems-minded builder focused on data contracts, evented systems, and making ops/audit work visible.
+							</p>
 						</div>
-						<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-100">
-							<span class="h-[5px] w-[5px] rounded-full bg-emerald-300"></span>
-							<span>Shipped weekly</span>
-						</div>
-					</article>
-				))}
-			</div>
-		</section>
-
-		<section id="about" class="rounded-3xl border border-white/10 bg-white/5 px-6 py-10">
-			<div class="max-w-3xl space-y-2">
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Who we are</p>
-				<h2 class="text-2xl font-semibold md:text-3xl">Founders stay in the work.</h2>
-				<p class="text-base leading-7 text-slate-200/80">
-					G&K Software, LLC is Texas-registered and entirely founder-built.
-				</p>
-			</div>
-			<div class="mt-6 grid gap-4 md:grid-cols-2">
-				<div class="flex items-start justify-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-						<img src={gibson.src} alt="Gibson Martin" class="h-11 w-11 rounded-full border border-white/15 bg-white/5 object-cover" />
-					<div class="space-y-1">
-						<p class="text-base font-semibold">Gibson Martin</p>
-						<p class="text-sm leading-6 text-slate-200/80">
-							Systems-minded builder who loves simplifying data flows and making ops painless.
-						</p>
 					</div>
-				</div>
-				<div class="flex items-start justify-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-						<img src={kyle.src} alt="Kyle Dougan" class="h-11 w-11 rounded-full border border-white/15 bg-white/5 object-cover" />
-					<div class="space-y-1">
-						<p class="text-base font-semibold">Kyle Dougan</p>
-						<p class="text-sm leading-6 text-slate-200/80">
-							Full-stack product engineer focused on fast feedback loops and production readiness.
-						</p>
+					<div class="flex items-start gap-3 border-t border-(--color-line) pt-3">
+							<img src={kyle.src} alt="Kyle Dougan" class="h-11 w-11 rounded-full border border-(--color-line) bg-(--color-panel-strong) object-cover" />
+						<div class="space-y-1">
+							<p class="text-base font-semibold text-(--color-ink)">Kyle Dougan</p>
+							<p class="text-sm leading-6 text-(--color-ink-soft)">
+								Full-stack engineer focused on migrations, observability, and putting guardrails in before launch.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -438,44 +281,57 @@ const accelerators = [
 
 		<section
 			id="contact"
-			class="grid gap-4 rounded-3xl border border-white/10 bg-white/5 px-6 py-10 md:grid-cols-[2fr,1fr]"
+			class="w-full bg-(--color-panel-strong) py-8"
 		>
-			<div class="space-y-3">
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-200/70">Let’s talk</p>
-				<h2 class="text-2xl font-semibold md:text-3xl">Need momentum? We can help.</h2>
-				<p class="text-base leading-7 text-slate-200/80">
-					Tell us about your product and timelines. We’ll respond within one business day with next steps.
-				</p>
-				<div class="flex flex-wrap gap-3">
-					<a
-						class="inline-flex items-center justify-center rounded-full bg-linear-to-r from-amber-300 to-amber-500 px-5 py-3 text-sm font-semibold text-slate-900 shadow-[0_12px_38px_rgba(255,180,84,0.45)] transition hover:brightness-105"
-						href="mailto:hello@gnksoftware.com?subject=Intro%20call%20request"
-					>
-						Book an intro call
-					</a>
-					<a
-						class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/30"
-						href="mailto:hello@gnksoftware.com?subject=Project%20details"
-					>
-						Send project details
-					</a>
+			<div class="mx-auto flex max-w-5xl flex-col gap-6 px-5">
+				<div class="space-y-3">
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Let’s talk</p>
+					<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-ink) md:text-3xl">Modernizing a critical system?</h2>
+					<p class="text-sm leading-7 text-(--color-ink-soft)">
+						Share the system, constraints, and timelines. We respond within one business day with a pilot proposal and
+						procurement-ready next steps.
+					</p>
+					<div class="flex flex-wrap gap-3">
+						<a
+							class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-5 py-3 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+							href="mailto:hello@gnksoftware.com?subject=Assessment%20request"
+						>
+							Schedule an assessment
+						</a>
+						<a
+							class="inline-flex items-center justify-center border border-(--color-line) bg-(--color-panel) px-5 py-3 text-sm font-semibold text-(--color-ink) transition hover:border-(--color-ink-muted)"
+							href="mailto:hello@gnksoftware.com?subject=System%20overview"
+						>
+							Send system overview
+						</a>
+					</div>
 				</div>
-			</div>
-			<div class="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-slate-200/80">
-				<p>Registered in Texas. Remote-first globally.</p>
-				<p>Email: <a href="mailto:hello@gnksoftware.com">hello@gnksoftware.com</a></p>
+				<div class="grid gap-4 md:grid-cols-2">
+					<div class="space-y-2 border-t border-(--color-line) pt-3 text-sm text-(--color-ink-soft)">
+						<p class="font-semibold text-(--color-ink)">Registered in Texas. Remote-first globally.</p>
+						<p>Procurement-ready: security questionnaires, MSAs, SOC/SOX alignment.</p>
+						<p>Email: <a class="underline decoration-(--color-ink) underline-offset-2" href="mailto:hello@gnksoftware.com">hello@gnksoftware.com</a></p>
+					</div>
+					<div class="space-y-2 border-t border-(--color-line) pt-3 text-sm text-(--color-ink-soft)">
+						<p class="font-semibold text-(--color-ink)">Response time</p>
+						<p>&lt; 2 hours during business hours.</p>
+						<p>Channels: Email, Slack/Teams bridge on request.</p>
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<footer class="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-200/70">
-			<div>
-				<p class="font-semibold uppercase tracking-[0.18em]">G&K Software, LLC</p>
-				<p>Texas registered. Built by Gibson Martin and Kyle Dougan.</p>
-			</div>
-			<div class="flex flex-wrap items-center gap-3">
-				<a class="font-semibold text-slate-200/80 hover:text-white" href="/">Home</a>
-				<a class="font-semibold text-slate-200/80 hover:text-white" href="/#about">About</a>
-				<a class="font-semibold text-slate-200/80 hover:text-white" href="mailto:hello@gnksoftware.com">Contact</a>
+		<footer class="w-full border-t border-(--color-line) pt-6">
+			<div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-5 text-sm text-(--color-ink-soft)">
+				<div>
+					<p class="font-semibold uppercase tracking-[0.18em] text-(--color-ink)">G&K Software, LLC</p>
+					<p>Texas registered. Built by Gibson Martin and Kyle Dougan.</p>
+				</div>
+				<div class="flex flex-wrap items-center gap-3">
+					<a class="font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/">Home</a>
+					<a class="font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#about">About</a>
+					<a class="font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="mailto:hello@gnksoftware.com">Contact</a>
+				</div>
 			</div>
 		</footer>
 	</main>
