@@ -3,65 +3,90 @@ import Layout from '../layouts/Layout.astro';
 import gibson from '../assets/gibson.png';
 import kyle from '../assets/kyle.png';
 
-const services = [
+const taglines = [
+	'Modernization done safely, reliably, and without disruption.',
+	'Future-ready systems for organizations that can’t afford downtime.',
+	'From legacy complexity to operational clarity.',
+];
+
+const whatWeDo = [
 	{
-		title: 'Legacy modernization',
-		body: 'Wrap or replace mainframe, COBOL, or Access workloads with stable services.',
-		items: ['Strangler patterns and APIs with contracts', 'Logging, tracing, and dashboards from day one', 'Cutovers with rollback and DR paths'],
+		title: 'System Modernization',
+		items: [
+			'Modernization strategy and roadmap development',
+			'Incremental migration approaches that reduce operational risk',
+			'Replatforming and refactoring aging systems',
+			'Service-boundary identification and modularization',
+			'Data migration planning and execution',
+			'API modernization and interface redesign',
+		],
 	},
 	{
-		title: 'Internal platforms',
-		body: 'Dashboards, approvals, and automation aligned with IT and audit.',
-		items: ['Workflow orchestration and queues', 'SSO/SCIM, RBAC, audit logging', 'Data reconciliation and alerts'],
+		title: 'Enterprise Backend Development',
+		items: [
+			'Backend systems for high-throughput, high-availability operations',
+			'Automated workflows and internal tools',
+			'Job orchestration, data processing, and pipeline design',
+			'Secure, compliance-aware application development',
+			'Reliability, performance, and maintainability improvements',
+		],
 	},
 	{
-		title: 'Advisory & program leadership',
-		body: 'Hands-on architecture and delivery guidance to keep initiatives on track.',
-		items: ['Roadmaps and governance across vendors', 'Production reviews and runbooks', 'Vendor evaluations and onboarding'],
+		title: 'Legacy System Integration',
+		items: [
+			'Bridging legacy systems with new platforms',
+			'Standardizing interfaces and communication patterns',
+			'Message queues, event-driven workflows, and interoperability layers',
+			'Observability, logging, auditing, and stability upgrades',
+		],
 	},
 ];
 
-const steps = [
+const industries = [
+	'Banking, payments, financial services',
+	'Insurance',
+	'Logistics, warehousing, supply chain',
+	'Healthcare and medical systems',
+	'Government, public sector, agencies',
+	'Large-scale enterprise operations',
+];
+
+const reasons = [
 	{
-		title: 'Assessment',
-		body: 'Interview SMEs, map systems and risks, and define a pilot with a contained scope.',
+		title: 'Reliable Execution',
+		body: 'Clear planning, predictable delivery schedules, and transparent communication throughout every phase of the project.',
 	},
 	{
-		title: 'Pilot & validate',
-		body: 'Ship the first slice in production behind flags with monitoring and DR rehearsed.',
+		title: 'Low-Risk Modernization',
+		body: 'We prioritize business continuity—modernizing incrementally, preserving existing workflows, and avoiding downtime.',
 	},
 	{
-		title: 'Rollout & transition',
-		body: 'Tighten controls, train teams, and hand over so your staff can operate confidently.',
+		title: 'Broad Enterprise Experience',
+		body: 'Comfortable working with long-running systems, strict compliance environments, and established operational processes.',
+	},
+	{
+		title: 'Flexible Engagement',
+		body: 'We can lead modernization initiatives, support existing teams, or partner with system integrators.',
 	},
 ];
 
-const wins = [
-	{
-		tag: 'Legacy cutover',
-		title: 'Mainframe to services',
-		body: 'Wrapped COBOL batch jobs with APIs, enabling phased migration while meeting SLAs.',
-	},
-	{
-		tag: 'Internal tooling',
-		title: 'Finance controls hub',
-		body: 'Built approvals, audit trails, and reporting for finance to pass SOC/SOX reviews on first pass.',
-	},
+const engagementModels = [
+	'Modernization initiatives: targeted upgrades, migrations, or restructuring of legacy systems.',
+	'Backend system development: design and delivery of new enterprise systems and internal tools.',
+	'Integration projects: connecting platforms, streamlining data flows, and reducing fragmentation.',
+	'Architecture and codebase assessments: rapid evaluations of risk, stability, technical debt, and modernization options.',
 ];
 
-const assurances = [
-	{
-		title: 'Governance ready',
-		body: 'Works with CAB windows, ITSM, procurement, and security reviews.',
-	},
-	{
-		title: 'Controls included',
-		body: 'SSO/SCIM, RBAC, audit logging, and change history are default.',
-	},
-	{
-		title: 'Operational handover',
-		body: 'Runbooks, SLOs, DR tests, and clear owners before we exit.',
-	},
+const capabilities = [
+	'Legacy system analysis',
+	'Data migration and modeling',
+	'API modernization',
+	'Distributed backend architectures',
+	'Secure system design',
+	'Workflow automation',
+	'Performance tuning',
+	'CI/CD and deployment automation',
+	'Compliance-aware development (finance, healthcare, gov)',
 ];
 
 const stats = [
@@ -69,107 +94,112 @@ const stats = [
 	{ label: 'Pilot live', value: '6–8 weeks', hint: 'One critical flow in production behind flags.' },
 	{ label: 'Response time', value: '< 2 hrs', hint: 'Direct access to the founders.' },
 ];
+
+const shortBlurbs = [
+	'Modernization without disruption.',
+	'Enterprise systems built for longevity.',
+	'Dependable engineering for critical operations.',
+	'Upgrade the system—preserve the business logic.',
+];
 ---
 
 <Layout
 	title="G&K Software, LLC — Modernization and internal tooling for enterprise teams"
 	description="Founding engineers modernizing legacy systems and building internal platforms with clear governance and production standards."
 >
-	<main class="flex w-full flex-col gap-10 pb-20 pt-8 md:gap-12">
-		<header class="w-full border-b border-(--color-line) pb-5">
+	<main class="flex w-full flex-col gap-10 pb-20 md:gap-12">
+		<header class="w-full border-b border-(--color-line) pb-5 sticky top-0 bg-(--color-panel) z-10 shadow-(--shadow-soft) pt-4">
 			<div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-5">
 				<div class="flex items-center gap-3">
-				<span
-					class="flex h-11 w-11 items-center justify-center rounded-xl border border-(--color-ink) bg-(--color-ink) text-sm font-black text-(--color-cream)"
-				>
-					G&K
-				</span>
-				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">G&K Software, LLC</p>
-					<p class="text-sm text-(--color-ink-soft)">Modernization and internal tooling for enterprises</p>
+					<span
+						class="flex h-11 w-11 items-center justify-center rounded-xl border border-(--color-ink) bg-(--color-ink) text-sm font-black text-(--color-cream)"
+					>
+						G&K
+					</span>
+					<div>
+						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">G&K Software, LLC</p>
+						<p class="text-sm text-(--color-ink-soft)">Modernization and internal tooling for enterprises</p>
+					</div>
 				</div>
-			</div>
-			<div class="flex flex-wrap items-center gap-3">
-				<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#services">Services</a>
-				<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#approach">Approach</a>
-				<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#about">About</a>
-				<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#contact">Contact</a>
-				<a
-					class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-4 py-2 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
-					href="mailto:hello@gnksoftware.com"
-				>
-					Email
-				</a>
-			</div>
+				<div class="flex flex-wrap items-center gap-3">
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#services">Services</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#approach">Approach</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#about">About</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#contact">Contact</a>
+					<a
+						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-4 py-2 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+						href="mailto:hello@gnksoftware.com"
+					>
+						Email
+					</a>
+				</div>
 			</div>
 		</header>
 
-		<section class="w-full border-b border-(--color-line) bg-(--color-panel) py-8">
+		<section class="w-full border-b border-(--color-line) bg-(--color-panel) py-8 shadow-(--shadow-soft)">
 			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[1.2fr,0.8fr]">
-			<div class="space-y-5">
-				<h1 class="font-['DM_Serif_Display'] text-3xl leading-tight text-(--color-ink) md:text-4xl">
-					Modernize critical systems with steady, production-first delivery.
-				</h1>
-				<p class="text-base leading-7 text-(--color-ink-soft)">
-					We are Gibson Martin and Kyle Dougan. We run modernization and internal tooling projects with clear owners,
-					disciplined communication, and production standards from day one.
-				</p>
-				<div class="flex flex-wrap gap-3">
-					<a
-						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-5 py-3 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
-						href="mailto:hello@gnksoftware.com?subject=Assessment%20request"
-					>
-						Request an assessment
-					</a>
-					<a
-						class="inline-flex items-center justify-center border border-(--color-line) bg-(--color-panel-strong) px-5 py-3 text-sm font-semibold text-(--color-ink) transition hover:border-(--color-ink-muted)"
-						href="#services"
-					>
-						View services
-					</a>
-				</div>
-				<ul class="grid gap-2 text-sm text-(--color-ink-soft) md:grid-cols-2">
-					<li class="border-t border-(--color-line) pt-2">Direct access to the founders</li>
-					<li class="border-t border-(--color-line) pt-2">Works with IT, security, and audit</li>
-					<li class="border-t border-(--color-line) pt-2">Runbooks and observability included</li>
-					<li class="border-t border-(--color-line) pt-2">Risk surfaced in week one</li>
-				</ul>
-			</div>
-			<div class="space-y-4 text-sm text-(--color-ink-soft)">
-				{stats.map((stat) => (
-					<div class="border-t border-(--color-line) pt-3">
-						<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">{stat.label}</p>
-						<p class="text-2xl font-semibold text-(--color-ink)">{stat.value}</p>
-						<p>{stat.hint}</p>
+				<div class="space-y-5">
+					<h1 class="font-['DM_Serif_Display'] text-3xl leading-tight text-(--color-ink) md:text-4xl">
+						Modernization done safely, reliably, and without disruption.
+					</h1>
+					<p class="text-base leading-7 text-(--color-ink-soft)">
+						We help enterprises modernize legacy systems, strengthen backend operations, and deliver dependable, long-lived software.
+						Our work supports critical processes in finance, logistics, healthcare, and other high-reliability industries.
+					</p>
+					<ul class="space-y-2 text-sm text-(--color-ink-soft)">
+						{taglines.map((line) => (
+							<li class="border-t border-(--color-line) pt-2">{line}</li>
+						))}
+					</ul>
+					<div class="flex flex-wrap gap-3">
+						<a
+							class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-5 py-3 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+							href="mailto:hello@gnksoftware.com?subject=Assessment%20request"
+						>
+							Request an assessment
+						</a>
+						<a
+							class="inline-flex items-center justify-center border border-(--color-line) bg-(--color-panel-strong) px-5 py-3 text-sm font-semibold text-(--color-ink) transition hover:border-(--color-ink-muted)"
+							href="#services"
+						>
+							View services
+						</a>
 					</div>
-				))}
-				<div class="border-t border-(--color-line) pt-3">
-					Caveats we surface early: data migrations, SSO/SCIM, compliance reviews, vendor approvals, and cross-team dependencies.
 				</div>
-			</div>
+				<div class="space-y-4 text-sm text-(--color-ink-soft)">
+					{stats.map((stat) => (
+						<div class="border-t border-(--color-line) pt-3">
+							<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">{stat.label}</p>
+							<p class="text-2xl font-semibold text-(--color-ink)">{stat.value}</p>
+							<p>{stat.hint}</p>
+						</div>
+					))}
+					<div class="border-t border-(--color-line) pt-3">
+						Caveats we surface early: data migrations, SSO/SCIM, compliance reviews, vendor approvals, and cross-team dependencies.
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<section id="services" class="w-full border-b border-(--color-line) bg-(--color-panel) py-8">
+		<section id="services" class="w-full border-b border-(--color-line) bg-(--color-panel) py-8 shadow-(--shadow-soft)">
 			<div class="mx-auto flex max-w-5xl flex-col gap-4 px-5">
 				<div class="flex flex-wrap items-start justify-between gap-3">
 					<div>
-						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Capabilities</p>
-						<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-ink) md:text-3xl">Modernization with senior ownership.</h2>
-						<p class="text-sm text-(--color-ink-soft)">Plain communication, predictable delivery, and governance-ready controls.</p>
+						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">What we do</p>
+						<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-ink) md:text-3xl">From legacy complexity to operational clarity.</h2>
+						<p class="text-sm text-(--color-ink-soft)">Modernization and backend delivery for teams that cannot afford downtime.</p>
 					</div>
 					<span class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Pilots in weeks</span>
 				</div>
-				<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-					{services.map((service) => (
+				<div class="grid gap-4 md:grid-cols-3">
+					{whatWeDo.map((item) => (
 						<article class="flex h-full flex-col gap-3 border-t border-(--color-line) pt-3">
-							<h3 class="text-lg font-semibold text-(--color-ink)">{service.title}</h3>
-							<p class="text-sm text-(--color-ink-soft)">{service.body}</p>
+							<h3 class="text-lg font-semibold text-(--color-ink)">{item.title}</h3>
 							<ul class="space-y-2 text-sm text-(--color-ink-soft)">
-								{service.items.map((item) => (
+								{item.items.map((line) => (
 									<li class="flex items-start gap-2">
 										<span class="mt-1.5 h-2 w-2 rounded-full bg-(--color-ink)"></span>
-										<span>{item}</span>
+										<span>{line}</span>
 									</li>
 								))}
 							</ul>
@@ -179,86 +209,91 @@ const stats = [
 			</div>
 		</section>
 
-		<section id="approach" class="w-full border-b border-(--color-line) bg-(--color-panel-strong) py-8">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-2">
-			<div class="space-y-3">
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Approach</p>
-				<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-ink) md:text-3xl">Predictable, compliant, observable.</h2>
-				<ol class="space-y-3 text-(--color-ink-soft)">
-					{steps.map((step, index) => (
-						<li class="flex gap-3 border-t border-(--color-line) pt-3">
-							<div class="flex h-9 w-9 shrink-0 items-center justify-center border border-(--color-line) text-sm font-semibold text-(--color-ink)">
-								{index + 1}
-							</div>
-							<div>
-								<p class="text-base font-semibold text-(--color-ink)">{step.title}</p>
-								<p class="text-sm leading-6">{step.body}</p>
-							</div>
-						</li>
-					))}
-				</ol>
-				<p class="text-sm text-(--color-ink-soft)">
-					We align with your governance—Slack or Teams, CAB windows, SOC/SOX requirements, ITSM, or vendor security reviews.
-				</p>
-			</div>
-			<div class="space-y-4">
-				<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Selected work</p>
-				<div class="space-y-3">
-					{wins.map((win) => (
-						<div class="space-y-1 border-t border-(--color-line) pt-3">
-							<p class="text-xs font-semibold uppercase tracking-[0.14em] text-(--color-ink-muted)">{win.tag}</p>
-							<h3 class="text-lg font-semibold text-(--color-ink)">{win.title}</h3>
-							<p class="text-sm text-(--color-ink-soft)">{win.body}</p>
-						</div>
-					))}
-				</div>
-				<div class="grid gap-3 border-t border-(--color-line) pt-3 text-(--color-ink-soft) md:grid-cols-2">
-					<div>
-						<p class="text-3xl font-semibold text-(--color-ink)">6–8</p>
-						<p class="text-sm">week window for most pilots</p>
-					</div>
-					<div>
-						<p class="text-3xl font-semibold text-(--color-ink)">100%</p>
-						<p class="text-sm">senior talent; founders build</p>
-					</div>
-				</div>
-			</div>
-			</div>
-		</section>
-
-		<section class="w-full border-b border-(--color-line) bg-(--color-ink) py-8 text-(--color-cream)">
+		<section class="w-full border-b border-(--color-line) bg-(--color-panel-strong) py-8 shadow-(--shadow-soft)">
 			<div class="mx-auto flex max-w-5xl flex-col gap-4 px-5">
 				<div class="flex flex-wrap items-start justify-between gap-3">
 					<div>
-						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-cream)/80">Operating guardrails</p>
+						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Industries we support</p>
+						<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-ink) md:text-3xl">Built for high-reliability environments.</h2>
+					</div>
+				</div>
+				<div class="grid gap-2 text-sm text-(--color-ink-soft) md:grid-cols-2">
+					{industries.map((industry) => (
+						<div class="border-t border-(--color-line) pt-2">{industry}</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section id="approach" class="w-full border-b border-(--color-line) bg-(--color-panel-strong) py-8 shadow-(--shadow-soft)">
+			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-2">
+				<div class="space-y-3">
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Why organizations choose G&K</p>
+					<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-ink) md:text-3xl">Reliable, low-risk execution.</h2>
+					<ol class="space-y-3 text-(--color-ink-soft)">
+						{reasons.map((reason, index) => (
+							<li class="flex gap-3 border-t border-(--color-line) pt-3">
+								<div class="flex h-9 w-9 shrink-0 items-center justify-center border border-(--color-line) text-sm font-semibold text-(--color-ink)">
+									{index + 1}
+								</div>
+								<div>
+									<p class="text-base font-semibold text-(--color-ink)">{reason.title}</p>
+									<p class="text-sm leading-6">{reason.body}</p>
+								</div>
+							</li>
+						))}
+					</ol>
+				</div>
+				<div class="space-y-4">
+					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Engagement models</p>
+					<div class="space-y-3 text-sm text-(--color-ink-soft)">
+						{engagementModels.map((model) => (
+							<p class="border-t border-(--color-line) pt-3">{model}</p>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="w-full border-b border-(--color-line) bg-(--color-ink) py-8 text-(--color-cream) shadow-(--shadow-soft)">
+			<div class="mx-auto flex max-w-5xl flex-col gap-4 px-5">
+				<div class="flex flex-wrap items-start justify-between gap-3">
+					<div>
+						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-cream)/80">Capabilities</p>
 						<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-cream) md:text-3xl">What is included by default.</h2>
 					</div>
 					<span class="text-xs font-semibold text-(--color-cream)/80">No add-ons</span>
 				</div>
-				<div class="grid gap-4 md:grid-cols-3">
-					{assurances.map((assurance) => (
-						<div class="space-y-2 border-t border-(--color-cream)/30 pt-3">
-							<h3 class="text-base font-semibold text-(--color-cream)">{assurance.title}</h3>
-							<p class="text-sm text-(--color-cream)/80">{assurance.body}</p>
-						</div>
+				<div class="grid gap-3 md:grid-cols-2">
+					{capabilities.map((capability) => (
+						<p class="border-t border-(--color-cream)/30 pt-3 text-sm text-(--color-cream)/90">{capability}</p>
 					))}
 				</div>
 			</div>
 		</section>
 
-		<section id="about" class="w-full border-b border-(--color-line) bg-(--color-panel) py-8">
+		<section class="w-full border-b border-(--color-line) bg-(--color-panel-strong) py-6 shadow-(--shadow-soft)">
+			<div class="mx-auto flex max-w-5xl flex-wrap gap-3 px-5 text-sm text-(--color-ink-soft)">
+				{shortBlurbs.map((blurb) => (
+					<span class="border border-(--color-line) px-3 py-1">{blurb}</span>
+				))}
+			</div>
+		</section>
+
+		<section id="about" class="w-full border-b border-(--color-line) bg-(--color-panel) py-8 shadow-(--shadow-soft)">
 			<div class="mx-auto flex max-w-5xl flex-col gap-6 px-5">
 				<div class="space-y-2">
 					<p class="text-xs font-semibold uppercase tracking-[0.22em] text-(--color-ink-muted)">Who we are</p>
 					<h2 class="font-['DM_Serif_Display'] text-2xl text-(--color-ink) md:text-3xl">Founders stay in the work.</h2>
 					<p class="text-sm leading-7 text-(--color-ink-soft)">
-						G&K Software, LLC is Texas-registered and founder-built. We modernize complex stacks, build internal platforms,
-						and stay hands-on through production.
+						G&K Software LLC is a remote-first engineering company focused on modernization and core backend development. We work with
+						organizations that depend on stable, long-lived systems and need a reliable partner to help them evolve their technology safely
+						and effectively.
 					</p>
 				</div>
 				<div class="grid gap-6 md:grid-cols-2">
 					<div class="flex items-start gap-3 border-t border-(--color-line) pt-3">
-							<img src={gibson.src} alt="Gibson Martin" class="h-11 w-11 rounded-full border border-(--color-line) bg-(--color-panel-strong) object-cover" />
+						<img src={gibson.src} alt="Gibson Martin" class="h-11 w-11 rounded-full border border-(--color-line) bg-(--color-panel-strong) object-cover" />
 						<div class="space-y-1">
 							<p class="text-base font-semibold text-(--color-ink)">Gibson Martin</p>
 							<p class="text-sm leading-6 text-(--color-ink-soft)">
@@ -267,7 +302,7 @@ const stats = [
 						</div>
 					</div>
 					<div class="flex items-start gap-3 border-t border-(--color-line) pt-3">
-							<img src={kyle.src} alt="Kyle Dougan" class="h-11 w-11 rounded-full border border-(--color-line) bg-(--color-panel-strong) object-cover" />
+						<img src={kyle.src} alt="Kyle Dougan" class="h-11 w-11 rounded-full border border-(--color-line) bg-(--color-panel-strong) object-cover" />
 						<div class="space-y-1">
 							<p class="text-base font-semibold text-(--color-ink)">Kyle Dougan</p>
 							<p class="text-sm leading-6 text-(--color-ink-soft)">
@@ -281,7 +316,7 @@ const stats = [
 
 		<section
 			id="contact"
-			class="w-full bg-(--color-panel-strong) py-8"
+			class="w-full bg-(--color-panel-strong) py-8 shadow-(--shadow-soft) md:rounded-lg"
 		>
 			<div class="mx-auto flex max-w-5xl flex-col gap-6 px-5">
 				<div class="space-y-3">
