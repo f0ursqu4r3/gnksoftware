@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 
+import  SpeedInsights  from "@vercel/speed-insights/astro"
+
 type Props = {
 	title?: string;
 	description?: string;
@@ -32,5 +34,14 @@ const {
 		class="m-0 min-h-screen bg-[radial-gradient(circle_at_20%_20%,rgba(255,180,84,0.08),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(127,231,211,0.08),transparent_32%),radial-gradient(circle_at_60%_70%,rgba(119,155,255,0.08),transparent_28%),linear-gradient(145deg,#0b1224_0%,#0c1327_40%,#0f1835_100%)] text-white font-['Space_Grotesk','Manrope',system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI',sans-serif] antialiased selection:bg-amber-300/30 selection:text-white"
 	>
 		<slot />
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-R3LS6JX6PZ"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-R3LS6JX6PZ');
+		</script>
+		<SpeedInsights />
 	</body>
 </html>
