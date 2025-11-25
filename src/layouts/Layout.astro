@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 import  SpeedInsights  from "@vercel/speed-insights/astro"
+import Analytics from '@vercel/analytics/astro'
 
 type Props = {
 	title?: string;
@@ -10,7 +11,7 @@ type Props = {
 
 const {
 	title = 'G&K Software, LLC',
-	description = 'Software studio building reliable web products, platforms, and internal tools.',
+	description = 'Enterprise modernization and internal tooling without the agency theater.',
 } = Astro.props;
 ---
 
@@ -18,20 +19,20 @@ const {
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&family=Work+Sans:wght@400;500;600;700&display=swap"
+		rel="stylesheet"
+	/>
+</head>
 	<body
-		class="m-0 min-h-screen bg-[radial-gradient(circle_at_20%_20%,rgba(255,180,84,0.08),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(127,231,211,0.08),transparent_32%),radial-gradient(circle_at_60%_70%,rgba(119,155,255,0.08),transparent_28%),linear-gradient(145deg,#0b1224_0%,#0c1327_40%,#0f1835_100%)] text-white font-['Space_Grotesk','Manrope',system-ui,-apple-system,BlinkMacSystemFont,'Segoe_UI',sans-serif] antialiased selection:bg-amber-300/30 selection:text-white"
+		class="m-0 min-h-screen bg-[var(--color-cream)] text-[var(--color-ink)] font-[var(--font-sans)] antialiased selection:bg-[var(--color-line)] selection:text-black"
 	>
 		<slot />
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-R3LS6JX6PZ"></script>
@@ -43,5 +44,6 @@ const {
 			gtag('config', 'G-R3LS6JX6PZ');
 		</script>
 		<SpeedInsights />
+		<Analytics />
 	</body>
 </html>
