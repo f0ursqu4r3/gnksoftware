@@ -1,0 +1,55 @@
+---
+const measurementId = 'G-R3LS6JX6PZ';
+---
+
+<script is:inline define:vars={{ measurementId }}>
+	const GA_ID = measurementId;
+
+	const injectGtag = () => {
+		if (window.gtag) {
+			window.gtag('config', GA_ID);
+			return;
+		}
+
+		window.dataLayer = window.dataLayer || [];
+		window.gtag = function gtag(){
+			window.dataLayer.push(arguments);
+		};
+
+		const script = document.createElement('script');
+		script.async = true;
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+		script.addEventListener('load', () => {
+			window.gtag('js', new Date());
+			window.gtag('config', GA_ID);
+		});
+		document.head.appendChild(script);
+	};
+
+	// Delay GA bootstrapping until the Vercel analytics script has had a chance to register.
+	const waitForAnalytics = () => {
+		const hasAnalytics = () => typeof window.va !== 'undefined' || document.querySelector('script[src*="vercel.com"]');
+
+		if (hasAnalytics()) {
+			return Promise.resolve();
+		}
+
+		return new Promise((resolve) => {
+			let attempts = 0;
+			const maxAttempts = 60; // ~1s
+
+			const check = () => {
+				attempts += 1;
+				if (hasAnalytics() || attempts >= maxAttempts) {
+					resolve();
+					return;
+				}
+				requestAnimationFrame(check);
+			};
+
+			requestAnimationFrame(check);
+		});
+	};
+
+	waitForAnalytics().then(injectGtag);
+</script>
