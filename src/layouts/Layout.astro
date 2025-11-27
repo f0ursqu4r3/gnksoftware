@@ -4,16 +4,26 @@ import "../styles/global.css";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import Analytics from '@vercel/analytics/astro';
 import GTag from '../components/GTag.astro';
+import previewImage from '../assets/gnk.png';
 
 type Props = {
 	title?: string;
 	description?: string;
+	image?: string;
 };
 
 const {
 	title = 'G&K Software, LLC',
 	description = 'Enterprise modernization and internal tooling without the agency theater.',
+	image: providedImage,
 } = Astro.props;
+
+const defaultPreview = Astro.site
+	? new URL(previewImage.src, Astro.site).href
+	: previewImage.src;
+
+const image = providedImage ?? defaultPreview;
+const imageAlt = 'G&K Software wordmark over neutral background';
 
 ---
 
@@ -21,18 +31,32 @@ const {
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="generator" content={Astro.generator} />
-	<title>{title}</title>
-	<meta name="description" content={description} />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-		href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&family=Work+Sans:wght@400;500;600;700&display=swap"
-		rel="stylesheet"
-	/>
-</head>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:image:alt" content={imageAlt} />
+		{Astro.url && <meta property="og:url" content={Astro.url.href} />}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:image:alt" content={imageAlt} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&family=Work+Sans:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
 	<body
 		class="m-0 min-h-screen bg-(--color-cream) text-(--color-ink) font-(--font-sans) antialiased selection:bg-(--color-line) selection:text-black"
 	>
