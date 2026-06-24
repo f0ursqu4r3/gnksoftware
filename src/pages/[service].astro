@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getRelatedServices, getServiceMailto, services, type Service } from '../data/services';
+
+export function getStaticPaths() {
+	return services.map((service) => ({
+		params: { service: service.slug },
+		props: { service },
+	}));
+}
+
+const { service } = Astro.props as { service: Service };
+const relatedServices = getRelatedServices(service);
+const serviceMailto = getServiceMailto(service);
+---
+
+<Layout title={`${service.title} | G&K Software`} description={service.metaDescription}>
+	<main class="flex w-full flex-col pb-16">
+		<header
+			class="sticky top-0 z-10 w-full border-b border-(--color-line) bg-(--color-panel)/95 py-4 shadow-(--shadow-soft) backdrop-blur"
+		>
+			<div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-5">
+				<a class="flex items-center gap-3" href="/" aria-label="G&K Software home">
+					<span
+						class="flex h-11 w-11 items-center justify-center border border-(--color-ink) bg-(--color-ink) text-sm font-black text-(--color-cream)"
+					>
+						G&K
+					</span>
+					<span>
+						<span class="block text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">G&K Software</span>
+						<span class="block text-sm text-(--color-ink-soft)">Development shop</span>
+					</span>
+				</a>
+				<nav class="flex flex-wrap items-center gap-3" aria-label="Service page navigation">
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#services">Services</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#founders">Founders</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#contact">Contact</a>
+					<a
+						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-4 py-2 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+						href={serviceMailto}
+					>
+						Start a conversation
+					</a>
+				</nav>
+			</div>
+		</header>
+
+		<section class="border-b border-(--color-line) bg-(--color-panel) py-12">
+			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[1.25fr,0.75fr]">
+				<div class="space-y-5">
+					<a class="text-sm font-semibold text-(--color-ink-muted) underline underline-offset-4" href="/">Back to G&K Software</a>
+					<h1 class="font-['DM_Serif_Display'] text-4xl leading-tight text-(--color-ink) md:text-6xl">{service.title}</h1>
+					<p class="max-w-3xl text-2xl leading-tight text-(--color-ink)">{service.promise}</p>
+					<p class="max-w-3xl text-base leading-7 text-(--color-ink-soft)">{service.description}</p>
+					<a
+						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-5 py-3 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+						href={serviceMailto}
+					>
+						Discuss this work
+					</a>
+				</div>
+				<aside class="border-t border-(--color-line) pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
+					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Typical work</p>
+					<ul class="mt-4 space-y-3 text-sm leading-6 text-(--color-ink-soft)">
+						{service.homepageBullets.map((bullet) => <li class="border-t border-(--color-line) pt-3">{bullet}</li>)}
+					</ul>
+				</aside>
+			</div>
+		</section>
+
+		<section class="border-b border-(--color-line) bg-(--color-panel-strong) py-10">
+			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[0.75fr,1.25fr]">
+				<div>
+					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Good fit when</p>
+					<h2 class="mt-2 font-['DM_Serif_Display'] text-3xl text-(--color-ink)">This is the right lane.</h2>
+				</div>
+				<ul class="grid gap-3 text-sm leading-6 text-(--color-ink-soft) md:grid-cols-2">
+					{service.goodFit.map((item) => <li class="border-t border-(--color-line) pt-3">{item}</li>)}
+				</ul>
+			</div>
+		</section>
+
+		<section class="border-b border-(--color-line) bg-(--color-ink) py-10 text-(--color-cream)">
+			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-2">
+				<div class="space-y-4">
+					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-cream)/75">What we build</p>
+					<h2 class="font-['DM_Serif_Display'] text-3xl">Concrete deliverables, not vague capacity.</h2>
+					<ul class="space-y-3 text-sm leading-6 text-(--color-cream)/90">
+						{service.builds.map((item) => <li class="border-t border-(--color-cream)/30 pt-3">{item}</li>)}
+					</ul>
+				</div>
+				<div class="space-y-4">
+					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-cream)/75">How we work</p>
+					<h2 class="font-['DM_Serif_Display'] text-3xl">Small-team execution with visible decisions.</h2>
+					<ul class="space-y-3 text-sm leading-6 text-(--color-cream)/90">
+						{service.howWeWork.map((item) => <li class="border-t border-(--color-cream)/30 pt-3">{item}</li>)}
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="border-b border-(--color-line) bg-(--color-panel) py-10">
+			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[0.75fr,1.25fr]">
+				<div>
+					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Typical projects</p>
+					<h2 class="mt-2 font-['DM_Serif_Display'] text-3xl text-(--color-ink)">Work we can step into.</h2>
+				</div>
+				<ul class="grid gap-3 text-sm leading-6 text-(--color-ink-soft) md:grid-cols-2">
+					{service.typicalProjects.map((item) => <li class="border-t border-(--color-line) pt-3">{item}</li>)}
+				</ul>
+			</div>
+		</section>
+
+		<section class="bg-(--color-panel-strong) py-10">
+			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[1fr,1fr]">
+				<div class="space-y-3">
+					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Related practices</p>
+					<h2 class="font-['DM_Serif_Display'] text-3xl text-(--color-ink)">Adjacent work often matters.</h2>
+					<div class="flex flex-wrap gap-3">
+						{relatedServices.map((related) => (
+							<a
+								class="border border-(--color-line) bg-(--color-panel) px-3 py-2 text-sm font-semibold text-(--color-ink) hover:border-(--color-ink-muted)"
+								href={`/${related.slug}`}
+							>
+								{related.title}
+							</a>
+						))}
+					</div>
+				</div>
+				<div class="space-y-3 border-t border-(--color-line) pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
+					<h2 class="font-['DM_Serif_Display'] text-3xl text-(--color-ink)">Have a project in this lane?</h2>
+					<p class="text-sm leading-7 text-(--color-ink-soft)">
+						Send the current state, what is blocked, and what a useful first milestone would look like. We will respond with a practical
+						next step.
+					</p>
+					<a
+						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-5 py-3 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+						href={serviceMailto}
+					>
+						Email G&K about {service.shortTitle.toLowerCase()}
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
