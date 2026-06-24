@@ -1,8 +1,14 @@
 type Point = {
+	cluster: number;
 	phase: number;
 	radius: number;
 	x: number;
 	y: number;
+};
+
+type Link = {
+	from: number;
+	to: number;
 };
 
 const synapseRoot = document.querySelector('[data-synapse-field]');
@@ -15,23 +21,121 @@ if (synapseRoot instanceof HTMLElement && synapseCanvas instanceof HTMLCanvasEle
 	const state = { height: 1, running: false, width: 1 };
 	let frame = 0;
 	let points: Point[] = [];
+	let links: Link[] = [];
 
 	const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 	const distance = (a: { x: number; y: number }, b: { x: number; y: number }) => Math.hypot(a.x - b.x, a.y - b.y);
 
 	const buildPoints = () => {
-		const count = state.width < 720 ? 18 : 28;
-		points = Array.from({ length: count }, (_, index) => {
-			const column = index % 7;
-			const row = Math.floor(index / 7);
-			const jitter = Math.sin(index * 12.9898) * 0.5 + 0.5;
-			return {
-				phase: index * 0.73,
-				radius: 1.8 + (index % 4) * 0.45,
-				x: state.width * (0.08 + column * 0.14 + jitter * 0.035),
-				y: state.height * (0.15 + row * 0.2 + (1 - jitter) * 0.06),
-			};
-		}).filter((point) => point.x < state.width * 0.96 && point.y < state.height * 0.9);
+		const clusterDefinitions = [
+			[
+				[0.26, 0.16],
+				[0.33, 0.2],
+				[0.4, 0.12],
+				[0.36, 0.23],
+				[0.45, 0.1],
+			],
+			[
+				[0.04, 0.34],
+				[0.13, 0.29],
+				[0.17, 0.39],
+				[0.15, 0.49],
+			],
+			[
+				[0.18, 0.58],
+				[0.28, 0.62],
+				[0.36, 0.58],
+				[0.24, 0.72],
+				[0.16, 0.82],
+				[0.28, 0.84],
+				[0.38, 0.88],
+			],
+			[
+				[0.54, 0.34],
+				[0.62, 0.43],
+				[0.69, 0.5],
+				[0.74, 0.58],
+				[0.86, 0.52],
+				[0.96, 0.44],
+			],
+			[
+				[0.72, 0.78],
+				[0.8, 0.72],
+				[0.9, 0.78],
+				[0.95, 0.82],
+				[0.86, 0.88],
+			],
+			[
+				[0.76, 0.24],
+				[0.84, 0.2],
+				[0.91, 0.27],
+				[0.95, 0.36],
+				[0.82, 0.32],
+			],
+		];
+		const linkDefinitions = [
+			[
+				[0, 1],
+				[1, 3],
+				[2, 3],
+				[2, 4],
+				[3, 4],
+			],
+			[
+				[0, 1],
+				[1, 2],
+				[2, 3],
+				[0, 2],
+			],
+			[
+				[0, 1],
+				[1, 2],
+				[0, 3],
+				[3, 4],
+				[3, 5],
+				[5, 6],
+				[4, 5],
+			],
+			[
+				[0, 1],
+				[1, 2],
+				[2, 3],
+				[3, 4],
+				[4, 5],
+			],
+			[
+				[0, 1],
+				[1, 2],
+				[2, 3],
+				[2, 4],
+				[0, 4],
+			],
+			[
+				[0, 1],
+				[1, 2],
+				[2, 3],
+				[0, 4],
+				[4, 3],
+			],
+		];
+
+		points = [];
+		links = [];
+		clusterDefinitions.forEach((cluster, clusterIndex) => {
+			const baseIndex = points.length;
+			cluster.forEach(([x, y], pointIndex) => {
+				points.push({
+					cluster: clusterIndex,
+					phase: clusterIndex * 1.7 + pointIndex * 0.83,
+					radius: 1.35 + ((pointIndex + clusterIndex) % 3) * 0.28,
+					x: state.width * x,
+					y: state.height * y,
+				});
+			});
+			linkDefinitions[clusterIndex]?.forEach(([from, to]) => {
+				links.push({ from: baseIndex + from, to: baseIndex + to });
+			});
+		});
 	};
 
 	const draw = (time: number) => {
@@ -47,43 +151,39 @@ if (synapseRoot instanceof HTMLElement && synapseCanvas instanceof HTMLCanvasEle
 		context.clearRect(0, 0, width, height);
 
 		const livePoints = points.map((point, index) => {
-			const drift = reducedMotion.matches ? 0 : Math.sin(motion * 0.32 + point.phase) * 5;
+			const drift = reducedMotion.matches ? 0 : Math.sin(motion * 0.18 + point.phase) * 3.2;
 			const pointerDistance = distance(point, pointerPosition);
-			const influence = pointer.active ? clamp(1 - pointerDistance / 260, 0, 1) : 0;
-			const pull = influence * 12;
+			const influence = pointer.active ? clamp(1 - pointerDistance / 230, 0, 1) : 0;
+			const pull = influence * 8;
 			const angle = Math.atan2(pointerPosition.y - point.y, pointerPosition.x - point.x);
 			return {
 				...point,
 				glow: influence,
-				x: point.x + Math.cos(point.phase) * drift + Math.cos(angle) * pull,
-				y: point.y + Math.sin(point.phase * 1.4) * drift + Math.sin(angle) * pull,
+				x: point.x + Math.cos(point.phase + index * 0.17) * drift + Math.cos(angle) * pull,
+				y: point.y + Math.sin(point.phase * 1.3) * drift + Math.sin(angle) * pull,
 			};
 		});
 
 		context.save();
 		context.lineCap = 'round';
-		for (let first = 0; first < livePoints.length; first += 1) {
-			for (let second = first + 1; second < livePoints.length; second += 1) {
-				const a = livePoints[first];
-				const b = livePoints[second];
-				const separation = distance(a, b);
-				const threshold = width < 720 ? 132 : 168;
-				if (separation > threshold) continue;
-				const cursorBoost = Math.max(a.glow, b.glow) * 0.32;
-				const alpha = (1 - separation / threshold) * 0.13 + cursorBoost;
-				context.beginPath();
-				context.moveTo(a.x, a.y);
-				context.lineTo(b.x, b.y);
-				context.strokeStyle = `rgba(199, 240, 106, ${alpha})`;
-				context.lineWidth = 0.75 + cursorBoost * 1.4;
-				context.stroke();
-			}
-		}
+		links.forEach((link) => {
+			const a = livePoints[link.from];
+			const b = livePoints[link.to];
+			if (!a || !b) return;
+			const cursorBoost = Math.max(a.glow, b.glow);
+			const alpha = 0.055 + cursorBoost * 0.28;
+			context.beginPath();
+			context.moveTo(a.x, a.y);
+			context.lineTo(b.x, b.y);
+			context.strokeStyle = `rgba(205, 216, 192, ${alpha})`;
+			context.lineWidth = 0.65 + cursorBoost * 1.05;
+			context.stroke();
+		});
 
 		if (pointer.active) {
-			const halo = context.createRadialGradient(pointerPosition.x, pointerPosition.y, 0, pointerPosition.x, pointerPosition.y, 260);
-			halo.addColorStop(0, 'rgba(199, 240, 106, 0.14)');
-			halo.addColorStop(0.46, 'rgba(199, 240, 106, 0.045)');
+			const halo = context.createRadialGradient(pointerPosition.x, pointerPosition.y, 0, pointerPosition.x, pointerPosition.y, 220);
+			halo.addColorStop(0, 'rgba(199, 240, 106, 0.08)');
+			halo.addColorStop(0.46, 'rgba(199, 240, 106, 0.028)');
 			halo.addColorStop(1, 'rgba(199, 240, 106, 0)');
 			context.fillStyle = halo;
 			context.fillRect(0, 0, width, height);
@@ -91,12 +191,12 @@ if (synapseRoot instanceof HTMLElement && synapseCanvas instanceof HTMLCanvasEle
 
 		livePoints.forEach((point) => {
 			context.beginPath();
-			context.arc(point.x, point.y, point.radius + point.glow * 3.2, 0, Math.PI * 2);
-			context.fillStyle = `rgba(199, 240, 106, ${0.18 + point.glow * 0.55})`;
+			context.arc(point.x, point.y, point.radius + point.glow * 2.4, 0, Math.PI * 2);
+			context.fillStyle = `rgba(205, 216, 192, ${0.18 + point.glow * 0.42})`;
 			context.fill();
 			context.beginPath();
 			context.arc(point.x, point.y, Math.max(1.2, point.radius - 0.6), 0, Math.PI * 2);
-			context.fillStyle = `rgba(241, 245, 232, ${0.18 + point.glow * 0.35})`;
+			context.fillStyle = `rgba(199, 240, 106, ${0.08 + point.glow * 0.52})`;
 			context.fill();
 		});
 		context.restore();

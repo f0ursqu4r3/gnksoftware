@@ -60,10 +60,10 @@
     z-index: 0;
     pointer-events: none;
     background:
-      radial-gradient(circle at 78% 24%, rgba(199, 240, 106, 0.13), transparent 25rem),
-      radial-gradient(circle at 18% 72%, rgba(199, 240, 106, 0.08), transparent 22rem),
-      linear-gradient(110deg, rgba(199, 240, 106, 0.055), transparent 34%, transparent 68%, rgba(199, 240, 106, 0.035));
-    opacity: 0.74;
+      radial-gradient(circle at 78% 24%, rgba(199, 240, 106, 0.055), transparent 25rem),
+      radial-gradient(circle at 18% 72%, rgba(199, 240, 106, 0.035), transparent 22rem),
+      linear-gradient(110deg, rgba(199, 240, 106, 0.028), transparent 34%, transparent 68%, rgba(199, 240, 106, 0.018));
+    opacity: 0.68;
   }
 
   .synapse-field-canvas {
@@ -81,8 +81,8 @@
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    background: linear-gradient(180deg, transparent, rgba(13, 16, 13, 0.72));
-    opacity: 0.86;
+    background: linear-gradient(180deg, transparent, rgba(13, 16, 13, 0.64));
+    opacity: 0.78;
   }
 
   @media (prefers-reduced-motion: reduce) {
