@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source not "../../docs";
 
 :root {
   --color-base: #0d100d;
@@ -14,10 +15,16 @@
   --color-signal: #c7f06a;
   --color-signal-dark: #31450f;
   --color-danger: #f17f5c;
-  --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.28);
-  --shadow-strong: 0 24px 80px rgba(0, 0, 0, 0.42);
+  --shadow-soft: 0 6px 8px rgba(0, 0, 0, 0.22);
+  --shadow-strong: 0 10px 14px rgba(0, 0, 0, 0.28);
   --font-sans: 'Sora', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif: 'Sora', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
 }
 
 @layer utilities {
@@ -40,5 +47,51 @@
 
   .text-pretty {
     text-wrap: pretty;
+  }
+
+  .synapse-field {
+    isolation: isolate;
+  }
+
+  .synapse-field::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 78% 24%, rgba(199, 240, 106, 0.13), transparent 25rem),
+      radial-gradient(circle at 18% 72%, rgba(199, 240, 106, 0.08), transparent 22rem),
+      linear-gradient(110deg, rgba(199, 240, 106, 0.055), transparent 34%, transparent 68%, rgba(199, 240, 106, 0.035));
+    opacity: 0.74;
+  }
+
+  .synapse-field-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .synapse-field::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent, rgba(13, 16, 13, 0.72));
+    opacity: 0.86;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-ticker {
+      animation: none;
+    }
+
+    .synapse-field::before {
+      opacity: 0.52;
+    }
   }
 }

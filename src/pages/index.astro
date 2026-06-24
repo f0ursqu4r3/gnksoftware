@@ -83,7 +83,7 @@ const directMailto = `mailto:${contactEmail}`;
 						<summary class="cursor-pointer list-none text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)">
 							Practices
 						</summary>
-						<div class="mt-3 grid w-full gap-1 border border-(--color-line) bg-(--color-panel) p-3 shadow-(--shadow-soft) md:absolute md:right-0 md:w-72">
+						<div class="mt-3 grid w-full gap-1 border border-(--color-line) bg-(--color-panel) p-3 md:absolute md:right-0 md:w-72">
 							{serviceLinks.map((service) => (
 								<a class="px-2 py-1.5 text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href={service.href}>
 									{service.navLabel}
@@ -104,12 +104,13 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</header>
 
-		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-14 md:py-20">
-			<div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr,0.8fr]">
+		<section class="synapse-field relative overflow-hidden border-b border-(--color-line) bg-(--color-base) px-5 py-14 md:py-20" data-synapse-field>
+			<canvas class="synapse-field-canvas" data-synapse-canvas aria-hidden="true"></canvas>
+			<div class="relative z-10 mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr,0.8fr]">
 				<div class="flex flex-col justify-between gap-10">
 					<div class="space-y-6">
-							<p class="max-w-max border border-(--color-line) bg-(--color-panel-muted) px-3 py-2 text-xs font-bold tracking-[0.04em] text-(--color-signal)">
-								Signal Room / Development House
+						<p class="max-w-max border border-(--color-line) bg-(--color-panel-muted) px-3 py-2 text-xs font-bold tracking-[0.04em] text-(--color-signal)">
+							Signal Room / Development House
 						</p>
 						<h1 class="text-balance max-w-5xl text-5xl font-extrabold leading-[0.95] tracking-[-0.03em] text-(--color-ink) md:text-7xl">
 							Software work for systems with consequences.
@@ -135,16 +136,16 @@ const directMailto = `mailto:${contactEmail}`;
 					</div>
 				</div>
 
-				<aside class="grid gap-5 border border-(--color-line) bg-(--color-panel) p-5 shadow-(--shadow-soft)">
+				<aside class="grid gap-5 border border-(--color-line) bg-(--color-panel) p-5">
 					<div class="flex items-center justify-between gap-4 border-b border-(--color-line) pb-4">
-							<p class="text-xs font-bold tracking-[0.04em] text-(--color-ink-muted)">Active lanes</p>
+						<p class="text-xs font-bold tracking-[0.04em] text-(--color-ink-muted)">Active lanes</p>
 						<p class="text-xs font-bold text-(--color-signal)">6</p>
 					</div>
 					<div class="grid gap-2">
 						{serviceLinks.map((service) => (
 							<a class="group grid grid-cols-[1fr,auto] gap-3 border border-(--color-line) bg-(--color-base-2) px-3 py-3 hover:border-(--color-signal)" href={service.href}>
 								<span class="text-sm font-bold text-(--color-ink) group-hover:text-(--color-signal)">{service.title}</span>
-								<span class="text-xs font-bold text-(--color-ink-muted)">OPEN</span>
+								<span class="text-xs font-bold text-(--color-ink-muted)">Open</span>
 							</a>
 						))}
 					</div>
@@ -196,7 +197,7 @@ const directMailto = `mailto:${contactEmail}`;
 		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-12 md:py-16">
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
-						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">When teams call us</p>
+					<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">When teams call us</p>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
 						Pressure shows up in the system first.
 					</h2>
@@ -212,7 +213,7 @@ const directMailto = `mailto:${contactEmail}`;
 		<section id="approach" class="scroll-mt-32 border-b border-(--color-line) bg-(--color-panel) px-5 py-12 md:scroll-mt-24 md:py-16">
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
-						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Operating model</p>
+					<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Operating model</p>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
 						Small team, visible decisions.
 					</h2>
@@ -220,7 +221,7 @@ const directMailto = `mailto:${contactEmail}`;
 				<ol class="grid gap-0 border border-(--color-line)">
 					{approach.map((item, index) => (
 						<li class="grid gap-4 border-b border-(--color-line) bg-(--color-base-2) p-5 last:border-b-0 md:grid-cols-[8rem,1fr]">
-							<p class="text-sm font-extrabold text-(--color-signal)">STEP {index + 1}</p>
+							<p class="text-sm font-extrabold text-(--color-signal)">Step {index + 1}</p>
 							<div>
 								<h3 class="text-xl font-extrabold text-(--color-ink)">{item.title}</h3>
 								<p class="mt-2 text-sm leading-7 text-(--color-ink-soft)">{item.body}</p>
@@ -234,7 +235,7 @@ const directMailto = `mailto:${contactEmail}`;
 		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-12">
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
-						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Capability matrix</p>
+					<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Capability matrix</p>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
 						The work around the work.
 					</h2>
@@ -252,7 +253,7 @@ const directMailto = `mailto:${contactEmail}`;
 		<section id="founders" class="scroll-mt-32 border-b border-(--color-line) bg-(--color-panel-muted) px-5 py-12 md:scroll-mt-24 md:py-16">
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
-						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Founders</p>
+					<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Founders</p>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
 						Builders stay in the room.
 					</h2>
@@ -289,7 +290,7 @@ const directMailto = `mailto:${contactEmail}`;
 		<section id="contact" class="scroll-mt-32 bg-(--color-base) px-5 py-12 md:scroll-mt-24 md:py-16">
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.8fr,1.2fr]">
 				<div>
-						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Contact</p>
+					<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Contact</p>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
 						Send the system context.
 					</h2>
@@ -354,5 +355,6 @@ const directMailto = `mailto:${contactEmail}`;
 				</nav>
 			</div>
 		</footer>
+		<script src="../scripts/synapse-field.ts"></script>
 	</main>
 </Layout>
