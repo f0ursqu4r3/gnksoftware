@@ -19,46 +19,37 @@ const serviceMailto = getServiceMailto(service);
 ---
 
 <Layout title={`${service.title} | G&K Software`} description={service.metaDescription}>
-	<main class="flex w-full flex-col pb-16">
-		<header
-			class="sticky top-0 z-10 w-full border-b border-(--color-line) bg-(--color-panel)/95 py-4 shadow-(--shadow-soft) backdrop-blur"
-		>
-			<div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-5">
+	<main class="min-h-screen bg-(--color-base) text-(--color-ink)">
+		<header class="sticky top-0 z-20 border-b border-(--color-line) bg-(--color-base)/95 backdrop-blur">
+			<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
 				<a class="flex items-center gap-3" href="/" aria-label="G&K Software home">
-					<span
-						class="flex h-11 w-11 items-center justify-center border border-(--color-ink) bg-(--color-ink) text-sm font-black text-(--color-cream)"
-					>
+					<span class="flex h-10 w-10 items-center justify-center border border-(--color-signal) bg-(--color-signal) text-sm font-extrabold text-(--color-base)">
 						G&K
 					</span>
 					<span>
-						<span class="block text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">G&K Software</span>
-						<span class="block text-sm text-(--color-ink-soft)">Development shop</span>
+						<span class="block text-xs font-bold tracking-[0.14em] text-(--color-ink)">G&K SOFTWARE</span>
+						<span class="block text-xs font-medium text-(--color-ink-muted)">Development house</span>
 					</span>
 				</a>
 				<nav class="flex w-full flex-wrap items-center gap-3 md:w-auto" aria-label="Service page navigation">
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#services">Services</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#services">Services</a>
 					<details class="group relative basis-full md:basis-auto">
-						<summary
-							class="cursor-pointer list-none text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)"
-							aria-label="Open service practice links"
-						>
+						<summary class="cursor-pointer list-none text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)">
 							Practices
 						</summary>
-						<div
-							class="mt-3 grid w-full gap-1 border border-(--color-line) bg-(--color-panel-strong) p-3 shadow-(--shadow-soft) md:absolute md:right-0 md:w-64"
-						>
+						<div class="mt-3 grid w-full gap-1 border border-(--color-line) bg-(--color-panel) p-3 shadow-(--shadow-soft) md:absolute md:right-0 md:w-72">
 							{serviceLinks.map((service) => (
-								<a class="px-2 py-1 text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href={service.href}>
+								<a class="px-2 py-1.5 text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href={service.href}>
 									{service.navLabel}
 								</a>
 							))}
 						</div>
 					</details>
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#approach">Approach</a>
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#founders">Founders</a>
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="/#contact">Contact</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#approach">Approach</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#founders">Founders</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#contact">Contact</a>
 					<a
-						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-4 py-2 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+						class="inline-flex items-center justify-center border border-(--color-signal) bg-(--color-signal) px-4 py-2 text-sm font-bold text-(--color-base) transition hover:bg-(--color-ink)"
 						href={serviceMailto}
 					>
 						Start a conversation
@@ -67,96 +58,107 @@ const serviceMailto = getServiceMailto(service);
 			</div>
 		</header>
 
-		<section class="border-b border-(--color-line) bg-(--color-panel) py-12">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[1.25fr,0.75fr]">
-				<div class="space-y-5">
-					<a class="text-sm font-semibold text-(--color-ink-muted) underline underline-offset-4" href="/">Back to G&K Software</a>
-					<h1 class="font-['DM_Serif_Display'] text-4xl leading-tight text-(--color-ink) md:text-6xl">{service.title}</h1>
-					<p class="max-w-3xl text-2xl leading-tight text-(--color-ink)">{service.promise}</p>
-					<p class="max-w-3xl text-base leading-7 text-(--color-ink-soft)">{service.description}</p>
+		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-12 md:py-18">
+			<div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr,0.8fr]">
+				<div class="space-y-6">
+					<a class="inline-flex text-sm font-bold text-(--color-ink-muted) underline underline-offset-4 hover:text-(--color-signal)" href="/">
+						Back to G&K Software
+					</a>
+						<p class="max-w-max border border-(--color-line) bg-(--color-panel-muted) px-3 py-2 text-xs font-bold tracking-[0.04em] text-(--color-signal)">
+							Practice lane
+					</p>
+					<h1 class="text-balance max-w-4xl text-5xl font-extrabold leading-[0.95] tracking-[-0.03em] text-(--color-ink) md:text-7xl">
+						{service.title}
+					</h1>
+					<p class="max-w-3xl text-2xl font-semibold leading-tight text-(--color-ink)">{service.promise}</p>
+					<p class="text-pretty max-w-3xl text-base leading-8 text-(--color-ink-soft)">{service.description}</p>
 					<a
-						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-5 py-3 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+						class="inline-flex items-center justify-center border border-(--color-signal) bg-(--color-signal) px-5 py-3 text-sm font-bold text-(--color-base) transition hover:bg-(--color-ink)"
 						href={serviceMailto}
 					>
 						Discuss this work
 					</a>
 				</div>
-				<aside class="border-t border-(--color-line) pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Typical work</p>
-					<ul class="mt-4 space-y-3 text-sm leading-6 text-(--color-ink-soft)">
-						{service.homepageBullets.map((bullet) => <li class="border-t border-(--color-line) pt-3">{bullet}</li>)}
+
+				<aside class="grid content-start gap-4 border border-(--color-line) bg-(--color-panel) p-5 shadow-(--shadow-soft)">
+					<div class="flex items-center justify-between gap-4 border-b border-(--color-line) pb-4">
+							<p class="text-xs font-bold tracking-[0.04em] text-(--color-ink-muted)">Active signals</p>
+						<p class="text-xs font-bold text-(--color-signal)">{service.shortTitle}</p>
+					</div>
+					<ul class="grid gap-3 text-sm leading-7 text-(--color-ink-soft)">
+						{service.homepageBullets.map((bullet) => <li class="border-t border-(--color-line) pt-3 first:border-t-0 first:pt-0">{bullet}</li>)}
 					</ul>
 				</aside>
 			</div>
 		</section>
 
-		<section class="border-b border-(--color-line) bg-(--color-panel-strong) py-10">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[0.75fr,1.25fr]">
+		<section class="border-b border-(--color-line) bg-(--color-panel-muted) px-5 py-12">
+			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Good fit when</p>
-					<h2 class="mt-2 font-['DM_Serif_Display'] text-3xl text-(--color-ink)">This is the right lane.</h2>
+						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Good fit when</p>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">This is the right lane.</h2>
 				</div>
-				<ul class="grid gap-3 text-sm leading-6 text-(--color-ink-soft) md:grid-cols-2">
-					{service.goodFit.map((item) => <li class="border-t border-(--color-line) pt-3">{item}</li>)}
+				<ul class="grid gap-3 md:grid-cols-2">
+					{service.goodFit.map((item) => <li class="border-t border-(--color-line) pt-4 text-sm leading-7 text-(--color-ink-soft)">{item}</li>)}
 				</ul>
 			</div>
 		</section>
 
-		<section class="border-b border-(--color-line) bg-(--color-ink) py-10 text-(--color-cream)">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-2">
-				<div class="space-y-4">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-cream)/75">What we build</p>
-					<h2 class="font-['DM_Serif_Display'] text-3xl">Concrete deliverables, not vague capacity.</h2>
-					<ul class="space-y-3 text-sm leading-6 text-(--color-cream)/90">
-						{service.builds.map((item) => <li class="border-t border-(--color-cream)/30 pt-3">{item}</li>)}
+		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-12 md:py-16">
+			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+				<div class="border border-(--color-line) bg-(--color-panel) p-5">
+						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">What we build</p>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink)">Concrete deliverables.</h2>
+					<ul class="mt-6 grid gap-3 text-sm leading-7 text-(--color-ink-soft)">
+						{service.builds.map((item) => <li class="border-t border-(--color-line) pt-3">{item}</li>)}
 					</ul>
 				</div>
-				<div class="space-y-4">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-cream)/75">How we work</p>
-					<h2 class="font-['DM_Serif_Display'] text-3xl">Small-team execution with visible decisions.</h2>
-					<ul class="space-y-3 text-sm leading-6 text-(--color-cream)/90">
-						{service.howWeWork.map((item) => <li class="border-t border-(--color-cream)/30 pt-3">{item}</li>)}
+				<div class="border border-(--color-line) bg-(--color-panel) p-5">
+						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">How we work</p>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink)">Visible decisions.</h2>
+					<ul class="mt-6 grid gap-3 text-sm leading-7 text-(--color-ink-soft)">
+						{service.howWeWork.map((item) => <li class="border-t border-(--color-line) pt-3">{item}</li>)}
 					</ul>
 				</div>
 			</div>
 		</section>
 
-		<section class="border-b border-(--color-line) bg-(--color-panel) py-10">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[0.75fr,1.25fr]">
+		<section class="border-b border-(--color-line) bg-(--color-panel) px-5 py-12">
+			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Typical projects</p>
-					<h2 class="mt-2 font-['DM_Serif_Display'] text-3xl text-(--color-ink)">Work we can step into.</h2>
+						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Typical projects</p>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
+						Work we can step into.
+					</h2>
 				</div>
-				<ul class="grid gap-3 text-sm leading-6 text-(--color-ink-soft) md:grid-cols-2">
-					{service.typicalProjects.map((item) => <li class="border-t border-(--color-line) pt-3">{item}</li>)}
+				<ul class="grid gap-3 md:grid-cols-2">
+					{service.typicalProjects.map((item) => <li class="border-t border-(--color-line) pt-4 text-sm leading-7 text-(--color-ink-soft)">{item}</li>)}
 				</ul>
 			</div>
 		</section>
 
-		<section class="bg-(--color-panel-strong) py-10">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[1fr,1fr]">
-				<div class="space-y-3">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Related practices</p>
-					<h2 class="font-['DM_Serif_Display'] text-3xl text-(--color-ink)">Adjacent work often matters.</h2>
-					<div class="flex flex-wrap gap-3">
+		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-12">
+			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1fr,1fr]">
+				<div>
+						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Related practices</p>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
+						Adjacent pressure matters.
+					</h2>
+					<div class="mt-6 flex flex-wrap gap-3">
 						{relatedServices.map((related) => (
-							<a
-								class="border border-(--color-line) bg-(--color-panel) px-3 py-2 text-sm font-semibold text-(--color-ink) hover:border-(--color-ink-muted)"
-								href={`/${related.slug}`}
-							>
+							<a class="border border-(--color-line-strong) bg-(--color-panel) px-3 py-2 text-sm font-bold text-(--color-ink) hover:border-(--color-signal) hover:text-(--color-signal)" href={`/${related.slug}`}>
 								{related.title}
 							</a>
 						))}
 					</div>
 				</div>
-				<div class="space-y-3 border-t border-(--color-line) pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-					<h2 class="font-['DM_Serif_Display'] text-3xl text-(--color-ink)">Have a project in this lane?</h2>
-					<p class="text-sm leading-7 text-(--color-ink-soft)">
-						Send the current state, what is blocked, and what a useful first milestone would look like. We will respond with a practical
-						next step.
+				<div class="border border-(--color-line) bg-(--color-panel) p-5">
+					<h2 class="text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink)">Have a project in this lane?</h2>
+					<p class="mt-4 text-sm leading-7 text-(--color-ink-soft)">
+						Send the current state, what is blocked, and what a useful first milestone would prove. We will respond with a practical next step.
 					</p>
 					<a
-						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-5 py-3 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+						class="mt-6 inline-flex items-center justify-center border border-(--color-signal) bg-(--color-signal) px-5 py-3 text-sm font-bold text-(--color-base) transition hover:bg-(--color-ink)"
 						href={serviceMailto}
 					>
 						Email G&K about {service.shortTitle.toLowerCase()}
@@ -165,29 +167,29 @@ const serviceMailto = getServiceMailto(service);
 			</div>
 		</section>
 
-		<footer class="border-t border-(--color-line) bg-(--color-panel) py-7">
-			<div class="mx-auto grid max-w-5xl gap-6 px-5 text-sm text-(--color-ink-soft) md:grid-cols-[1fr,1fr]">
+		<footer class="border-t border-(--color-line) bg-(--color-panel) px-5 py-8">
+			<div class="mx-auto grid max-w-6xl gap-7 text-sm text-(--color-ink-soft) md:grid-cols-[1fr,1fr]">
 				<div>
-					<p class="font-semibold uppercase tracking-[0.18em] text-(--color-ink)">G&K Software, LLC</p>
-					<p class="mt-2 max-w-md leading-6">
-						Senior software development for products, platforms, automation, backend systems, modernization, and technical rescue.
+					<p class="font-extrabold tracking-[0.14em] text-(--color-ink)">G&K SOFTWARE, LLC</p>
+					<p class="mt-2 max-w-lg leading-7">
+						Software work for products, platforms, automation, backend systems, modernization, and technical rescue.
 					</p>
 				</div>
 				<nav class="grid gap-5 sm:grid-cols-2" aria-label="Footer navigation">
 					<div>
-						<p class="font-semibold text-(--color-ink)">Homepage</p>
+						<p class="font-extrabold text-(--color-ink)">Homepage</p>
 						<div class="mt-2 flex flex-wrap gap-3">
-							<a class="hover:text-(--color-ink)" href="/#services">Services</a>
-							<a class="hover:text-(--color-ink)" href="/#approach">Approach</a>
-							<a class="hover:text-(--color-ink)" href="/#founders">Founders</a>
-							<a class="hover:text-(--color-ink)" href="/#contact">Contact</a>
+							<a class="hover:text-(--color-signal)" href="/#services">Services</a>
+							<a class="hover:text-(--color-signal)" href="/#approach">Approach</a>
+							<a class="hover:text-(--color-signal)" href="/#founders">Founders</a>
+							<a class="hover:text-(--color-signal)" href="/#contact">Contact</a>
 						</div>
 					</div>
 					<div>
-						<p class="font-semibold text-(--color-ink)">Practices</p>
+						<p class="font-extrabold text-(--color-ink)">Practices</p>
 						<div class="mt-2 flex flex-wrap gap-3">
 							{serviceLinks.map((service) => (
-								<a class="hover:text-(--color-ink)" href={service.href}>
+								<a class="hover:text-(--color-signal)" href={service.href}>
 									{service.shortTitle}
 								</a>
 							))}

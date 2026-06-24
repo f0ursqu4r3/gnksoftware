@@ -4,50 +4,53 @@ import gibson from '../assets/gibson.png';
 import kyle from '../assets/kyle.png';
 import { contactEmail, getServiceMailto, services } from '../data/services';
 
-const proofPoints = [
-	'Founder-led engineering, not account management theater.',
-	'Product, platform, automation, backend, modernization, and recovery work.',
+const signalPoints = [
+	'Founder-led engineering, close to the code.',
+	'Products, backends, automations, platforms, modernization, and recovery.',
 	'Small-team delivery with visible technical decisions.',
 ];
 
-const industries = [
-	'Startups and founder-led product teams',
-	'Operations-heavy service businesses',
-	'Finance, logistics, and healthcare workflows',
-	'Teams maintaining older business-critical systems',
-	'Organizations with internal tools that need real ownership',
-	'Product teams that need senior backend and platform depth',
+const situations = [
+	'The product needs senior implementation, not another planning cycle.',
+	'The backend is carrying more business logic than the team can safely change.',
+	'Operators are still moving critical data through spreadsheets and handoffs.',
+	'An internal platform needs to match the real workflow instead of forcing workarounds.',
+	'A legacy system still runs the business, but every change is expensive.',
+	'A troubled build or production issue needs a clear technical read.',
 ];
 
 const approach = [
 	{
-		title: 'Map the actual system',
-		body: 'We start with the users, workflows, data, code, and operational constraints that define the real project.',
+		title: 'Enter through the real system',
+		body: 'We start with the code, data, workflows, users, constraints, and failure modes that define the work.',
 	},
 	{
-		title: 'Ship in useful slices',
-		body: 'We prefer visible milestones, working software, and clear tradeoffs over long discovery phases with little evidence.',
+		title: 'Find the first useful slice',
+		body: 'We narrow the first milestone until it can prove behavior, reduce risk, or unblock the next decision.',
 	},
 	{
-		title: 'Keep the work ownable',
-		body: 'We leave behind code, notes, decisions, and handoff paths your team can understand after the engagement.',
+		title: 'Build with operating notes',
+		body: 'We keep interfaces, deployment paths, ownership, and support behavior visible while the work is still being built.',
 	},
 	{
-		title: 'Stay close to the builders',
-		body: 'You work directly with the founders doing the technical work, not a layer of coordinators translating the work.',
+		title: 'Leave the system easier to own',
+		body: 'The handoff is code, decisions, tests, and a path your team can reason about after we leave.',
 	},
 ];
 
 const capabilities = [
-	'Product architecture and implementation',
-	'API and backend service design',
-	'Data automation and validation',
-	'Internal tool and portal development',
-	'Legacy system modernization',
-	'Technical assessment and recovery',
-	'Workflow and integration design',
-	'Observability and operational handoff',
-	'Deployment and release paths',
+	'Product architecture',
+	'API and service design',
+	'Workflow applications',
+	'Data validation',
+	'Internal portals',
+	'Background workers',
+	'Legacy migration paths',
+	'Production triage',
+	'Operational handoff',
+	'Observability',
+	'Release planning',
+	'Codebase assessment',
 ];
 
 const serviceLinks = services.map((service) => ({
@@ -59,49 +62,40 @@ const directMailto = `mailto:${contactEmail}`;
 ---
 
 <Layout
-	title="G&K Software, LLC | Senior software development shop"
-	description="G&K Software is a founder-led development shop for products, platforms, automation, backend systems, modernization, and technical rescue."
+	title="G&K Software, LLC | Software work for systems with consequences"
+	description="G&K Software is a founder-led development house for products, backend systems, automation, internal platforms, modernization, and technical rescue."
 >
-	<main class="flex w-full flex-col pb-16">
-		<header
-			class="sticky top-0 z-10 w-full border-b border-(--color-line) bg-(--color-panel)/95 py-4 shadow-(--shadow-soft) backdrop-blur"
-		>
-			<div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-5">
+	<main class="min-h-screen bg-(--color-base) text-(--color-ink)">
+		<header class="sticky top-0 z-20 border-b border-(--color-line) bg-(--color-base)/95 backdrop-blur">
+			<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
 				<a class="flex items-center gap-3" href="/" aria-label="G&K Software home">
-					<span
-						class="flex h-11 w-11 items-center justify-center border border-(--color-ink) bg-(--color-ink) text-sm font-black text-(--color-cream)"
-					>
+					<span class="flex h-10 w-10 items-center justify-center border border-(--color-signal) bg-(--color-signal) text-sm font-extrabold text-(--color-base)">
 						G&K
 					</span>
 					<span>
-						<span class="block text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">G&K Software</span>
-						<span class="block text-sm text-(--color-ink-soft)">Development House</span>
+						<span class="block text-xs font-bold tracking-[0.14em] text-(--color-ink)">G&K SOFTWARE</span>
+						<span class="block text-xs font-medium text-(--color-ink-muted)">Development house</span>
 					</span>
 				</a>
 				<nav class="flex w-full flex-wrap items-center gap-3 md:w-auto" aria-label="Homepage navigation">
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="#services">Services</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="#services">Services</a>
 					<details class="group relative basis-full md:basis-auto">
-						<summary
-							class="cursor-pointer list-none text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)"
-							aria-label="Open service practice links"
-						>
+						<summary class="cursor-pointer list-none text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)">
 							Practices
 						</summary>
-						<div
-							class="mt-3 grid w-full gap-1 border border-(--color-line) bg-(--color-panel-strong) p-3 shadow-(--shadow-soft) md:absolute md:right-0 md:w-64"
-						>
+						<div class="mt-3 grid w-full gap-1 border border-(--color-line) bg-(--color-panel) p-3 shadow-(--shadow-soft) md:absolute md:right-0 md:w-72">
 							{serviceLinks.map((service) => (
-								<a class="px-2 py-1 text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href={service.href}>
+								<a class="px-2 py-1.5 text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href={service.href}>
 									{service.navLabel}
 								</a>
 							))}
 						</div>
 					</details>
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="#approach">Approach</a>
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="#founders">Founders</a>
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-ink)" href="#contact">Contact</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="#approach">Approach</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="#founders">Founders</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="#contact">Contact</a>
 					<a
-						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-4 py-2 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+						class="inline-flex items-center justify-center border border-(--color-signal) bg-(--color-signal) px-4 py-2 text-sm font-bold text-(--color-base) transition hover:bg-(--color-ink)"
 						href={directMailto}
 					>
 						Email G&K
@@ -110,74 +104,86 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</header>
 
-		<section class="border-b border-(--color-line) bg-(--color-panel) py-12 md:py-16">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[1.2fr,0.8fr]">
-				<div class="space-y-6">
-					<h1 class="max-w-4xl font-['DM_Serif_Display'] text-4xl leading-tight text-(--color-ink) md:text-6xl">
-						Senior software development for products, platforms, automation, and hard systems work.
-					</h1>
-					<p class="max-w-3xl text-lg leading-8 text-(--color-ink-soft)">
-						G&K Software is a small development shop for teams that need experienced builders close to the code. We design,
-						implement, stabilize, and modernize software where workflows, data, integrations, and operations all matter.
-					</p>
+		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-14 md:py-20">
+			<div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr,0.8fr]">
+				<div class="flex flex-col justify-between gap-10">
+					<div class="space-y-6">
+							<p class="max-w-max border border-(--color-line) bg-(--color-panel-muted) px-3 py-2 text-xs font-bold tracking-[0.04em] text-(--color-signal)">
+								Signal Room / Development House
+						</p>
+						<h1 class="text-balance max-w-5xl text-5xl font-extrabold leading-[0.95] tracking-[-0.03em] text-(--color-ink) md:text-7xl">
+							Software work for systems with consequences.
+						</h1>
+						<p class="text-pretty max-w-3xl text-lg leading-8 text-(--color-ink-soft)">
+							G&K Software is a small development house for teams that need senior builders close to the code. We build products,
+							backends, automations, internal platforms, modernizations, and recoveries where failure has a real cost.
+						</p>
+					</div>
 					<div class="flex flex-wrap gap-3">
 						<a
-							class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-5 py-3 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
+							class="inline-flex items-center justify-center border border-(--color-signal) bg-(--color-signal) px-5 py-3 text-sm font-bold text-(--color-base) transition hover:bg-(--color-ink)"
 							href="#services"
 						>
-							Review development services
+							Review work lanes
 						</a>
 						<a
-							class="inline-flex items-center justify-center border border-(--color-line) bg-(--color-panel-strong) px-5 py-3 text-sm font-semibold text-(--color-ink) transition hover:border-(--color-ink-muted)"
+							class="inline-flex items-center justify-center border border-(--color-line-strong) bg-(--color-panel) px-5 py-3 text-sm font-bold text-(--color-ink) transition hover:border-(--color-signal) hover:text-(--color-signal)"
 							href={directMailto}
 						>
-							Email project context
+							Send project context
 						</a>
 					</div>
 				</div>
-				<aside class="border-t border-(--color-line) pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Where we fit</p>
-					<ul class="mt-4 space-y-3 text-sm leading-6 text-(--color-ink-soft)">
-						{proofPoints.map((point) => <li class="border-t border-(--color-line) pt-3">{point}</li>)}
+
+				<aside class="grid gap-5 border border-(--color-line) bg-(--color-panel) p-5 shadow-(--shadow-soft)">
+					<div class="flex items-center justify-between gap-4 border-b border-(--color-line) pb-4">
+							<p class="text-xs font-bold tracking-[0.04em] text-(--color-ink-muted)">Active lanes</p>
+						<p class="text-xs font-bold text-(--color-signal)">6</p>
+					</div>
+					<div class="grid gap-2">
+						{serviceLinks.map((service) => (
+							<a class="group grid grid-cols-[1fr,auto] gap-3 border border-(--color-line) bg-(--color-base-2) px-3 py-3 hover:border-(--color-signal)" href={service.href}>
+								<span class="text-sm font-bold text-(--color-ink) group-hover:text-(--color-signal)">{service.title}</span>
+								<span class="text-xs font-bold text-(--color-ink-muted)">OPEN</span>
+							</a>
+						))}
+					</div>
+					<ul class="grid gap-3 border-t border-(--color-line) pt-4 text-sm leading-6 text-(--color-ink-soft)">
+						{signalPoints.map((point) => <li class="border-t border-(--color-line) pt-3 first:border-t-0 first:pt-0">{point}</li>)}
 					</ul>
 				</aside>
 			</div>
 		</section>
 
-		<section id="services" class="scroll-mt-32 border-b border-(--color-line) bg-(--color-panel-strong) py-10 md:scroll-mt-24 md:py-12">
-			<div class="mx-auto flex max-w-5xl flex-col gap-7 px-5">
-				<div class="grid gap-4 md:grid-cols-[0.75fr,1.25fr]">
-					<div>
-						<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Services</p>
-						<h2 class="mt-2 font-['DM_Serif_Display'] text-3xl text-(--color-ink) md:text-4xl">
-							The primary work lanes.
-						</h2>
-					</div>
+		<section id="services" class="scroll-mt-32 border-b border-(--color-line) bg-(--color-panel-muted) px-5 py-12 md:scroll-mt-24 md:py-16">
+			<div class="mx-auto max-w-6xl">
+				<div class="mb-8 grid gap-4 md:grid-cols-[0.65fr,1.35fr]">
+					<h2 class="text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">Work lanes</h2>
 					<p class="max-w-3xl text-sm leading-7 text-(--color-ink-soft)">
-						Each practice has a dedicated route with fit, deliverables, and working patterns. The homepage keeps the scan
-						short so buyers can move directly to the kind of work they need.
+						Each lane has a dedicated route with fit, deliverables, operating model, and typical project shapes. Pick the system
+						pressure closest to what is in front of you.
 					</p>
 				</div>
-				<div class="grid gap-5 md:grid-cols-2">
+				<div class="grid border border-(--color-line) md:grid-cols-2">
 					{serviceLinks.map((service) => (
-						<article class="flex h-full flex-col gap-4 border-t border-(--color-line) pt-4">
-							<div class="space-y-2">
-								<h3 class="text-xl font-semibold text-(--color-ink)">{service.title}</h3>
-								<p class="text-sm leading-7 text-(--color-ink-soft)">{service.summary}</p>
+						<article class="flex min-h-80 flex-col gap-5 border-b border-(--color-line) bg-(--color-panel) p-5 md:border-r odd:md:border-r">
+							<div class="flex items-start justify-between gap-4">
+								<h3 class="max-w-sm text-2xl font-extrabold tracking-[-0.02em] text-(--color-ink)">{service.title}</h3>
+								<span class="shrink-0 border border-(--color-line-strong) px-2 py-1 text-xs font-bold text-(--color-signal)">
+									{service.shortTitle}
+								</span>
 							</div>
-							<ul class="space-y-2 text-sm leading-6 text-(--color-ink-soft)">
+							<p class="text-sm leading-7 text-(--color-ink-soft)">{service.summary}</p>
+							<ul class="mt-auto grid gap-2 text-sm leading-6 text-(--color-ink-soft)">
 								{service.homepageBullets.map((bullet) => (
-									<li class="flex items-start gap-3">
-										<span class="mt-2 h-1.5 w-1.5 shrink-0 bg-(--color-ink)" aria-hidden="true"></span>
-										<span>{bullet}</span>
-									</li>
+									<li class="border-t border-(--color-line) pt-2">{bullet}</li>
 								))}
 							</ul>
-							<div class="mt-auto flex flex-wrap gap-3 pt-1">
-								<a class="text-sm font-semibold text-(--color-ink) underline underline-offset-4" href={service.href}>
-									View {service.shortTitle.toLowerCase()} service
+							<div class="flex flex-wrap gap-3 border-t border-(--color-line) pt-4">
+								<a class="text-sm font-bold text-(--color-signal) underline underline-offset-4" href={service.href}>
+									View {service.shortTitle.toLowerCase()} lane
 								</a>
-								<a class="text-sm font-semibold text-(--color-ink-muted) underline underline-offset-4" href={getServiceMailto(service)}>
+								<a class="text-sm font-bold text-(--color-ink-muted) underline underline-offset-4 hover:text-(--color-signal)" href={getServiceMailto(service)}>
 									Email about {service.shortTitle.toLowerCase()}
 								</a>
 							</div>
@@ -187,107 +193,91 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<section class="border-b border-(--color-line) bg-(--color-panel) py-10">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[0.7fr,1.3fr]">
+		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-12 md:py-16">
+			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Common situations</p>
-					<h2 class="mt-2 font-['DM_Serif_Display'] text-3xl text-(--color-ink)">Work with real operating pressure.</h2>
+						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">When teams call us</p>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
+						Pressure shows up in the system first.
+					</h2>
 				</div>
-				<div class="grid gap-3 text-sm leading-6 text-(--color-ink-soft) md:grid-cols-2">
-					{industries.map((industry) => <p class="border-t border-(--color-line) pt-3">{industry}</p>)}
+				<div class="grid gap-3 md:grid-cols-2">
+					{situations.map((situation) => (
+						<p class="border-t border-(--color-line) pt-4 text-sm leading-7 text-(--color-ink-soft)">{situation}</p>
+					))}
 				</div>
 			</div>
 		</section>
 
-		<section id="approach" class="scroll-mt-32 border-b border-(--color-line) bg-(--color-panel-strong) py-10 md:scroll-mt-24 md:py-12">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[0.75fr,1.25fr]">
-				<div class="space-y-3">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Approach</p>
-					<h2 class="font-['DM_Serif_Display'] text-3xl text-(--color-ink) md:text-4xl">
-						Direct engineering work with visible tradeoffs.
+		<section id="approach" class="scroll-mt-32 border-b border-(--color-line) bg-(--color-panel) px-5 py-12 md:scroll-mt-24 md:py-16">
+			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
+				<div>
+						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Operating model</p>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
+						Small team, visible decisions.
 					</h2>
-					<p class="text-sm leading-7 text-(--color-ink-soft)">
-						We keep the process light enough to move and explicit enough that technical decisions are inspectable.
-					</p>
 				</div>
-				<ol class="grid gap-4 md:grid-cols-2">
+				<ol class="grid gap-0 border border-(--color-line)">
 					{approach.map((item, index) => (
-						<li class="border-t border-(--color-line) pt-4">
-							<p class="text-sm font-semibold text-(--color-ink-muted)">Step {index + 1}</p>
-							<h3 class="mt-1 text-lg font-semibold text-(--color-ink)">{item.title}</h3>
-							<p class="mt-2 text-sm leading-7 text-(--color-ink-soft)">{item.body}</p>
+						<li class="grid gap-4 border-b border-(--color-line) bg-(--color-base-2) p-5 last:border-b-0 md:grid-cols-[8rem,1fr]">
+							<p class="text-sm font-extrabold text-(--color-signal)">STEP {index + 1}</p>
+							<div>
+								<h3 class="text-xl font-extrabold text-(--color-ink)">{item.title}</h3>
+								<p class="mt-2 text-sm leading-7 text-(--color-ink-soft)">{item.body}</p>
+							</div>
 						</li>
 					))}
 				</ol>
 			</div>
 		</section>
 
-		<section class="border-b border-(--color-line) bg-(--color-ink) py-10 text-(--color-cream)">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[0.75fr,1.25fr]">
+		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-12">
+			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-cream)/75">Capabilities</p>
-					<h2 class="mt-2 font-['DM_Serif_Display'] text-3xl md:text-4xl">What tends to come with the work.</h2>
+						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Capability matrix</p>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
+						The work around the work.
+					</h2>
 				</div>
-				<div class="grid gap-3 text-sm leading-6 text-(--color-cream)/90 md:grid-cols-2">
-					{capabilities.map((capability) => <p class="border-t border-(--color-cream)/30 pt-3">{capability}</p>)}
+				<div class="grid border border-(--color-line) sm:grid-cols-2 lg:grid-cols-3">
+					{capabilities.map((capability) => (
+						<p class="border-b border-r border-(--color-line) bg-(--color-panel) p-4 text-sm font-semibold text-(--color-ink-soft)">
+							{capability}
+						</p>
+					))}
 				</div>
 			</div>
 		</section>
 
-		<section id="founders" class="scroll-mt-32 border-b border-(--color-line) bg-(--color-panel) py-10 md:scroll-mt-24 md:py-12">
-			<div class="mx-auto flex max-w-5xl flex-col gap-7 px-5">
-				<div class="grid gap-4 md:grid-cols-[0.75fr,1.25fr]">
-					<div>
-						<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Founders</p>
-						<h2 class="mt-2 font-['DM_Serif_Display'] text-3xl text-(--color-ink) md:text-4xl">
-							Hands-on builders stay close to the code.
-						</h2>
-					</div>
-					<p class="max-w-3xl text-sm leading-7 text-(--color-ink-soft)">
-						G&K is led by Gibson Martin and Kyle Dougan. The public engineering footprint spans product code, tools,
-						experiments, infrastructure, and practical systems work. We use that breadth carefully: it supports technical
-						range, not inflated claims.
-					</p>
+		<section id="founders" class="scroll-mt-32 border-b border-(--color-line) bg-(--color-panel-muted) px-5 py-12 md:scroll-mt-24 md:py-16">
+			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
+				<div>
+						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Founders</p>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
+						Builders stay in the room.
+					</h2>
 				</div>
-				<div class="grid gap-6 md:grid-cols-2">
-					<article class="flex gap-4 border-t border-(--color-line) pt-4">
-						<img
-							src={gibson.src}
-							alt="Gibson Martin"
-							class="h-16 w-16 shrink-0 border border-(--color-line) bg-(--color-panel-strong) object-cover"
-						/>
-						<div class="space-y-2">
-							<h3 class="text-lg font-semibold text-(--color-ink)">Gibson Martin</h3>
-							<p class="text-sm leading-7 text-(--color-ink-soft)">
+				<div class="grid gap-5 md:grid-cols-2">
+					<article class="grid gap-4 border border-(--color-line) bg-(--color-panel) p-5">
+						<img src={gibson.src} alt="Gibson Martin" class="h-20 w-20 border border-(--color-line) object-cover" />
+						<div>
+							<h3 class="text-xl font-extrabold text-(--color-ink)">Gibson Martin</h3>
+							<p class="mt-2 text-sm leading-7 text-(--color-ink-soft)">
 								Builder with public work across software systems, tooling, and technical experiments.
 							</p>
-							<a
-								class="text-sm font-semibold text-(--color-ink) underline underline-offset-4"
-								href="https://github.com/wegfawefgawefg"
-								rel="me noopener noreferrer"
-								target="_blank"
-							>
+							<a class="mt-4 inline-flex text-sm font-bold text-(--color-signal) underline underline-offset-4" href="https://github.com/wegfawefgawefg" rel="me noopener noreferrer" target="_blank">
 								View Gibson Martin on GitHub
 							</a>
 						</div>
 					</article>
-					<article class="flex gap-4 border-t border-(--color-line) pt-4">
-						<img
-							src={kyle.src}
-							alt="Kyle Dougan"
-							class="h-16 w-16 shrink-0 border border-(--color-line) bg-(--color-panel-strong) object-cover"
-						/>
-						<div class="space-y-2">
-							<h3 class="text-lg font-semibold text-(--color-ink)">Kyle Dougan</h3>
-							<p class="text-sm leading-7 text-(--color-ink-soft)">
+					<article class="grid gap-4 border border-(--color-line) bg-(--color-panel) p-5">
+						<img src={kyle.src} alt="Kyle Dougan" class="h-20 w-20 border border-(--color-line) object-cover" />
+						<div>
+							<h3 class="text-xl font-extrabold text-(--color-ink)">Kyle Dougan</h3>
+							<p class="mt-2 text-sm leading-7 text-(--color-ink-soft)">
 								Builder with public work across applications, automation, developer tooling, and product infrastructure.
 							</p>
-							<a
-								class="text-sm font-semibold text-(--color-ink) underline underline-offset-4"
-								href="https://github.com/f0ursqu4r3"
-								rel="me noopener noreferrer"
-								target="_blank"
-							>
+							<a class="mt-4 inline-flex text-sm font-bold text-(--color-signal) underline underline-offset-4" href="https://github.com/f0ursqu4r3" rel="me noopener noreferrer" target="_blank">
 								View Kyle Dougan on GitHub
 							</a>
 						</div>
@@ -296,66 +286,66 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<section id="contact" class="scroll-mt-32 bg-(--color-panel-strong) py-10 md:scroll-mt-24 md:py-12">
-			<div class="mx-auto grid max-w-5xl gap-8 px-5 md:grid-cols-[0.9fr,1.1fr]">
-				<div class="space-y-4">
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-ink-muted)">Contact</p>
-					<h2 class="font-['DM_Serif_Display'] text-3xl text-(--color-ink) md:text-4xl">Send the project context.</h2>
-					<p class="text-sm leading-7 text-(--color-ink-soft)">
-						Email the current state, what is blocked, the systems involved, the timeline, and what a useful first milestone
-						would look like. We will respond with a practical next step.
+		<section id="contact" class="scroll-mt-32 bg-(--color-base) px-5 py-12 md:scroll-mt-24 md:py-16">
+			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.8fr,1.2fr]">
+				<div>
+						<p class="mb-3 text-xs font-bold tracking-[0.04em] text-(--color-signal)">Contact</p>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
+						Send the system context.
+					</h2>
+					<p class="mt-4 max-w-xl text-sm leading-7 text-(--color-ink-soft)">
+						Send what is being built, what is unstable, the systems involved, the timeline, and what a useful first milestone would prove.
 					</p>
-					<a
-						class="inline-flex items-center justify-center border border-(--color-ink) bg-(--color-ink) px-5 py-3 text-sm font-semibold text-(--color-cream) transition hover:brightness-110"
-						href={directMailto}
-					>
+				</div>
+				<div class="grid gap-5 border border-(--color-line) bg-(--color-panel) p-5">
+					<div class="grid gap-3 text-sm leading-7 text-(--color-ink-soft) md:grid-cols-2">
+						<div>
+							<h3 class="font-extrabold text-(--color-ink)">Useful context</h3>
+							<ul class="mt-2 grid gap-2">
+								<li>What needs built, changed, or stabilized.</li>
+								<li>Who uses it and what fails when it breaks.</li>
+								<li>Code, data, integration, and deployment constraints.</li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="font-extrabold text-(--color-ink)">Good first outcomes</h3>
+							<ul class="mt-2 grid gap-2">
+								<li>A scoped product slice or backend service.</li>
+								<li>A system map, risk read, or recovery plan.</li>
+								<li>A modernization or automation path your team can own.</li>
+							</ul>
+						</div>
+					</div>
+					<a class="inline-flex w-fit items-center justify-center border border-(--color-signal) bg-(--color-signal) px-5 py-3 text-sm font-bold text-(--color-base) transition hover:bg-(--color-ink)" href={directMailto}>
 						Email {contactEmail}
 					</a>
-				</div>
-				<div class="grid gap-4 text-sm leading-7 text-(--color-ink-soft) md:grid-cols-2">
-					<div class="border-t border-(--color-line) pt-4">
-						<h3 class="font-semibold text-(--color-ink)">Useful context to send</h3>
-						<ul class="mt-2 space-y-2">
-							<li>What you need built, changed, or stabilized.</li>
-							<li>Who uses the system and what breaks when it fails.</li>
-							<li>Relevant code, data, integration, or deployment constraints.</li>
-						</ul>
-					</div>
-					<div class="border-t border-(--color-line) pt-4">
-						<h3 class="font-semibold text-(--color-ink)">Good first outcomes</h3>
-						<ul class="mt-2 space-y-2">
-							<li>A scoped product slice or backend service.</li>
-							<li>A system map, risk read, or recovery plan.</li>
-							<li>A modernization or automation path your team can own.</li>
-						</ul>
-					</div>
 				</div>
 			</div>
 		</section>
 
-		<footer class="border-t border-(--color-line) bg-(--color-panel) py-7">
-			<div class="mx-auto grid max-w-5xl gap-6 px-5 text-sm text-(--color-ink-soft) md:grid-cols-[1fr,1fr]">
+		<footer class="border-t border-(--color-line) bg-(--color-panel) px-5 py-8">
+			<div class="mx-auto grid max-w-6xl gap-7 text-sm text-(--color-ink-soft) md:grid-cols-[1fr,1fr]">
 				<div>
-					<p class="font-semibold uppercase tracking-[0.18em] text-(--color-ink)">G&K Software, LLC</p>
-					<p class="mt-2 max-w-md leading-6">
-						Senior software development for products, platforms, automation, backend systems, modernization, and technical rescue.
+					<p class="font-extrabold tracking-[0.14em] text-(--color-ink)">G&K SOFTWARE, LLC</p>
+					<p class="mt-2 max-w-lg leading-7">
+						Software work for products, platforms, automation, backend systems, modernization, and technical rescue.
 					</p>
 				</div>
 				<nav class="grid gap-5 sm:grid-cols-2" aria-label="Footer navigation">
 					<div>
-						<p class="font-semibold text-(--color-ink)">Homepage</p>
+						<p class="font-extrabold text-(--color-ink)">Homepage</p>
 						<div class="mt-2 flex flex-wrap gap-3">
-							<a class="hover:text-(--color-ink)" href="#services">Services</a>
-							<a class="hover:text-(--color-ink)" href="#approach">Approach</a>
-							<a class="hover:text-(--color-ink)" href="#founders">Founders</a>
-							<a class="hover:text-(--color-ink)" href="#contact">Contact</a>
+							<a class="hover:text-(--color-signal)" href="#services">Services</a>
+							<a class="hover:text-(--color-signal)" href="#approach">Approach</a>
+							<a class="hover:text-(--color-signal)" href="#founders">Founders</a>
+							<a class="hover:text-(--color-signal)" href="#contact">Contact</a>
 						</div>
 					</div>
 					<div>
-						<p class="font-semibold text-(--color-ink)">Practices</p>
+						<p class="font-extrabold text-(--color-ink)">Practices</p>
 						<div class="mt-2 flex flex-wrap gap-3">
 							{serviceLinks.map((service) => (
-								<a class="hover:text-(--color-ink)" href={service.href}>
+								<a class="hover:text-(--color-signal)" href={service.href}>
 									{service.shortTitle}
 								</a>
 							))}
