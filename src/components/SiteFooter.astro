@@ -2,6 +2,8 @@
 import { contactEmail } from '../data/services';
 
 const directMailto = `mailto:${contactEmail}`;
+const footerLinkClass =
+	'rounded-(--radius-sm) text-(--color-ink-soft) no-underline transition-colors duration-180 hover:text-(--color-signal) focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--color-signal) motion-reduce:transition-none';
 ---
 
 <footer class="border-t border-[rgba(216,210,192,0.16)] bg-(--color-base) px-5 py-10">
@@ -13,10 +15,10 @@ const directMailto = `mailto:${contactEmail}`;
 			</p>
 		</div>
 		<nav class="flex flex-wrap gap-x-5 gap-y-3" aria-label="Footer navigation">
-			<a class="studio-footer-link" href="/#approach">Approach</a>
-			<a class="studio-footer-link" href="/#founders">Founders</a>
-			<a class="studio-footer-link" href="/#services">Services</a>
-			<a class="studio-footer-link" href={directMailto}>Contact us</a>
+			<a class={footerLinkClass} href="/#approach">Approach</a>
+			<a class={footerLinkClass} href="/#founders">Founders</a>
+			<a class={footerLinkClass} href="/#services">Services</a>
+			<a class={footerLinkClass} href={directMailto}>Contact us</a>
 		</nav>
 	</div>
 </footer>

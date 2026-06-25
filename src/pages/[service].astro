@@ -14,6 +14,20 @@ export function getStaticPaths() {
 const { service } = Astro.props as { service: Service };
 const relatedServices = getRelatedServices(service);
 const directMailto = `mailto:${contactEmail}`;
+const containerClass = 'mx-auto w-[calc(100%-1.5rem)] max-w-[var(--container)] sm:w-[calc(100%-2rem)]';
+const sectionPadClass = 'py-[var(--section-y)]';
+const primaryButtonClass =
+	'inline-flex min-h-11 items-center justify-center rounded-(--radius-sm) border border-transparent bg-(--color-signal) px-[1.15rem] py-3 text-sm font-extrabold text-(--color-base) no-underline transition-[background-color,color,translate] duration-180 hover:-translate-y-px hover:bg-(--color-ink) active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--color-signal) motion-reduce:transition-none motion-reduce:hover:translate-y-0';
+const panelClass =
+	'rounded-(--radius-md) border border-[rgba(216,210,192,0.12)] bg-[linear-gradient(145deg,rgba(214,179,90,0.085),transparent_38%),linear-gradient(180deg,rgba(236,234,222,0.06),rgba(236,234,222,0.026))]';
+const solidPanelClass =
+	'rounded-(--radius-md) border border-[rgba(216,210,192,0.1)] bg-(--color-surface) bg-[linear-gradient(150deg,rgba(236,234,222,0.052),transparent_34%)]';
+const solidPanelLinkClass =
+	`${solidPanelClass} text-inherit no-underline transition-[background-color,border-color,translate] duration-180 hover:-translate-y-px hover:border-[rgba(214,179,90,0.38)] hover:bg-(--color-surface-soft) active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--color-signal) motion-reduce:transition-none motion-reduce:hover:translate-y-0`;
+const railListClass =
+	'grid gap-0 md:grid md:grid-cols-2 md:gap-x-8 [&>*]:border-t [&>*]:border-[rgba(216,210,192,0.09)] [&>*]:py-4 [&>*:last-child]:border-b';
+const dotItemClass =
+	'grid grid-cols-[0.7rem_1fr] gap-[0.85rem] py-3 before:mt-[0.7rem] before:h-[0.42rem] before:w-[0.42rem] before:rounded-full before:bg-(--color-signal) before:opacity-85 before:content-[\'\']';
 ---
 
 <Layout title={`${service.title} | G&K Software`} description={service.metaDescription}>
@@ -21,7 +35,7 @@ const directMailto = `mailto:${contactEmail}`;
 		<SiteHeader />
 
 		<section class="bg-(--color-base) px-5 py-14 sm:py-20 md:py-28">
-			<div class="site-container grid gap-10 md:grid-cols-[1.2fr,0.8fr]">
+			<div class={`${containerClass} grid gap-10 md:grid-cols-[1.2fr,0.8fr]`}>
 				<div class="space-y-6">
 					<h1 class="text-balance max-w-4xl text-[clamp(2.35rem,12vw,4.5rem)] font-extrabold leading-[0.96] tracking-[-0.025em] text-(--color-ink)">
 						{service.title}
@@ -29,47 +43,47 @@ const directMailto = `mailto:${contactEmail}`;
 					<p class="max-w-3xl text-xl font-semibold leading-tight text-(--color-ink) sm:text-2xl">{service.promise}</p>
 					<p class="text-pretty max-w-3xl text-base leading-8 text-(--color-ink-soft)">{service.description}</p>
 					<a
-						class="studio-button studio-button-primary w-full sm:w-auto"
+						class={`${primaryButtonClass} w-full sm:w-auto`}
 						href={directMailto}
 					>
 						Contact us
 					</a>
 				</div>
 
-				<aside class="studio-panel p-5 md:p-6">
+				<aside class={`${panelClass} p-5 md:p-6`}>
 					<div class="flex items-start justify-between gap-6">
 						<div>
 							<p class="text-sm font-extrabold text-(--color-ink)">What this usually includes</p>
 							<p class="mt-2 text-sm leading-6 text-(--color-ink-muted)">{service.shortTitle}</p>
 						</div>
 					</div>
-					<ul class="studio-dot-list mt-5 text-sm leading-7 text-(--color-ink-soft)">
-						{service.homepageBullets.map((bullet) => <li class="py-3">{bullet}</li>)}
+					<ul class="mt-5 grid gap-[0.85rem] text-sm leading-7 text-(--color-ink-soft)">
+						{service.homepageBullets.map((bullet) => <li class={dotItemClass}>{bullet}</li>)}
 					</ul>
 				</aside>
 			</div>
 		</section>
 
-		<section class="bg-(--color-surface) px-5 section-pad">
+		<section class={`bg-(--color-surface) px-5 ${sectionPadClass}`}>
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">This is the right lane.</h2>
 				</div>
-				<ul class="studio-rail-list md:grid md:grid-cols-2 md:gap-x-8">
+				<ul class={railListClass}>
 					{service.goodFit.map((item) => <li class="text-sm leading-7 text-(--color-ink-soft)">{item}</li>)}
 				</ul>
 			</div>
 		</section>
 
-		<section class="bg-(--color-base) px-5 section-pad">
+		<section class={`bg-(--color-base) px-5 ${sectionPadClass}`}>
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
-				<div class="studio-panel-solid p-5 md:p-6">
+				<div class={`${solidPanelClass} p-5 md:p-6`}>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink)">Concrete deliverables.</h2>
 					<ul class="mt-6 grid gap-3 text-sm leading-7 text-(--color-ink-soft)">
 						{service.builds.map((item) => <li class="border-t border-[rgba(216,210,192,0.1)] pt-3">{item}</li>)}
 					</ul>
 				</div>
-				<div class="studio-panel-solid p-5 md:p-6">
+				<div class={`${solidPanelClass} p-5 md:p-6`}>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink)">Visible decisions.</h2>
 					<ul class="mt-6 grid gap-3 text-sm leading-7 text-(--color-ink-soft)">
 						{service.howWeWork.map((item) => <li class="border-t border-[rgba(216,210,192,0.1)] pt-3">{item}</li>)}
@@ -78,20 +92,20 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<section class="bg-(--color-surface) px-5 section-pad">
+		<section class={`bg-(--color-surface) px-5 ${sectionPadClass}`}>
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
 						Work we can step into.
 					</h2>
 				</div>
-				<ul class="studio-rail-list md:grid md:grid-cols-2 md:gap-x-8">
+				<ul class={railListClass}>
 					{service.typicalProjects.map((item) => <li class="text-sm leading-7 text-(--color-ink-soft)">{item}</li>)}
 				</ul>
 			</div>
 		</section>
 
-		<section class="bg-(--color-base) px-5 section-pad">
+		<section class={`bg-(--color-base) px-5 ${sectionPadClass}`}>
 			<div class="mx-auto grid max-w-6xl gap-8">
 				<div>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
@@ -99,7 +113,7 @@ const directMailto = `mailto:${contactEmail}`;
 					</h2>
 					<div class="mt-6 flex snap-x gap-4 overflow-x-auto pb-2" aria-label="Related services">
 						{relatedServices.map((related) => (
-							<a class="studio-panel-solid grid min-w-[min(18rem,82vw)] max-w-sm snap-start gap-3 p-4" href={`/${related.slug}`}>
+							<a class={`${solidPanelLinkClass} grid min-w-[min(18rem,82vw)] max-w-sm snap-start gap-3 p-4`} href={`/${related.slug}`}>
 								<span class="text-sm font-extrabold text-(--color-ink)">{related.title}</span>
 								<span class="text-sm leading-6 text-(--color-ink-muted)">{related.summary}</span>
 								<span class="border-t border-(--color-line) pt-3 text-sm leading-6 text-(--color-ink-soft)">
@@ -112,8 +126,8 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<section class="bg-(--color-base) px-5 section-pad">
-			<div class="studio-panel mx-auto flex max-w-6xl flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-8">
+		<section class={`bg-(--color-base) px-5 ${sectionPadClass}`}>
+			<div class={`${panelClass} mx-auto flex max-w-6xl flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-8`}>
 				<div>
 					<h2 class="text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink)">Ready to discuss work?</h2>
 					<p class="mt-4 text-sm leading-7 text-(--color-ink-soft)">
@@ -121,7 +135,7 @@ const directMailto = `mailto:${contactEmail}`;
 					</p>
 				</div>
 				<a
-					class="studio-button studio-button-primary w-full sm:w-fit"
+					class={`${primaryButtonClass} w-full sm:w-fit`}
 					href={directMailto}
 				>
 					Contact us

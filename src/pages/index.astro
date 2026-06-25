@@ -40,6 +40,22 @@ const serviceLinks = services.map((service) => ({
 }));
 
 const directMailto = `mailto:${contactEmail}`;
+const containerClass = 'mx-auto w-[calc(100%-1.5rem)] max-w-[var(--container)] sm:w-[calc(100%-2rem)]';
+const sectionPadClass = 'py-[var(--section-y)]';
+const primaryButtonClass =
+	'inline-flex min-h-11 items-center justify-center rounded-(--radius-sm) border border-transparent bg-(--color-signal) px-[1.15rem] py-3 text-sm font-extrabold text-(--color-base) no-underline transition-[background-color,color,translate] duration-180 hover:-translate-y-px hover:bg-(--color-ink) active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--color-signal) motion-reduce:transition-none motion-reduce:hover:translate-y-0';
+const secondaryButtonClass =
+	'inline-flex min-h-11 items-center justify-center rounded-(--radius-sm) border border-[rgba(216,210,192,0.2)] bg-[rgba(236,234,222,0.04)] px-[1.15rem] py-3 text-sm font-extrabold text-(--color-ink) no-underline transition-[background-color,border-color,color,translate] duration-180 hover:-translate-y-px hover:border-[rgba(214,179,90,0.55)] hover:text-(--color-signal) active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--color-signal) motion-reduce:transition-none motion-reduce:hover:translate-y-0';
+const panelClass =
+	'rounded-(--radius-md) border border-[rgba(216,210,192,0.12)] bg-[linear-gradient(145deg,rgba(214,179,90,0.085),transparent_38%),linear-gradient(180deg,rgba(236,234,222,0.06),rgba(236,234,222,0.026))]';
+const solidPanelClass =
+	'rounded-(--radius-md) border border-[rgba(216,210,192,0.1)] bg-(--color-surface) bg-[linear-gradient(150deg,rgba(236,234,222,0.052),transparent_34%)]';
+const founderLinkClass =
+	'mt-4 inline-flex rounded-(--radius-sm) text-sm font-extrabold text-(--color-signal) no-underline transition-colors duration-180 hover:text-(--color-ink) focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--color-signal) motion-reduce:transition-none';
+const railListClass =
+	'grid gap-0 md:grid md:grid-cols-2 md:gap-x-8 [&>*]:border-t [&>*]:border-[rgba(216,210,192,0.09)] [&>*]:py-4 [&>*:last-child]:border-b';
+const synapseSectionClass =
+	"relative isolate overflow-hidden bg-(--color-base) px-5 py-14 before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[radial-gradient(circle_at_78%_24%,rgba(214,179,90,0.038),transparent_25rem),radial-gradient(circle_at_18%_72%,rgba(214,179,90,0.024),transparent_22rem),linear-gradient(110deg,rgba(214,179,90,0.018),transparent_34%,transparent_68%,rgba(214,179,90,0.012))] before:opacity-50 before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-0 after:bg-[linear-gradient(180deg,transparent,rgba(17,18,14,0.64))] after:opacity-[0.78] after:content-[''] sm:py-18 md:py-24";
 ---
 
 <Layout
@@ -49,28 +65,28 @@ const directMailto = `mailto:${contactEmail}`;
 	<main class="min-h-screen bg-(--color-base) text-(--color-ink)">
 		<SiteHeader />
 
-		<section class="synapse-field relative overflow-hidden bg-(--color-base) px-5 py-14 sm:py-18 md:py-24" data-synapse-field>
-			<canvas class="synapse-field-canvas" data-synapse-canvas aria-hidden="true"></canvas>
-			<div class="site-container relative z-10 flex min-h-[clamp(24rem,56svh,40rem)] items-center">
+		<section class={synapseSectionClass} data-synapse-field>
+			<canvas class="pointer-events-none absolute inset-0 z-0 h-full w-full" data-synapse-canvas aria-hidden="true"></canvas>
+			<div class={`${containerClass} relative z-10 flex min-h-[clamp(24rem,56svh,40rem)] items-center`}>
 				<div class="max-w-5xl space-y-7 sm:space-y-8">
 					<h1 class="max-w-5xl text-[clamp(1.18rem,5.7vw,4.5rem)] font-extrabold leading-[0.98] tracking-[-0.02em] text-(--color-ink) sm:leading-[0.96]">
 						<span class="block whitespace-nowrap">High velocity.</span>
 						<span class="block whitespace-nowrap text-(--color-signal)">Senior engineering.</span>
 						<span class="block whitespace-nowrap text-[0.86em]">For systems with consequences.</span>
 					</h1>
-					<p class="text-pretty max-w-3xl text-base leading-7 text-(--color-ink-soft) sm:text-lg sm:leading-8">
+					<p class="max-w-3xl text-pretty text-base leading-7 text-(--color-ink-soft) sm:text-lg sm:leading-8">
 						G&K Software is a small development house for teams that need senior engineers for serious code. We build for
 						performance, durability, and places where failure has a real cost.
 					</p>
 					<div class="flex flex-wrap gap-3">
 						<a
-							class="studio-button studio-button-secondary w-full sm:w-auto"
+							class={`${secondaryButtonClass} w-full sm:w-auto`}
 							href="#approach"
 						>
 							Our process
 						</a>
 						<a
-							class="studio-button studio-button-primary w-full sm:w-auto"
+							class={`${primaryButtonClass} w-full sm:w-auto`}
 							href={directMailto}
 						>
 							Contact us
@@ -80,7 +96,7 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<section id="services" class="scroll-mt-32 bg-(--color-surface) px-5 section-pad md:scroll-mt-24">
+		<section id="services" class={`scroll-mt-32 bg-(--color-surface) px-5 ${sectionPadClass} md:scroll-mt-24`}>
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.62fr,1.38fr]">
 				<div class="max-w-xl">
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) sm:text-4xl md:text-6xl">What we do.</h2>
@@ -88,8 +104,8 @@ const directMailto = `mailto:${contactEmail}`;
 						Six ways we step into serious software work. Start with the lane that matches the work in front of you.
 					</p>
 				</div>
-				<div class="studio-panel p-4 md:p-5" aria-label="Services">
-					<div class="studio-divider-list">
+				<div class={`${panelClass} p-4 md:p-5`} aria-label="Services">
+					<div class="[&>*+*]:border-t [&>*+*]:border-[rgba(216,210,192,0.1)]">
 						{serviceLinks.map((service) => (
 							<a class="group grid gap-2 py-4 md:grid-cols-[13rem,1fr] md:gap-6 md:py-5" href={service.href}>
 								<span class="text-base font-extrabold text-(--color-ink) group-hover:text-(--color-signal)">{service.title}</span>
@@ -101,14 +117,14 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<section class="bg-(--color-base) px-5 section-pad">
+		<section class={`bg-(--color-base) px-5 ${sectionPadClass}`}>
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
 						Pressure shows up in the system first.
 					</h2>
 				</div>
-				<div class="studio-rail-list md:grid md:grid-cols-2 md:gap-x-8">
+				<div class={railListClass}>
 					{situations.map((situation) => (
 						<p class="text-sm leading-7 text-(--color-ink-soft)">{situation}</p>
 					))}
@@ -116,7 +132,7 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<section id="approach" class="scroll-mt-32 bg-(--color-surface) px-5 section-pad md:scroll-mt-24">
+		<section id="approach" class={`scroll-mt-32 bg-(--color-surface) px-5 ${sectionPadClass} md:scroll-mt-24`}>
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
@@ -137,7 +153,7 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<section id="founders" class="scroll-mt-32 bg-(--color-base) px-5 section-pad md:scroll-mt-24">
+		<section id="founders" class={`scroll-mt-32 bg-(--color-base) px-5 ${sectionPadClass} md:scroll-mt-24`}>
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
@@ -145,26 +161,26 @@ const directMailto = `mailto:${contactEmail}`;
 					</h2>
 				</div>
 				<div class="grid gap-5 md:grid-cols-2">
-					<article class="studio-panel-solid grid gap-5 p-5 md:p-6">
+					<article class={`${solidPanelClass} grid gap-5 p-5 md:p-6`}>
 						<img src={gibson.src} alt="Gibson Martin" class="h-28 w-28 rounded-(--radius-md) object-cover" />
 						<div>
 							<h3 class="text-2xl font-extrabold text-(--color-ink)">Gibson Martin</h3>
 							<p class="mt-2 text-sm leading-7 text-(--color-ink-soft)">
 								Builder with public work across software systems, tooling, and technical experiments.
 							</p>
-							<a class="studio-link mt-4 inline-flex text-sm" href="https://github.com/wegfawefgawefg" rel="me noopener noreferrer" target="_blank">
+							<a class={founderLinkClass} href="https://github.com/wegfawefgawefg" rel="me noopener noreferrer" target="_blank">
 								View Gibson Martin on GitHub
 							</a>
 						</div>
 					</article>
-					<article class="studio-panel-solid grid gap-5 p-5 md:p-6">
+					<article class={`${solidPanelClass} grid gap-5 p-5 md:p-6`}>
 						<img src={kyle.src} alt="Kyle Dougan" class="h-28 w-28 rounded-(--radius-md) object-cover" />
 						<div>
 							<h3 class="text-2xl font-extrabold text-(--color-ink)">Kyle Dougan</h3>
 							<p class="mt-2 text-sm leading-7 text-(--color-ink-soft)">
 								Builder with public work across applications, automation, developer tooling, and product infrastructure.
 							</p>
-							<a class="studio-link mt-4 inline-flex text-sm" href="https://github.com/f0ursqu4r3" rel="me noopener noreferrer" target="_blank">
+							<a class={founderLinkClass} href="https://github.com/f0ursqu4r3" rel="me noopener noreferrer" target="_blank">
 								View Kyle Dougan on GitHub
 							</a>
 						</div>
@@ -173,15 +189,15 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<section id="contact" class="scroll-mt-32 bg-(--color-base) px-5 section-pad md:scroll-mt-24">
-			<div class="studio-panel mx-auto flex max-w-6xl flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-8">
+		<section id="contact" class={`scroll-mt-32 bg-(--color-base) px-5 ${sectionPadClass} md:scroll-mt-24`}>
+			<div class={`${panelClass} mx-auto flex max-w-6xl flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-8`}>
 				<div>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">Ready to discuss work?</h2>
 					<p class="mt-4 max-w-2xl text-sm leading-7 text-(--color-ink-soft)">
 						Send a short note about what you need built, fixed, automated, or stabilized.
 					</p>
 				</div>
-				<a class="studio-button studio-button-primary w-full sm:w-fit" href={directMailto}>
+				<a class={`${primaryButtonClass} w-full sm:w-fit`} href={directMailto}>
 					Contact us
 				</a>
 			</div>
