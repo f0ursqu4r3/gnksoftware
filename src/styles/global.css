@@ -95,7 +95,7 @@
     outline-offset: 3px;
   }
 
-  .studio-nav a:focus-visible,
+  .studio-nav a:not(.studio-button):focus-visible,
   .studio-nav summary:focus-visible,
   footer a:focus-visible {
     border-radius: var(--radius-sm);
