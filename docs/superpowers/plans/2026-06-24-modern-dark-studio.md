@@ -212,7 +212,7 @@ Replace the uppercase company label with sentence-case text:
 
 ```astro
 <span class="block text-sm font-extrabold text-(--color-ink)">G&K Software</span>
-<span class="block text-xs font-medium text-(--color-ink-muted)">Development house</span>
+<span class="block text-xs font-medium text-(--color-ink-muted)">Engineering studio</span>
 ```
 
 - [ ] **Step 2: Modernize header navigation**
@@ -257,7 +257,7 @@ Delete this paragraph from the hero:
 
 ```astro
 <p class="max-w-max border border-(--color-line) bg-(--color-panel-muted) px-3 py-2 text-xs font-bold tracking-[0.04em] text-(--color-signal)">
-  Signal Room / Development House
+  Signal Room / Engineering studio
 </p>
 ```
 

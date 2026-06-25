@@ -2,7 +2,7 @@
 
 ## Summary
 
-Redesign the G&K Software site around the approved Signal Room direction: near-black, dense, operational, precise, and clearly positioned as a senior development house for software systems with real consequences.
+Redesign the G&K Software site around the approved Signal Room direction: near-black, dense, operational, precise, and clearly positioned as a senior engineering studio for software systems with real consequences.
 
 The redesign keeps the existing routes, service data, founder proof, and direct development-shop positioning. It changes the brand system and page hierarchy so the site no longer reads as a warm consultancy page or generic SaaS landing page.
 
@@ -16,7 +16,7 @@ The core homepage headline becomes:
 
 Supporting copy should stay direct:
 
-> G&K Software is a small development house for teams that need senior builders close to the code. We build products, backends, automations, internal platforms, modernizations, and recoveries where failure has a real cost.
+> G&K Software is a small engineering studio for teams that need senior builders close to the code. We build products, backends, automations, internal platforms, modernizations, and recoveries where failure has a real cost.
 
 ## Visual System
 
@@ -92,4 +92,3 @@ bun run build
 ```
 
 If a dev server can bind locally, verify `/` and all six service routes return `200` and include expected content.
-
