@@ -20,7 +20,7 @@
   --radius-sm: 3px;
   --radius-md: 5px;
   --radius-lg: 8px;
-  --section-y: clamp(4.75rem, 7vw, 7rem);
+  --section-y: clamp(3.5rem, 9vw, 7rem);
   --container: 72rem;
   --font-sans: 'Chivo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Archivo', var(--font-sans);
@@ -53,7 +53,7 @@
   }
 
   .site-container {
-    width: min(100% - 2rem, var(--container));
+    width: min(100% - 1.5rem, var(--container));
     margin-inline: auto;
   }
 
@@ -295,6 +295,34 @@
     pointer-events: none;
     background: linear-gradient(180deg, transparent, rgba(17, 18, 14, 0.64));
     opacity: 0.78;
+  }
+
+  @media (min-width: 640px) {
+    .site-container {
+      width: min(100% - 2rem, var(--container));
+    }
+  }
+
+  @media (max-width: 639px) {
+    .studio-nav {
+      position: sticky;
+    }
+
+    .studio-nav-links {
+      margin-inline: -0.35rem;
+      padding-bottom: 0.1rem;
+      width: calc(100% + 0.7rem);
+    }
+
+    .studio-nav-link,
+    .studio-button {
+      min-height: 2.75rem;
+      padding-inline: 0.85rem;
+    }
+
+    .studio-button {
+      min-width: max-content;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

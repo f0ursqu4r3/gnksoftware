@@ -49,28 +49,28 @@ const directMailto = `mailto:${contactEmail}`;
 	<main class="min-h-screen bg-(--color-base) text-(--color-ink)">
 		<SiteHeader />
 
-		<section class="synapse-field relative overflow-hidden bg-(--color-base) px-5 py-18 md:py-24" data-synapse-field>
+		<section class="synapse-field relative overflow-hidden bg-(--color-base) px-5 py-14 sm:py-18 md:py-24" data-synapse-field>
 			<canvas class="synapse-field-canvas" data-synapse-canvas aria-hidden="true"></canvas>
-			<div class="site-container relative z-10 flex min-h-[clamp(30rem,58svh,40rem)] items-center">
-				<div class="max-w-5xl space-y-8">
-					<h1 class="max-w-5xl text-[clamp(1.45rem,5.8vw,4.5rem)] font-extrabold leading-[0.96] tracking-[-0.02em] text-(--color-ink)">
+			<div class="site-container relative z-10 flex min-h-[clamp(24rem,56svh,40rem)] items-center">
+				<div class="max-w-5xl space-y-7 sm:space-y-8">
+					<h1 class="max-w-5xl text-[clamp(1.18rem,5.7vw,4.5rem)] font-extrabold leading-[0.98] tracking-[-0.02em] text-(--color-ink) sm:leading-[0.96]">
 						<span class="block whitespace-nowrap">High velocity.</span>
 						<span class="block whitespace-nowrap text-(--color-signal)">Senior engineering.</span>
 						<span class="block whitespace-nowrap text-[0.86em]">For systems with consequences.</span>
 					</h1>
-					<p class="text-pretty max-w-3xl text-lg leading-8 text-(--color-ink-soft)">
+					<p class="text-pretty max-w-3xl text-base leading-7 text-(--color-ink-soft) sm:text-lg sm:leading-8">
 						G&K Software is a small development house for teams that need senior engineers for serious code. We build for
 						performance, durability, and places where failure has a real cost.
 					</p>
 					<div class="flex flex-wrap gap-3">
 						<a
-							class="studio-button studio-button-secondary"
+							class="studio-button studio-button-secondary w-full sm:w-auto"
 							href="#approach"
 						>
 							Our process
 						</a>
 						<a
-							class="studio-button studio-button-primary"
+							class="studio-button studio-button-primary w-full sm:w-auto"
 							href={directMailto}
 						>
 							Contact us
@@ -83,7 +83,7 @@ const directMailto = `mailto:${contactEmail}`;
 		<section id="services" class="scroll-mt-32 bg-(--color-surface) px-5 section-pad md:scroll-mt-24">
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.62fr,1.38fr]">
 				<div class="max-w-xl">
-					<h2 class="text-balance text-4xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-6xl">What we do.</h2>
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) sm:text-4xl md:text-6xl">What we do.</h2>
 					<p class="mt-5 text-sm leading-7 text-(--color-ink-soft)">
 						Six ways we step into serious software work. Start with the lane that matches the work in front of you.
 					</p>
@@ -123,9 +123,9 @@ const directMailto = `mailto:${contactEmail}`;
 						From first read to shipped work.
 					</h2>
 				</div>
-				<ol class="grid gap-0 overflow-hidden rounded-(--radius-md) border border-[rgba(196,206,183,0.1)] bg-(--color-surface)">
+				<ol class="grid gap-0 overflow-hidden rounded-(--radius-md) border border-[rgba(216,210,192,0.1)] bg-(--color-surface)">
 					{approach.map((item, index) => (
-						<li class="grid gap-4 border-b border-[rgba(196,206,183,0.1)] p-5 last:border-b-0 md:grid-cols-[5rem,1fr] md:p-6">
+						<li class="grid gap-3 border-b border-[rgba(216,210,192,0.1)] p-5 last:border-b-0 md:grid-cols-[5rem,1fr] md:gap-4 md:p-6">
 							<p class="text-sm font-extrabold text-(--color-signal)" aria-hidden="true">{String(index + 1).padStart(2, '0')}</p>
 							<div>
 								<h3 class="text-xl font-extrabold text-(--color-ink)">{item.title}</h3>
@@ -181,7 +181,7 @@ const directMailto = `mailto:${contactEmail}`;
 						Send a short note about what you need built, fixed, automated, or stabilized.
 					</p>
 				</div>
-				<a class="studio-button studio-button-primary w-fit" href={directMailto}>
+				<a class="studio-button studio-button-primary w-full sm:w-fit" href={directMailto}>
 					Contact us
 				</a>
 			</div>
