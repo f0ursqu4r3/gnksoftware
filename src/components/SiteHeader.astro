@@ -15,7 +15,7 @@ const headerCtaClass =
 <header class="sticky top-0 z-20 border-b border-[rgba(216,210,192,0.1)] bg-[rgba(17,18,14,0.88)] backdrop-blur-[18px]">
 	<div class={containerClass}>
 		<a class="flex shrink-0 items-center gap-2.5 md:min-w-0 md:gap-3" href={homeHref} aria-label="G&K Software home">
-			<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-(--radius-sm) bg-(--color-signal) text-xs font-extrabold text-(--color-base) [font-family:var(--font-display)] md:h-9 md:w-9 md:text-sm">
+			<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm bg-(--color-signal) text-xs font-extrabold text-(--color-base) [font-family:var(--font-display)] md:h-9 md:w-9 md:text-sm">
 				G&K
 			</span>
 			<span class="hidden min-w-0 md:block">
@@ -23,7 +23,7 @@ const headerCtaClass =
 				<span class="block truncate text-xs font-medium text-(--color-ink-muted)">Development house</span>
 			</span>
 		</a>
-		<nav class="flex min-w-0 flex-1 items-center gap-[0.15rem] overflow-x-auto pb-[0.05rem] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:gap-[0.35rem]" aria-label="Primary navigation">
+		<nav class="flex min-w-0 flex-1 items-center gap-[0.15rem] overflow-x-auto pb-[0.05rem] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-between md:gap-[0.35rem] md:overflow-visible md:pb-0" aria-label="Primary navigation">
 			<a class={navLinkClass} href="/">Home</a>
 			<a class={navLinkClass} href="/#approach">Approach</a>
 			<a class={navLinkClass} href="/#founders">Founders</a>
