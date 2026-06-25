@@ -20,7 +20,6 @@ export type Service = {
 	howWeWork: string[];
 	typicalProjects: string[];
 	related: ServiceSlug[];
-	ctaSubject: string;
 	metaDescription: string;
 };
 
@@ -68,7 +67,6 @@ export const services: Service[] = [
 			'Feature expansion for an existing product under active use',
 		],
 		related: ['backend-systems', 'internal-platforms', 'data-automation'],
-		ctaSubject: 'Product engineering project',
 		metaDescription:
 			'Product engineering for MVPs, workflow applications, and production software features built with durable technical foundations.',
 	},
@@ -113,7 +111,6 @@ export const services: Service[] = [
 			'Backend refactor to isolate unstable responsibilities',
 		],
 		related: ['data-automation', 'modernization', 'technical-rescue'],
-		ctaSubject: 'Backend systems project',
 		metaDescription:
 			'Backend engineering for APIs, services, integrations, workers, data contracts, and observability in operational software.',
 	},
@@ -158,7 +155,6 @@ export const services: Service[] = [
 			'Scheduled reporting pipeline with exception handling',
 		],
 		related: ['internal-platforms', 'backend-systems', 'modernization'],
-		ctaSubject: 'Data automation project',
 		metaDescription:
 			'Data automation for reporting, validation, operational handoffs, and reducing brittle spreadsheet-driven manual work.',
 	},
@@ -203,7 +199,6 @@ export const services: Service[] = [
 			'Tooling layer over existing backend or data systems',
 		],
 		related: ['product-engineering', 'data-automation', 'backend-systems'],
-		ctaSubject: 'Internal platform project',
 		metaDescription:
 			'Internal platform engineering for portals, admin systems, internal tools, and operational software that supports real business workflows.',
 	},
@@ -248,7 +243,6 @@ export const services: Service[] = [
 			'Refactor of a high-change subsystem blocking product work',
 		],
 		related: ['backend-systems', 'technical-rescue', 'data-automation'],
-		ctaSubject: 'Modernization project',
 		metaDescription:
 			'Incremental software modernization for legacy upgrades, migrations, refactors, and preserving critical business logic.',
 	},
@@ -293,7 +287,6 @@ export const services: Service[] = [
 			'Triage of recurring incidents in a business-critical system',
 		],
 		related: ['modernization', 'backend-systems', 'product-engineering'],
-		ctaSubject: 'Technical rescue project',
 		metaDescription:
 			'Technical rescue for troubled software projects, including assessment, triage, stabilization, and recovery planning.',
 	},
@@ -309,8 +302,4 @@ export function getRelatedServices(service: Service): Service[] {
 	return service.related
 		.map((slug) => getServiceBySlug(slug))
 		.filter((relatedService): relatedService is Service => relatedService !== undefined);
-}
-
-export function getServiceMailto(service: Pick<Service, 'ctaSubject'>): string {
-	return `mailto:${contactEmail}?subject=${encodeURIComponent(service.ctaSubject)}`;
 }

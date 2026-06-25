@@ -2,13 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import gibson from '../assets/gibson.png';
 import kyle from '../assets/kyle.png';
-import { contactEmail, getServiceMailto, services } from '../data/services';
-
-const signalPoints = [
-	'Founder-led engineering, close to the code.',
-	'Products, backends, automations, platforms, modernization, and recovery.',
-	'Small-team delivery with visible technical decisions.',
-];
+import { contactEmail, services } from '../data/services';
 
 const situations = [
 	'The product needs senior implementation, not another planning cycle.',
@@ -21,36 +15,21 @@ const situations = [
 
 const approach = [
 	{
-		title: 'Enter through the real system',
-		body: 'We start with the code, data, workflows, users, constraints, and failure modes that define the work.',
+		title: 'Discovery',
+		body: 'We read the current system, business pressure, users, risks, and constraints before prescribing work.',
 	},
 	{
-		title: 'Find the first useful slice',
-		body: 'We narrow the first milestone until it can prove behavior, reduce risk, or unblock the next decision.',
+		title: 'Scope',
+		body: 'We turn the problem into a bounded first engagement with clear outcomes, tradeoffs, and ownership.',
 	},
 	{
-		title: 'Build with operating notes',
-		body: 'We keep interfaces, deployment paths, ownership, and support behavior visible while the work is still being built.',
+		title: 'Delivery',
+		body: 'We build in thin, reviewable slices so progress is visible and technical decisions stay close to the work.',
 	},
 	{
-		title: 'Leave the system easier to own',
-		body: 'The handoff is code, decisions, tests, and a path your team can reason about after we leave.',
+		title: 'Handoff',
+		body: 'We leave behind code, decisions, tests, and operating notes your team can actually use.',
 	},
-];
-
-const capabilities = [
-	'Product architecture',
-	'API and service design',
-	'Workflow applications',
-	'Data validation',
-	'Internal portals',
-	'Background workers',
-	'Legacy migration paths',
-	'Production triage',
-	'Operational handoff',
-	'Observability',
-	'Release planning',
-	'Codebase assessment',
 ];
 
 const serviceLinks = services.map((service) => ({
@@ -78,27 +57,14 @@ const directMailto = `mailto:${contactEmail}`;
 					</span>
 				</a>
 				<nav class="flex w-full flex-wrap items-center gap-4 md:w-auto" aria-label="Homepage navigation">
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="#services">Services</a>
-					<details class="group relative basis-full md:basis-auto">
-						<summary class="cursor-pointer list-none text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)">
-							Practices
-						</summary>
-						<div class="studio-panel-solid mt-3 grid w-full gap-1 p-3 md:absolute md:right-0 md:w-72">
-							{serviceLinks.map((service) => (
-								<a class="px-2 py-1.5 text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href={service.href}>
-									{service.navLabel}
-								</a>
-							))}
-						</div>
-					</details>
 					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="#approach">Approach</a>
 					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="#founders">Founders</a>
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="#contact">Contact</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="#services">Services</a>
 					<a
 						class="studio-button studio-button-primary"
 						href={directMailto}
 					>
-						Email G&K
+						Contact us
 					</a>
 				</nav>
 			</div>
@@ -113,87 +79,45 @@ const directMailto = `mailto:${contactEmail}`;
 							Founder-led development for products, platforms, automations, and systems that need careful technical judgment.
 						</p>
 						<h1 class="text-balance max-w-5xl text-5xl font-extrabold leading-[0.98] tracking-[-0.025em] text-(--color-ink) md:text-7xl">
-							Software work for systems with consequences.
+							High velocity. <span class="text-(--color-signal)">Senior engineering.</span> For systems with consequences.
 						</h1>
 						<p class="text-pretty max-w-3xl text-lg leading-8 text-(--color-ink-soft)">
-							G&K Software is a small development house for teams that need senior builders close to the code. We build products,
-							backends, automations, internal platforms, modernizations, and recoveries where failure has a real cost.
+							G&K Software is a small development house for teams that need senior engineers for serious code. We build for
+							performance, durability, and places where failure has a real cost.
 						</p>
 					</div>
 					<div class="flex flex-wrap gap-3">
 						<a
-							class="studio-button studio-button-primary"
-							href="#services"
+							class="studio-button studio-button-secondary"
+							href="#approach"
 						>
-							Review work lanes
+							Our process
 						</a>
 						<a
-							class="studio-button studio-button-secondary"
+							class="studio-button studio-button-primary"
 							href={directMailto}
 						>
-							Send project context
+							Contact us
 						</a>
 					</div>
 				</div>
 
-				<aside class="studio-panel p-5 md:p-6">
+				<aside id="services" class="studio-panel scroll-mt-32 p-5 md:p-6">
 					<div class="flex items-start justify-between gap-6">
 						<div>
-							<p class="text-sm font-extrabold text-(--color-ink)">Work index</p>
-							<p class="mt-2 text-sm leading-6 text-(--color-ink-muted)">Six entry points into the same operating model.</p>
+							<p class="text-sm font-extrabold text-(--color-ink)"><span class="text-(--color-signal)">Work</span> index</p>
+							<p class="mt-2 text-sm leading-6 text-(--color-ink-muted)">Pick the pressure closest to what is in front of you.</p>
 						</div>
-						<p class="text-sm font-extrabold text-(--color-signal)">06</p>
 					</div>
 					<div class="studio-divider-list mt-5">
 						{serviceLinks.map((service) => (
-							<a class="group flex items-center justify-between gap-4 py-3 text-sm font-bold text-(--color-ink-soft)" href={service.href}>
-								<span class="group-hover:text-(--color-ink)">{service.title}</span>
-								<span class="text-(--color-ink-muted) group-hover:text-(--color-signal)">View</span>
+							<a class="group grid gap-1 py-3" href={service.href}>
+								<span class="text-sm font-extrabold text-(--color-ink) group-hover:text-(--color-signal)">{service.title}</span>
+								<span class="text-sm leading-6 text-(--color-ink-muted)">{service.summary}</span>
 							</a>
 						))}
 					</div>
-					<ul class="studio-divider-list mt-5 text-sm leading-6 text-(--color-ink-soft)">
-						{signalPoints.map((point) => <li class="py-3">{point}</li>)}
-					</ul>
 				</aside>
-			</div>
-		</section>
-
-		<section id="services" class="scroll-mt-32 bg-(--color-surface) px-5 section-pad md:scroll-mt-24">
-			<div class="mx-auto max-w-6xl">
-				<div class="mb-8 grid gap-4 md:grid-cols-[0.65fr,1.35fr]">
-					<h2 class="text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">Work lanes</h2>
-					<p class="max-w-3xl text-sm leading-7 text-(--color-ink-soft)">
-						Each lane has a dedicated route with fit, deliverables, operating model, and typical project shapes. Pick the system
-						pressure closest to what is in front of you.
-					</p>
-				</div>
-				<div class="grid gap-4 md:grid-cols-2">
-					{serviceLinks.map((service) => (
-						<article class="studio-panel-solid flex min-h-72 flex-col gap-5 p-5 md:p-6">
-							<div class="flex items-start justify-between gap-4">
-								<h3 class="max-w-sm text-2xl font-extrabold tracking-[-0.02em] text-(--color-ink)">{service.title}</h3>
-								<span class="studio-chip shrink-0 px-3 py-1 text-xs font-bold">
-									{service.shortTitle}
-								</span>
-							</div>
-							<p class="text-sm leading-7 text-(--color-ink-soft)">{service.summary}</p>
-							<ul class="mt-auto grid gap-2 text-sm leading-6 text-(--color-ink-soft)">
-								{service.homepageBullets.map((bullet) => (
-									<li class="border-t border-(--color-line) pt-2">{bullet}</li>
-								))}
-							</ul>
-							<div class="flex flex-wrap gap-3 border-t border-(--color-line) pt-4">
-								<a class="studio-link text-sm" href={service.href}>
-									View {service.shortTitle.toLowerCase()} work
-								</a>
-								<a class="studio-link text-sm" href={getServiceMailto(service)}>
-									Email about {service.shortTitle.toLowerCase()}
-								</a>
-							</div>
-						</article>
-					))}
-				</div>
 			</div>
 		</section>
 
@@ -206,7 +130,7 @@ const directMailto = `mailto:${contactEmail}`;
 				</div>
 				<div class="grid gap-3 md:grid-cols-2">
 					{situations.map((situation) => (
-						<p class="border-t border-[rgba(196,206,183,0.1)] pt-4 text-sm leading-7 text-(--color-ink-soft)">{situation}</p>
+						<p class="studio-panel-solid p-4 text-sm leading-7 text-(--color-ink-soft)">{situation}</p>
 					))}
 				</div>
 			</div>
@@ -216,7 +140,7 @@ const directMailto = `mailto:${contactEmail}`;
 			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
 				<div>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
-						Small team, visible decisions.
+						From first read to shipped work.
 					</h2>
 				</div>
 				<ol class="grid gap-4">
@@ -230,23 +154,6 @@ const directMailto = `mailto:${contactEmail}`;
 						</li>
 					))}
 				</ol>
-			</div>
-		</section>
-
-		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-12">
-			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.7fr,1.3fr]">
-				<div>
-					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
-						The technical surface area we cover.
-					</h2>
-				</div>
-				<div class="flex flex-wrap gap-3">
-					{capabilities.map((capability) => (
-						<p class="studio-chip px-4 py-2 text-sm font-semibold">
-							{capability}
-						</p>
-					))}
-				</div>
 			</div>
 		</section>
 
@@ -286,70 +193,33 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<section id="contact" class="scroll-mt-32 bg-(--color-base) px-5 py-12 md:scroll-mt-24 md:py-16">
-			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.8fr,1.2fr]">
+		<section id="contact" class="scroll-mt-32 bg-(--color-base) px-5 py-14 md:scroll-mt-24 md:py-20">
+			<div class="studio-panel mx-auto flex max-w-6xl flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-8">
 				<div>
-					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
-						Send the system context.
-					</h2>
-					<p class="mt-4 max-w-xl text-sm leading-7 text-(--color-ink-soft)">
-						Send what is being built, what is unstable, the systems involved, the timeline, and what a useful first milestone would prove.
+					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">Ready to discuss work?</h2>
+					<p class="mt-4 max-w-2xl text-sm leading-7 text-(--color-ink-soft)">
+						Send a short note about what you need built, fixed, automated, or stabilized.
 					</p>
 				</div>
-				<div class="studio-panel-solid grid gap-5 p-5 md:p-6">
-					<div class="grid gap-3 text-sm leading-7 text-(--color-ink-soft) md:grid-cols-2">
-						<div>
-							<h3 class="font-extrabold text-(--color-ink)">Useful context</h3>
-							<ul class="mt-2 grid gap-2">
-								<li>What needs built, changed, or stabilized.</li>
-								<li>Who uses it and what fails when it breaks.</li>
-								<li>Code, data, integration, and deployment constraints.</li>
-							</ul>
-						</div>
-						<div>
-							<h3 class="font-extrabold text-(--color-ink)">Good first outcomes</h3>
-							<ul class="mt-2 grid gap-2">
-								<li>A scoped product slice or backend service.</li>
-								<li>A system map, risk read, or recovery plan.</li>
-								<li>A modernization or automation path your team can own.</li>
-							</ul>
-						</div>
-					</div>
-					<a class="studio-button studio-button-primary w-fit" href={directMailto}>
-						Email {contactEmail}
-					</a>
-				</div>
+				<a class="studio-button studio-button-primary w-fit" href={directMailto}>
+					Contact us
+				</a>
 			</div>
 		</section>
 
 		<footer class="border-t border-[rgba(196,206,183,0.1)] bg-(--color-base) px-5 py-10">
-			<div class="mx-auto grid max-w-6xl gap-7 text-sm text-(--color-ink-soft) md:grid-cols-[1fr,1fr]">
+			<div class="mx-auto flex max-w-6xl flex-col gap-6 text-sm text-(--color-ink-soft) md:flex-row md:items-start md:justify-between">
 				<div>
 					<p class="font-extrabold text-(--color-ink)">G&K Software, LLC</p>
 					<p class="mt-2 max-w-lg leading-7">
 						Software work for products, platforms, automation, backend systems, modernization, and technical rescue.
 					</p>
 				</div>
-				<nav class="grid gap-5 sm:grid-cols-2" aria-label="Footer navigation">
-					<div>
-						<p class="font-extrabold text-(--color-ink)">Homepage</p>
-						<div class="mt-2 flex flex-wrap gap-3">
-							<a class="hover:text-(--color-signal)" href="#services">Services</a>
-							<a class="hover:text-(--color-signal)" href="#approach">Approach</a>
-							<a class="hover:text-(--color-signal)" href="#founders">Founders</a>
-							<a class="hover:text-(--color-signal)" href="#contact">Contact</a>
-						</div>
-					</div>
-					<div>
-						<p class="font-extrabold text-(--color-ink)">Practices</p>
-						<div class="mt-2 flex flex-wrap gap-3">
-							{serviceLinks.map((service) => (
-								<a class="hover:text-(--color-signal)" href={service.href}>
-									{service.shortTitle}
-								</a>
-							))}
-						</div>
-					</div>
+				<nav class="flex flex-wrap gap-4" aria-label="Footer navigation">
+					<a class="hover:text-(--color-signal)" href="#approach">Approach</a>
+					<a class="hover:text-(--color-signal)" href="#founders">Founders</a>
+					<a class="hover:text-(--color-signal)" href="#services">Services</a>
+					<a class="hover:text-(--color-signal)" href={directMailto}>Contact us</a>
 				</nav>
 			</div>
 		</footer>

@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getRelatedServices, getServiceMailto, services, type Service } from '../data/services';
+import { contactEmail, getRelatedServices, services, type Service } from '../data/services';
 
 export function getStaticPaths() {
 	return services.map((service) => ({
@@ -11,11 +11,7 @@ export function getStaticPaths() {
 
 const { service } = Astro.props as { service: Service };
 const relatedServices = getRelatedServices(service);
-const serviceLinks = services.map((service) => ({
-	...service,
-	href: `/${service.slug}`,
-}));
-const serviceMailto = getServiceMailto(service);
+const directMailto = `mailto:${contactEmail}`;
 ---
 
 <Layout title={`${service.title} | G&K Software`} description={service.metaDescription}>
@@ -32,27 +28,14 @@ const serviceMailto = getServiceMailto(service);
 					</span>
 				</a>
 				<nav class="flex w-full flex-wrap items-center gap-4 md:w-auto" aria-label="Service page navigation">
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#services">Services</a>
-					<details class="group relative basis-full md:basis-auto">
-						<summary class="cursor-pointer list-none text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)">
-							Practices
-						</summary>
-						<div class="studio-panel-solid mt-3 grid w-full gap-1 p-3 md:absolute md:right-0 md:w-72">
-							{serviceLinks.map((service) => (
-								<a class="px-2 py-1.5 text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href={service.href}>
-									{service.navLabel}
-								</a>
-							))}
-						</div>
-					</details>
 					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#approach">Approach</a>
 					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#founders">Founders</a>
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#contact">Contact</a>
+					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#services">Services</a>
 					<a
 						class="studio-button studio-button-primary"
-						href={serviceMailto}
+						href={directMailto}
 					>
-						Start a conversation
+						Contact us
 					</a>
 				</nav>
 			</div>
@@ -61,9 +44,6 @@ const serviceMailto = getServiceMailto(service);
 		<section class="bg-(--color-base) px-5 py-18 md:py-24">
 			<div class="site-container grid gap-10 md:grid-cols-[1.2fr,0.8fr]">
 				<div class="space-y-6">
-					<a class="studio-link inline-flex text-sm" href="/">
-						Back to G&K Software
-					</a>
 					<h1 class="text-balance max-w-4xl text-5xl font-extrabold leading-[0.95] tracking-[-0.03em] text-(--color-ink) md:text-7xl">
 						{service.title}
 					</h1>
@@ -71,9 +51,9 @@ const serviceMailto = getServiceMailto(service);
 					<p class="text-pretty max-w-3xl text-base leading-8 text-(--color-ink-soft)">{service.description}</p>
 					<a
 						class="studio-button studio-button-primary"
-						href={serviceMailto}
+						href={directMailto}
 					>
-						Discuss this work
+						Contact us
 					</a>
 				</div>
 
@@ -133,62 +113,56 @@ const serviceMailto = getServiceMailto(service);
 		</section>
 
 		<section class="border-b border-(--color-line) bg-(--color-base) px-5 py-12">
-			<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1fr,1fr]">
+			<div class="mx-auto grid max-w-6xl gap-8">
 				<div>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
-						Adjacent pressure matters.
+						Related services.
 					</h2>
-					<div class="mt-6 flex flex-wrap gap-3">
+					<div class="mt-6 flex gap-4 overflow-x-auto pb-2">
 						{relatedServices.map((related) => (
-							<a class="studio-chip px-4 py-2 text-sm font-bold hover:border-(--color-signal) hover:text-(--color-signal)" href={`/${related.slug}`}>
-								{related.title}
+							<a class="studio-panel-solid grid min-w-72 max-w-sm gap-3 p-4 hover:border-(--color-signal)" href={`/${related.slug}`}>
+								<span class="text-sm font-extrabold text-(--color-ink)">{related.title}</span>
+								<span class="text-sm leading-6 text-(--color-ink-muted)">{related.summary}</span>
+								<span class="border-t border-(--color-line) pt-3 text-sm leading-6 text-(--color-ink-soft)">
+									Right if: {related.goodFit[0]}
+								</span>
 							</a>
 						))}
 					</div>
 				</div>
-				<div class="studio-panel-solid p-5 md:p-6">
-					<h2 class="text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink)">Have a project in this lane?</h2>
+			</div>
+		</section>
+
+		<section class="bg-(--color-base) px-5 py-14 md:py-20">
+			<div class="studio-panel mx-auto flex max-w-6xl flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-8">
+				<div>
+					<h2 class="text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink)">Ready to discuss work?</h2>
 					<p class="mt-4 text-sm leading-7 text-(--color-ink-soft)">
-						Send the current state, what is blocked, and what a useful first milestone would prove. We will respond with a practical next step.
+						Send a short note about what you need built, fixed, automated, or stabilized.
 					</p>
-					<a
-						class="studio-button studio-button-primary mt-6"
-						href={serviceMailto}
-					>
-						Email G&K about {service.shortTitle.toLowerCase()}
-					</a>
 				</div>
+				<a
+					class="studio-button studio-button-primary w-fit"
+					href={directMailto}
+				>
+					Contact us
+				</a>
 			</div>
 		</section>
 
 		<footer class="border-t border-[rgba(196,206,183,0.1)] bg-(--color-base) px-5 py-10">
-			<div class="mx-auto grid max-w-6xl gap-7 text-sm text-(--color-ink-soft) md:grid-cols-[1fr,1fr]">
+			<div class="mx-auto flex max-w-6xl flex-col gap-6 text-sm text-(--color-ink-soft) md:flex-row md:items-start md:justify-between">
 				<div>
 					<p class="font-extrabold text-(--color-ink)">G&K Software, LLC</p>
 					<p class="mt-2 max-w-lg leading-7">
 						Software work for products, platforms, automation, backend systems, modernization, and technical rescue.
 					</p>
 				</div>
-				<nav class="grid gap-5 sm:grid-cols-2" aria-label="Footer navigation">
-					<div>
-						<p class="font-extrabold text-(--color-ink)">Homepage</p>
-						<div class="mt-2 flex flex-wrap gap-3">
-							<a class="hover:text-(--color-signal)" href="/#services">Services</a>
-							<a class="hover:text-(--color-signal)" href="/#approach">Approach</a>
-							<a class="hover:text-(--color-signal)" href="/#founders">Founders</a>
-							<a class="hover:text-(--color-signal)" href="/#contact">Contact</a>
-						</div>
-					</div>
-					<div>
-						<p class="font-extrabold text-(--color-ink)">Practices</p>
-						<div class="mt-2 flex flex-wrap gap-3">
-							{serviceLinks.map((service) => (
-								<a class="hover:text-(--color-signal)" href={service.href}>
-									{service.shortTitle}
-								</a>
-							))}
-						</div>
-					</div>
+				<nav class="flex flex-wrap gap-4" aria-label="Footer navigation">
+					<a class="hover:text-(--color-signal)" href="/#approach">Approach</a>
+					<a class="hover:text-(--color-signal)" href="/#founders">Founders</a>
+					<a class="hover:text-(--color-signal)" href="/#services">Services</a>
+					<a class="hover:text-(--color-signal)" href={directMailto}>Contact us</a>
 				</nav>
 			</div>
 		</footer>

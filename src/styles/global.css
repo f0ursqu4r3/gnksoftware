@@ -90,7 +90,8 @@
 
   .studio-button:focus-visible,
   .studio-link:focus-visible,
-  .studio-chip:focus-visible {
+  .studio-chip:focus-visible,
+  .studio-panel-solid:focus-visible {
     outline: 2px solid var(--color-signal);
     outline-offset: 3px;
   }
