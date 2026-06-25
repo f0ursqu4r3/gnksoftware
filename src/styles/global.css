@@ -88,6 +88,12 @@
     transform: translateY(-1px);
   }
 
+  .studio-button:focus-visible,
+  .studio-link:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
   .studio-button-primary {
     background: var(--color-signal);
     color: var(--color-base);
