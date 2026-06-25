@@ -199,7 +199,7 @@
     }
 
     .synapse-field::before {
-      opacity: 0.52;
+      opacity: 0.5;
     }
   }
 }
