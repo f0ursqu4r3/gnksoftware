@@ -6,14 +6,14 @@ const directMailto = `mailto:${contactEmail}`;
 ---
 
 <header class="studio-nav sticky top-0 z-20">
-	<div class="site-container flex flex-col items-stretch gap-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:py-4">
-		<a class="flex min-w-0 items-center gap-3" href={homeHref} aria-label="G&K Software home">
-			<span class="wordmark-mark flex h-9 w-9 shrink-0 items-center justify-center text-sm font-extrabold">
+	<div class="site-container flex flex-col items-stretch gap-2 py-3 md:flex-row md:items-center md:justify-between md:gap-4 md:py-4">
+		<a class="flex min-w-0 items-center gap-2.5 md:gap-3" href={homeHref} aria-label="G&K Software home">
+			<span class="wordmark-mark flex h-8 w-8 shrink-0 items-center justify-center text-xs font-extrabold md:h-9 md:w-9 md:text-sm">
 				G&K
 			</span>
 			<span class="min-w-0">
-				<span class="block truncate text-sm font-extrabold text-(--color-ink)">G&K Software</span>
-				<span class="block truncate text-xs font-medium text-(--color-ink-muted)">Development house</span>
+				<span class="block truncate text-sm font-extrabold text-(--color-ink) md:text-sm">G&K Software</span>
+				<span class="hidden truncate text-xs font-medium text-(--color-ink-muted) sm:block">Development house</span>
 			</span>
 		</a>
 		<nav class="studio-nav-links" aria-label="Primary navigation">
@@ -21,7 +21,7 @@ const directMailto = `mailto:${contactEmail}`;
 			<a class="studio-nav-link" href="/#approach">Approach</a>
 			<a class="studio-nav-link" href="/#founders">Founders</a>
 			<a class="studio-nav-link" href="/#services">Services</a>
-			<a class="studio-button studio-button-primary hidden sm:inline-flex" href={directMailto}>
+			<a class="studio-button studio-button-primary hidden md:inline-flex" href={directMailto}>
 				Contact us
 			</a>
 		</nav>
