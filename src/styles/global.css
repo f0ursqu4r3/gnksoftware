@@ -135,6 +135,10 @@
     translate: 0 0;
   }
 
+  .site-header-cta {
+    display: none;
+  }
+
   .studio-button:focus-visible,
   .studio-link:focus-visible,
   .studio-chip:focus-visible,
@@ -334,6 +338,12 @@
     .studio-nav-link {
       font-size: 0.875rem;
       padding-inline: 0.8rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .site-header-cta {
+      display: inline-flex;
     }
   }
 
