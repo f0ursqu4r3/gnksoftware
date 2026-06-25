@@ -70,6 +70,7 @@
   .studio-nav-links {
     display: flex;
     align-items: center;
+    flex: 1;
     gap: 0.35rem;
     min-width: 0;
     overflow-x: auto;
@@ -314,15 +315,14 @@
 
     .studio-nav-links {
       gap: 0.15rem;
-      margin-inline: -0.25rem;
+      margin-right: -0.25rem;
       padding-bottom: 0.05rem;
-      width: calc(100% + 0.5rem);
     }
 
     .studio-nav-link {
-      font-size: 0.8125rem;
+      font-size: 0.78rem;
       min-height: 2.35rem;
-      padding-inline: 0.62rem;
+      padding-inline: 0.5rem;
     }
 
     .studio-nav-link:hover {
@@ -336,8 +336,8 @@
 
   @media (min-width: 420px) and (max-width: 767px) {
     .studio-nav-link {
-      font-size: 0.875rem;
-      padding-inline: 0.8rem;
+      font-size: 0.8125rem;
+      padding-inline: 0.62rem;
     }
   }
 
