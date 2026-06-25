@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import { contactEmail, getRelatedServices, services, type Service } from '../data/services';
 
 export function getStaticPaths() {
@@ -16,30 +18,7 @@ const directMailto = `mailto:${contactEmail}`;
 
 <Layout title={`${service.title} | G&K Software`} description={service.metaDescription}>
 	<main class="min-h-screen bg-(--color-base) text-(--color-ink)">
-		<header class="studio-nav sticky top-0 z-20">
-			<div class="site-container flex flex-wrap items-center justify-between gap-4 py-4">
-				<a class="flex items-center gap-3" href="/" aria-label="G&K Software home">
-					<span class="wordmark-mark flex h-9 w-9 items-center justify-center text-sm font-extrabold">
-						G&K
-					</span>
-					<span>
-						<span class="block text-sm font-extrabold text-(--color-ink)">G&K Software</span>
-						<span class="block text-xs font-medium text-(--color-ink-muted)">Development house</span>
-					</span>
-				</a>
-				<nav class="flex w-full flex-wrap items-center gap-4 md:w-auto" aria-label="Service page navigation">
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#approach">Approach</a>
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#founders">Founders</a>
-					<a class="text-sm font-semibold text-(--color-ink-soft) hover:text-(--color-signal)" href="/#services">Services</a>
-					<a
-						class="studio-button studio-button-primary"
-						href={directMailto}
-					>
-						Contact us
-					</a>
-				</nav>
-			</div>
-		</header>
+		<SiteHeader />
 
 		<section class="bg-(--color-base) px-5 py-18 md:py-24">
 			<div class="site-container grid gap-10 md:grid-cols-[1.2fr,0.8fr]">
@@ -64,7 +43,7 @@ const directMailto = `mailto:${contactEmail}`;
 							<p class="mt-2 text-sm leading-6 text-(--color-ink-muted)">{service.shortTitle}</p>
 						</div>
 					</div>
-					<ul class="studio-divider-list mt-5 text-sm leading-7 text-(--color-ink-soft)">
+					<ul class="studio-dot-list mt-5 text-sm leading-7 text-(--color-ink-soft)">
 						{service.homepageBullets.map((bullet) => <li class="py-3">{bullet}</li>)}
 					</ul>
 				</aside>
@@ -76,8 +55,8 @@ const directMailto = `mailto:${contactEmail}`;
 				<div>
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">This is the right lane.</h2>
 				</div>
-				<ul class="grid gap-3 md:grid-cols-2">
-					{service.goodFit.map((item) => <li class="border-t border-[rgba(196,206,183,0.1)] pt-4 text-sm leading-7 text-(--color-ink-soft)">{item}</li>)}
+				<ul class="studio-rail-list md:grid md:grid-cols-2 md:gap-x-8">
+					{service.goodFit.map((item) => <li class="text-sm leading-7 text-(--color-ink-soft)">{item}</li>)}
 				</ul>
 			</div>
 		</section>
@@ -106,8 +85,8 @@ const directMailto = `mailto:${contactEmail}`;
 						Work we can step into.
 					</h2>
 				</div>
-				<ul class="grid gap-3 md:grid-cols-2">
-					{service.typicalProjects.map((item) => <li class="border-t border-[rgba(196,206,183,0.1)] pt-4 text-sm leading-7 text-(--color-ink-soft)">{item}</li>)}
+				<ul class="studio-rail-list md:grid md:grid-cols-2 md:gap-x-8">
+					{service.typicalProjects.map((item) => <li class="text-sm leading-7 text-(--color-ink-soft)">{item}</li>)}
 				</ul>
 			</div>
 		</section>
@@ -118,9 +97,9 @@ const directMailto = `mailto:${contactEmail}`;
 					<h2 class="text-balance text-3xl font-extrabold tracking-[-0.02em] text-(--color-ink) md:text-5xl">
 						Related services.
 					</h2>
-					<div class="mt-6 flex gap-4 overflow-x-auto pb-2">
+					<div class="mt-6 flex snap-x gap-4 overflow-x-auto pb-2" aria-label="Related services">
 						{relatedServices.map((related) => (
-							<a class="studio-panel-solid grid min-w-72 max-w-sm gap-3 p-4 hover:border-(--color-signal)" href={`/${related.slug}`}>
+							<a class="studio-panel-solid grid min-w-72 max-w-sm snap-start gap-3 p-4" href={`/${related.slug}`}>
 								<span class="text-sm font-extrabold text-(--color-ink)">{related.title}</span>
 								<span class="text-sm leading-6 text-(--color-ink-muted)">{related.summary}</span>
 								<span class="border-t border-(--color-line) pt-3 text-sm leading-6 text-(--color-ink-soft)">
@@ -150,21 +129,6 @@ const directMailto = `mailto:${contactEmail}`;
 			</div>
 		</section>
 
-		<footer class="border-t border-[rgba(196,206,183,0.1)] bg-(--color-base) px-5 py-10">
-			<div class="mx-auto flex max-w-6xl flex-col gap-6 text-sm text-(--color-ink-soft) md:flex-row md:items-start md:justify-between">
-				<div>
-					<p class="font-extrabold text-(--color-ink)">G&K Software, LLC</p>
-					<p class="mt-2 max-w-lg leading-7">
-						Software work for products, platforms, automation, backend systems, modernization, and technical rescue.
-					</p>
-				</div>
-				<nav class="flex flex-wrap gap-4" aria-label="Footer navigation">
-					<a class="hover:text-(--color-signal)" href="/#approach">Approach</a>
-					<a class="hover:text-(--color-signal)" href="/#founders">Founders</a>
-					<a class="hover:text-(--color-signal)" href="/#services">Services</a>
-					<a class="hover:text-(--color-signal)" href={directMailto}>Contact us</a>
-				</nav>
-			</div>
-		</footer>
+		<SiteFooter />
 	</main>
 </Layout>
