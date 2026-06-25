@@ -3,15 +3,13 @@
 
 :root {
   --color-base: #10140f;
-  --color-base-2: #151a14;
   --color-panel: #192017;
   --color-panel-strong: #222a1f;
-  --color-panel-muted: #131812;
-  --color-line: #3a4437;
+  --color-line: #495641;
   --color-line-strong: #56624f;
   --color-ink: #e8eedf;
-  --color-ink-soft: #c4ceb7;
-  --color-ink-muted: #a3ad98;
+  --color-ink-soft: #ced8c3;
+  --color-ink-muted: #b5c0aa;
   --color-signal: #b8d96a;
   --color-signal-dark: #2f3d16;
   --color-danger: #e58b70;
@@ -19,12 +17,12 @@
   --color-surface-soft: #1c241a;
   --color-surface-raised: #222a1f;
   --color-warm: #e58b70;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --section-y: clamp(4.5rem, 8vw, 7.5rem);
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
+  --section-y: clamp(4.75rem, 7vw, 7rem);
   --container: 72rem;
-  --font-sans: 'Sora', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Chivo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Archivo', var(--font-sans);
 }
 
@@ -111,13 +109,13 @@
 
   .wordmark-mark {
     border-radius: var(--radius-sm);
-    background: var(--color-ink);
+    background: var(--color-signal);
     color: var(--color-base);
     font-family: var(--font-display);
   }
 
   .studio-button {
-    border-radius: 999px;
+    border-radius: var(--radius-sm);
     border: 1px solid transparent;
     display: inline-flex;
     align-items: center;
@@ -170,13 +168,17 @@
   .studio-panel {
     border: 1px solid rgba(196, 206, 183, 0.12);
     border-radius: var(--radius-md);
-    background: linear-gradient(180deg, rgba(232, 238, 223, 0.055), rgba(232, 238, 223, 0.025));
+    background:
+      linear-gradient(145deg, rgba(184, 217, 106, 0.075), transparent 38%),
+      linear-gradient(180deg, rgba(232, 238, 223, 0.06), rgba(232, 238, 223, 0.026));
   }
 
   .studio-panel-solid {
     border: 1px solid rgba(196, 206, 183, 0.1);
     border-radius: var(--radius-md);
-    background: var(--color-surface);
+    background:
+      linear-gradient(150deg, rgba(232, 238, 223, 0.052), transparent 34%),
+      var(--color-surface);
   }
 
   a.studio-panel-solid {
@@ -207,7 +209,7 @@
 
   .studio-chip {
     border: 1px solid rgba(196, 206, 183, 0.14);
-    border-radius: 999px;
+    border-radius: var(--radius-sm);
     background: rgba(232, 238, 223, 0.04);
     color: var(--color-ink-soft);
   }
@@ -222,12 +224,12 @@
   }
 
   .studio-rail-list > * {
-    border-top: 1px solid rgba(196, 206, 183, 0.12);
+    border-top: 1px solid rgba(196, 206, 183, 0.09);
     padding-block: 1rem;
   }
 
   .studio-rail-list > *:last-child {
-    border-bottom: 1px solid rgba(196, 206, 183, 0.12);
+    border-bottom: 1px solid rgba(196, 206, 183, 0.09);
   }
 
   .studio-dot-list {
