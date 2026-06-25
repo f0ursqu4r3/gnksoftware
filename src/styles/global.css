@@ -95,6 +95,14 @@
     outline-offset: 3px;
   }
 
+  .studio-nav a:focus-visible,
+  .studio-nav summary:focus-visible,
+  footer a:focus-visible {
+    border-radius: var(--radius-sm);
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
   .studio-button-primary {
     background: var(--color-signal);
     color: var(--color-base);
