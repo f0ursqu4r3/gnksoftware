@@ -114,7 +114,7 @@ if (
         context.beginPath();
         context.moveTo(a.x, a.y);
         context.lineTo(b.x, b.y);
-        context.strokeStyle = `rgba(196, 206, 183, ${alpha})`;
+        context.strokeStyle = `rgba(216, 210, 192, ${alpha})`;
         context.lineWidth = 0.65 + cursorBoost * 1.05;
         context.stroke();
       }
@@ -129,9 +129,9 @@ if (
         pointerPosition.y,
         220
       );
-      halo.addColorStop(0, 'rgba(184, 217, 106, 0.065)');
-      halo.addColorStop(0.46, 'rgba(184, 217, 106, 0.022)');
-      halo.addColorStop(1, 'rgba(184, 217, 106, 0)');
+      halo.addColorStop(0, 'rgba(214, 179, 90, 0.07)');
+      halo.addColorStop(0.46, 'rgba(214, 179, 90, 0.026)');
+      halo.addColorStop(1, 'rgba(214, 179, 90, 0)');
       context.fillStyle = halo;
       context.fillRect(0, 0, width, height);
     }
@@ -145,7 +145,7 @@ if (
         0,
         Math.PI * 2
       );
-      context.fillStyle = `rgba(196, 206, 183, ${0.16 + point.glow * 0.36})`;
+      context.fillStyle = `rgba(216, 210, 192, ${0.16 + point.glow * 0.36})`;
       context.fill();
       context.beginPath();
       context.arc(
@@ -155,7 +155,7 @@ if (
         0,
         Math.PI * 2
       );
-      context.fillStyle = `rgba(184, 217, 106, ${0.065 + point.glow * 0.44})`;
+      context.fillStyle = `rgba(214, 179, 90, ${0.07 + point.glow * 0.44})`;
       context.fill();
     });
     context.restore();
